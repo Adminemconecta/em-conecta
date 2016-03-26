@@ -1,5 +1,5 @@
 <?php
-	define('BASE_URL', 'http://localhost/connecta/');
+	define('BASE_URL', 'http://localhost/em-conecta/');
     define('DEFAULT_CONTROLLER', 'buscar');
     define('DEFAULT_LAYOUT', 'default');
 
