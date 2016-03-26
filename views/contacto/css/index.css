@@ -1,0 +1,76 @@
+.form-contact{
+	position: relative;
+	margin-top: -50px;
+}
+.form-contact .col .card{
+	padding: 20px;
+}
+.radio-icon{
+	position: relative;
+	height: 250px;
+}
+.icon-logo-unete{
+	position: absolute;
+	font-size: 3.5em;
+	top: 50%;
+	margin-top: -25.1px;
+	left: 50%;
+	margin-left: -25.1px;
+}
+.radio-div{
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	background: black;
+	border-radius: 75px;
+	top: 50%;
+	left: 50%;
+	margin-top: -75px;
+	margin-left: -75px;
+	color: white;
+}
+.texto-card-sevices{
+	position: relative;
+	width: 100%;
+	padding: 10px 20px 0 20px;
+	text-align: center;
+}
+.margin-paralax{
+	margin-top: 50px;
+}
+.section-card{
+	position: relative;
+	width: 100%;
+	height: 500px;
+}
+.carta-principal{
+	position: absolute;
+	width: 400px;
+	padding: 30px;
+	left: 50%;
+	margin-left: -200px;
+	top: 20px;
+}
+.title-font-bot strong{
+	font-size: 0.7em;
+}
+.btn-contacto{
+    border: 5px solid #004d40;
+    width: 200px;
+    color: black;
+    font-weight: bold;
+    padding-bottom: 35px;
+}
+@media only screen and (max-width: 400px) and (min-width: 0px){
+	.titulo-publica h2{
+		font-size: 3.0em;
+	}
+	.carta-principal{
+		width: 90%;
+		margin-left: -45%;
+	}
+
+	.section-card{
+		height: 600px;
+	}
+}

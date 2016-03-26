@@ -1,0 +1,127 @@
+<section class="buscador">
+  <form id="form-serach" class="container row">
+    	<div class="input-field col s12 m12 l6">
+        <input id="first_name" type="text" class="validate">
+        <label for="first_name">¿Que buscas?</label>
+      </div>
+      <div class="input-field col s12 m6 l2">
+      <select>
+        <option value="" disabled selected>Ciudad</option>
+        <?php for ($i=0; $i < 50 ; $i++) { ?>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        <?php } ?>
+      </select>
+    </div>
+    <div class="input-field col s12 m6 l2">
+      <select>
+        <option value="" disabled selected>Tipo empresa</option>
+        <?php for ($i=0; $i < 50 ; $i++) { ?>
+          <option value="1">Ferreteria</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        <?php } ?>
+      </select>
+    </div>
+    <div class="input-field col s12 m6 l2">
+      <select>
+        <option value="" disabled selected>Tienda</option>
+        <?php for ($i=0; $i < 50 ; $i++) { ?>
+          <option value="1">Adidas</option>
+          <option value="2">Tenis</option>
+          <option value="3">Calzatodo</option>
+        <?php } ?>
+      </select>
+    </div>
+    <button class="btn waves-effect teal darken-3 col s12 m12 l12" type="submit" name="action">Buscar</button>
+  </form>
+</section>
+<section class="resutados row">
+<div class="result-search">100 Empresa tienen lo que buscas en ciudad</div>
+<div class="col s12 m12 l6 cont-items">
+  <div class="col s12 m6 l6">
+	<?php for ($i=0; $i < 3 ; $i++) { ?>
+    <div class="card col s12 m12 l12">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://images.unsplash.com/photo-1436246745626-344c04303c72?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=be50efdcbdb70a9517ea78ea6d44c4d0">
+      </div>
+      <div class="card-content">
+        <div class="card-title activator grey-text text-darken-4 center-align"><strong>Nombre empresa</strong></div>
+        <p><a href="#">www.url.com</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><strong>Nombre empresa</strong><i class="icon-close right"></i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+    </div>
+  <?php  } ?> 
+  </div>
+
+  <div class="col s12 m6 l6">
+  <?php for ($i=0; $i < 3 ; $i++) { ?>
+    <div class="card col s12 m12 l12">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://images.unsplash.com/photo-1434871619871-1f315a50efba?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=3281bb702a6886af18829c77bb47d103">
+      </div>
+      <div class="card-content">
+        <div class="card-title activator grey-text text-darken-4 center-align"><strong>Nombre empresa</strong></div>
+        <p><a href="#">www.url.com</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><strong>Nombre empresa</strong><i class="icon-close right"></i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+    </div>
+  <?php  } ?> 
+  </div>
+</div>
+<div class="col s12 m12 l6">
+  <div class="col s12 m6 l6 cont-items">
+  <?php for ($i=0; $i < 3 ; $i++) { ?>
+    <div class="card col s12 m12 l12">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://images.unsplash.com/photo-1433162653888-a571db5ccccf?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=cf237e64d8b950edfc9f0e84c71c9b0d">
+      </div>
+      <div class="card-content">
+        <div class="card-title activator grey-text text-darken-4 center-align"><strong>Nombre empresa</strong></div>
+        <p><a href="#">www.url.com</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><strong>Nombre empresa</strong><i class="icon-close right"></i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+    </div>
+  <?php  } ?> 
+  </div>
+
+  <div class="col s12 m6 l6">
+  <?php for ($i=0; $i < 3 ; $i++) { ?>
+    <div class="card col s12 m12 l12">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="https://images.unsplash.com/photo-1436306896198-6f280fe8481b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=a166046660f3114ae4532b57b2dbd14d">
+      </div>
+      <div class="card-content">
+        <div class="card-title activator grey-text text-darken-4 center-align"><strong>Nombre empresa</strong></div>
+        <p><a href="#">www.url.com</a></p>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4"><strong>Nombre empresa</strong><i class="icon-close right"></i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+    </div>
+  <?php  } ?> 
+  </div>
+</div>
+</section>
+<div class="center-align pagination-home">
+  <ul class="pagination">
+    <li class="disabled"><a href="#!"><i class="icon-chevron-left"></i></a></li>
+    <li class="active"><a href="#!">1</a></li>
+    <li class="waves-effect"><a href="#!">2</a></li>
+    <li class="waves-effect"><a href="#!">3</a></li>
+    <li class="waves-effect"><a href="#!">4</a></li>
+    <li class="waves-effect"><a href="#!">5</a></li>
+    <li class="waves-effect"><a href="#!"><i class="icon-chevron-right"></i></a></li>
+  </ul>
+</div>

@@ -1,0 +1,37 @@
+.relative-title{
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    top: 50%;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Sansita One', cursive;
+}
+.content-form-publica{
+    position: relative;
+    width: 90%;
+    margin-top: 50px;
+    padding: 20px 0 50px 0;
+}
+.btn-contacto{
+    position: absolute;
+    border: 5px solid #5d4037;
+    width: 200px;
+    color: black;
+    font-weight: bold;
+    padding-bottom: 35px;
+    left: 50%;
+    margin-left: -100px;
+}
+.tabs .tab a {
+    color: black;
+}
+.tabs .tab a:hover{
+    color: rgba(180, 180, 180, 1);
+}
+.tabs .indicator {
+    background-color: black;
+}
+#test1, #test2, #test3, #test4{
+    padding: 30px;
+}

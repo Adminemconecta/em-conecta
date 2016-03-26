@@ -1,0 +1,169 @@
+<div class="parallax-container">
+    <div class="parallax"><img src="<?php echo BASE_URL ?>public/img/pexels-photo-53817.jpeg"></div>
+</div>
+<div class="row content-form-publica z-depth-2">
+	<section class="col s12 m12 l12">
+		<div class="row ">
+			<h4 class="black-text relative-title">
+			    Panel de control
+			</h4>
+
+			<div class="row">
+				<div class="col s12">
+				    <ul class="tabs">
+				    	<li class="tab col s3"><a class="active" href="#test1">Configuracion inicial</a></li>
+				    	<li class="tab col s3"><a href="#test2">Planes</a></li>
+				    	<li class="tab col s3"><a href="#test3">Beneficios</a></li>
+				    	<li class="tab col s3"><a href="#test4">Portafolio</a></li>
+				    </ul>
+				</div>
+				<div id="test1" class="col s12">
+					<form id="otros" class="col s12">
+					    <div class="row">
+						      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="conecta" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Conecta al mundo</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="efectividad" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Efectividad</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="productividad" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Productividad</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="marketin" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Marketing</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="datos" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Datos</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="nosotros" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Nosotros</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="mision" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Mision</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="vision" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Vision</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="creemos" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">En que creemos</label>
+					        </div>
+
+					    </div>
+					    <button class="btn waves-effect transparent btn-contacto" type="submit" name="otros">Guardar</button>
+				    </form>
+				</div>
+				<div id="test2" class="col s12">
+					<form id="planes" class="col s12">
+					    <div class="row">
+					        <div class="input-field col s12 m12 l12">
+					          <input name="titulo" id="first_name" type="text" class="validate">
+					          <label for="first_name">Titulo</label>
+					        </div>
+					        <div class="input-field col s12 m12 l12">
+					          <textarea name="contenido" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Contenido</label>
+					        </div>
+					        <div class="input-field col s12 m12 l12">
+					          <input name="titulos_inf" id="last_name" type="text" class="validate">
+					          <label for="last_name">Titulos inferiores</label>
+					        </div>
+					    </div>
+					    <button class="btn waves-effect transparent btn-contacto" type="submit" name="planes">Guardar</button>
+				    </form>
+				</div>
+				<div id="test3" class="col s12">
+					<form id="beneficios" class="col s12 m12 l12">
+						<div class="row">
+							<div class="input-field col s12">
+							    <select name="select_plan">
+							    	<option disabled="" selected="" value="Plan">Plan</option>
+							      <?php for ($i=0; $i < 10; $i++) { ?>
+							      	<option value="">Option 1</option>
+							      <?php } ?>
+							    </select>
+							    <label>Seleccione un plan</label>
+							</div>
+							<div class="input-field col s12 m12 l12">
+					          <textarea name="beneficios" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Beneficios</label>
+					        </div>
+					    </div>
+						<button class="btn waves-effect transparent btn-contacto" type="submit" name="beneficios">Guardar</button>
+					</form>
+				</div>
+				<div id="test4" class="col s12">
+					<form id="portafolio" class="col s12">
+					    <div class="row">
+						      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="bienvenida" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Bienvenida</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="marca" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Marca</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="historia" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Historia cultura</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="innovacion" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Innovacion</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="integracion" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Integracion</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="integridad" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Integidad</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="lista_serv" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Lista de servicios</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="como_trabajamos" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Como trabajamos</label>
+					        </div>
+					      
+					        <div class="input-field col s12 m6 l4">
+					          <textarea name="como_pensamos" id="textarea1" class="materialize-textarea"></textarea>
+					          <label for="textarea1">Como pensamos</label>
+					        </div>
+
+					    </div>
+					    <button class="btn waves-effect transparent btn-contacto" type="submit" name="portafolio">Guardar</button>
+				    </form>
+				</div>
+			</div>
+		    
+	    </div>
+	</section>
+</div>

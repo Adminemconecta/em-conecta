@@ -1,0 +1,34 @@
+.content-form-publica{
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+.font-publica{
+	font-family: 'Sansita One', cursive;
+}
+.text-info-publica{
+	position: relative;
+	padding: 20px;
+	text-align: justify;
+}
+.inicio-text{
+	position: absolute;
+	top: -40px;
+	font-size: 5em;
+	font-family: 'Sansita One', cursive;
+	padding: 0;
+}
+.btn-contacto{
+	position: absolute;
+    border: 5px solid #5d4037;
+    width: 200px;
+    color: black;
+    font-weight: bold;
+    padding-bottom: 35px;
+    left: 50%;
+    margin-left: -100px;
+}
+@media only screen and (max-width: 400px) and (min-width: 0px){
+	.titulo-publica h2{
+		font-size: 3.0em;
+	}
+}
