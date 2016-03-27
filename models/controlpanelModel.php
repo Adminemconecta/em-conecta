@@ -121,8 +121,8 @@
 
 		public function getConfigInicial()
 		{
-			$clientes = $this->_db->query("SELECT * FROM otros ORDER BY idotros DESC");
-			return $clientes->fetchall();
+			$config = $this->_db->query("SELECT * FROM otros ORDER BY idotros DESC");
+			return $config->fetch();
 		}
 
 		public function getPlanes()
