@@ -26,9 +26,12 @@
 										$fax,
 										$e_mail,
 										$municipio_idmunicipio,
-										$tipo_empresa_idtipo_empresa)
+										$tipo_empresa_idtipo_empresa,
+										$empresa_peticion_tipo_producto,
+										$empresa_peticion_departamento,
+										$empresa_peticion_user)
 		{
-			$this->_db->prepare("INSERT INTO empresa VALUES  (null, 
+			$this->_db->prepare("INSERT INTO empresa_peticion VALUES  (null, 
 																:nombre, 
 																:oficina_central, 
 																:fundacion, 
@@ -45,8 +48,10 @@
 																:fax,
 																:e_mail,
 																:municipio_idmunicipio,
-																:tipo_empresa_idtipo_empresa
-																)")
+																:tipo_empresa_idtipo_empresa,
+																:empresa_peticion_tipo_producto,
+																:empresa_peticion_departamento,
+																:empresa_peticion_user)")
 			->execute(
 					array(
 							':nombre'=> $nombre,
@@ -65,7 +70,10 @@
 							':fax'=> $fax,
 							':e_mail'=> $e_mail,
 							':municipio_idmunicipio'=> $municipio_idmunicipio,
-							':tipo_empresa_idtipo_empresa'=> $tipo_empresa_idtipo_empresa
+							':tipo_empresa_idtipo_empresa'=> $tipo_empresa_idtipo_empresa,
+							':empresa_peticion_tipo_producto'=> $empresa_peticion_tipo_producto,
+							':empresa_peticion_departamento'=> $empresa_peticion_departamento,
+							':empresa_peticion_user'=> $empresa_peticion_user
 						)
 				);
 		}

@@ -19,6 +19,7 @@
 				$this->redireccionar();
 			}
 
+			$this->_view->configuracion = $this->_controlpanel->getPlanes();
 			$this->_view->titulo = 'Panel de control';
 			$this->_view->setCss(array('index'));
 			$this->_view->setJs(array('index'));
@@ -133,17 +134,18 @@
 									"respuesta" => 'Seleccione un plan');
             	echo json_encode($answerJson);
             	exit;
-			}elseif ($this->getUsuarioParam('beneficios') == '') {
+			}elseif ($this->getUsuarioParam('beneficio') == '') {
 				$answerJson = array("answer" => false,
 									"respuesta" => 'Falta el beneficio');
             	echo json_encode($answerJson);
             	exit;
 			}else{
-
+				
 				$this->_controlpanel->registrarBeneficio(
-						$this->getUsuarioParam('select_plan'),
-						$this->getUsuarioParam('beneficios')    
+						$this->getUsuarioParam('beneficio'),
+						$this->getUsuarioParam('select_plan')
 					);
+
 				$answerJson = array("answer" => true,
 									"respuesta" => 'Se insertoaron los beneficios');
             	echo json_encode($answerJson);

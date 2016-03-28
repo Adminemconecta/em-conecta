@@ -37,7 +37,7 @@
     <div class="google-menu-close"></div>
     <div class="google-menu">
       <figure class="img-user">
-        <img class="circle img-perfil center-perfil" src="<?php echo BASE_URL ?>public/img/chloe-grace-moretz1.jpg">
+        <img class="circle img-perfil center-perfil" src="<?php echo BASE_URL ?>public/img/chloe-grace-moretz1.png">
       </figure>
       <form id="form-serach" class="container row">
           <div class="input-field col s12 m12 l12">
@@ -74,26 +74,30 @@
 <nav class="options transparent">
     <div class="nav-wrapper">
       <span class="brand-logo hide-on-med-and-down">
-      <figure class="img-user data-admin">
-        <img class="circle img-perfil" src="<?php echo BASE_URL ?>public/img/chloe-grace-moretz1.jpg">
-      </figure>
-      <h6 class="alias-menu-mav">Alias</h6>
+      <?php 
+        if (Session::get('autenticado')) { ?>
+        <figure class="img-user data-admin">
+          <img class="circle img-perfil" src="<?php echo BASE_URL ?>public/img/chloe-grace-moretz1.png">
+        </figure>
+         <h6 class="alias-menu-mav"> <?php echo $_SESSION['nombre'].' '.$_SESSION['apellido']; ?> </h6>
+      <?php } ?>
       </span>
       <div class="data-menu-close"></div>
       <?php if (Session::get('autenticado')){ ?>
         <div class="data-menu z-depth-2 teal darken-4">
           <div class="content-figure-menu">
             <figure class="img-user-menu data-admin_menu">
-              <img class="circle img-perfil" src="<?php echo BASE_URL ?>public/img/chloe-grace-moretz1.jpg">
+              <img class="circle img-perfil" src="<?php echo BASE_URL ?>public/img/chloe-grace-moretz1.png">
             </figure>
-            <h6 class="alias">Alias</h6>
-            <h6 class="nombre">Nombre Completo</h6>
+            <h6 class="alias">_____</h6>
+            <h6 class="nombre"><?php echo $_SESSION['nombre'].' '.$_SESSION['apellido']; ?></h6>
           </div>
           <div>
           <hr size="1" style="color: white;" class="hr" />
             <a href="<?php echo BASE_URL?>cuenta"><div class="cuenta"><span class="icon-menu-admin icon-account_box"></span>Cuenta</div></a>
             <div class="tareas"><span class="icon-menu-admin icon-check"></span>Tareas</div>
             <div class="eventos"><span class="icon-menu-admin icon-collections_bookmark"></span>Eventos</div>
+            <div class="eventos"><span class="icon-import_contacts icon-collections_bookmark"></span>Portafolio</div>
           </div>
           <div>
           <hr size="1" style="color: white;"/>
@@ -110,11 +114,13 @@
       </ul>
       <!-- menu lateral -->
       <ul class="side-nav" id="mobile-demo">
+      <?php if (Session::get('autenticado')) { ?>
         <div class="img-menu-perfil">
           <figure class="img-user data-admin">
-            <img class="circle img-perfil" src="<?php echo BASE_URL ?>public/img/chloe-grace-moretz1.jpg">
+            <img class="circle img-perfil" src="<?php echo BASE_URL ?>public/img/chloe-grace-moretz1.png">
           </figure>
         </div>
+      <?php } ?>
         <li><a href="<?php echo BASE_URL ?>">Inicio</a></li>
         <li class="google-show-api"><a href="#">Mapa</a></li>
         <li><a href="<?php echo BASE_URL ?>publica">Publica con nosotros</a></li>

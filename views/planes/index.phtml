@@ -9,68 +9,32 @@
 </h3>
 <section class="text-info-publica">
 	<article class="container row">
-		<div class="col s12 m12 l4">
-			<div class="card">
-		      <div class="card-image waves-effect waves-block waves-light">
-		        <article>
-		        	<h4 class="center-align teal-text text-darken-4"><strong>Basico</strong></h4>
-		        	<div class="texto-card-sevices">
-		        		En em-conecta nos preocupamos por la utilizacion del timepo
-		        		por esta razon implementamos un servicio que te permite conectar los datos de tu
-		        		sitio a nosotros con un solo clik
-		        	</div>
-		        	<div class="radio-icon">
-		        		<div class="radio-div">
-		        			<span class="icon-merge_type icon-logo-unete"></span>
-		        		</div>
-		        	</div>
-		        </article>
-		      </div>
-		      <div class="card-content">
-		        <div class="card-title activator blue-text text-darken-1 center-align title-font-bot"><strong>WS SOAP REST</strong></div>
-		      </div>
+		<?php $varcount = count($this->configuracion); 
+			$array_icons = array('device_hub', 'details', 'filter_tilt_shift');
+		?>
+
+		<?php for ($i=0; $i < $varcount ; $i++) { ?>
+			<div class="col s12 m12 l4">
+				<div class="card">
+			      <div class="card-image waves-effect waves-block waves-light">
+			        <article>
+			        	<h4 class="center-align teal-text text-darken-4"><strong><?php echo $this->configuracion[$i]['planes_titulo']; ?></strong></h4>
+			        	<div class="texto-card-sevices">
+			        		<?php echo $this->configuracion[$i]['contenido']; ?>
+			        	</div>
+			        	<div class="radio-icon">
+			        		<div class="radio-div">
+			        			<span class="<?php echo 'icon-'.$array_icons[$i];?> icon-logo-unete"></span>
+			        		</div>
+			        	</div>
+			        </article>
+			      </div>
+			      <div class="card-content">
+			        <div class="card-title activator blue-text text-darken-1 center-align title-font-bot"><strong><?php echo $this->configuracion[$i]['planes_title_inf']; ?></strong></div>
+			      </div>
+			    </div>
 		    </div>
-	    </div>
-	    <div class="col s12 m12 l4">
-		    <div class="card">
-		      <div class="card-image waves-effect waves-block waves-light">
-		        <article>
-		        	<h4 class="center-align teal-text text-darken-4"><strong>General</strong></h4>
-		        	<div class="texto-card-sevices">
-		        		Presenta la oferta de tu firma, difunde información precisa y constituye una herramienta comercial de marketing muy valiosa para aumentar tus ventas
-		        	</div>
-		        	<div class="radio-icon">
-		        		<div class="radio-div">
-		        			<span class="icon-library_books icon-logo-unete"></span>
-		        		</div>
-		        	</div>
-		        </article>
-		      </div>
-		      <div class="card-content">
-		        <div class="card-title activator blue-text text-darken-1 center-align title-font-bot"><strong>PORTAFOLIO</strong></div>
-		      </div>
-		    </div>
-	    </div>
-	    <div class="col s12 m12 l4">
-		    <div class="card">
-		      <div class="card-image waves-effect waves-block waves-light">
-		        <article>
-		        <h4 class="center-align teal-text text-darken-4"><strong>Optimo</strong></h4>
-		        	<div class="texto-card-sevices">
-		        		Genera graficos, reportes, facturas para tu empresa, analiza los datos de tu empresa toma desiciones acertadas y dale el giro que le hace falta para ser exitoso.
-		        	</div>
-		        	<div class="radio-icon">
-		        		<div class="radio-div">
-		        			<span class="icon-database icon-logo-unete"></span>
-		        		</div>
-		        	</div>
-		        </article>
-		      </div>
-		      <div class="card-content">
-		        <div class="card-title activator blue-text text-darken-1 center-align title-font-bot"><strong>REPORTES GRAFICOS</strong></div>
-		      </div>
-		    </div>
-	    </div>
+		<?php } ?>
 	</article>
 </section>
 <div class="parallax-container">
@@ -83,17 +47,23 @@
 	        <article>
 	        <h4 class="center-align teal-text text-darken-4"><strong>Beneficios</strong></h4>
 	        	<div class="texto-card-sevices">
-	        		Genera graficos, reportes, facturas para tu empresa, analiza los datos de tu empresa toma desiciones acertadas y dale el giro que le hace falta para ser exitoso.
+	        		<?php for ($w=0; $w < count($this->configuracion); $w++) { ?>
+	        			<strong><?php echo $this->configuracion[$w]['planes_titulo']?></strong>:
+	        			<?php for ($x=0; $x < count($this->beneficios); $x++) { ?>
+	        				<?php
+	        				 	if ($this->configuracion[$w]['idplanes'] == $this->beneficios[$x]['planes_idplanes']) {
+	        						echo $this->beneficios[$x]['beneficios_lista_beneficios'];
+	        				 	} 
+	        				?>
+	        			<?php } ?><br>
+	        		<?php }	?>
 	        	</div>
 	        	<div class="radio-icon">
 	        		<div class="radio-div">
-	        			<span class="icon-database icon-logo-unete"></span>
+	        			<span class="icon-verified_user icon-logo-unete"></span>
 	        		</div>
 	        	</div>
 	        </article>
-	      </div>
-	      <div class="card-content">
-	        <div class="card-title activator blue-text text-darken-1 center-align title-font-bot"><strong>REPORTES GRAFICOS</strong></div>
 	      </div>
 	    </div>
     </div>

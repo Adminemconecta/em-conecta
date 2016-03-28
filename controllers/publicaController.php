@@ -140,10 +140,11 @@
 						$this->getUsuarioParam('fax'),
 						$this->getUsuarioParam('e_mail'),
 						$this->getUsuarioParam('municipio'),
-						$this->getUsuarioParam('tipo_de_empresa')						
+						$this->getUsuarioParam('tipo_de_empresa'),
+						$this->getUsuarioParam('tipo_productos'),
+						$this->getUsuarioParam('departamento'),
+						$this->getUsuarioParam('nombre_usuario')					
 					);
-/*$this->getUsuarioParam('departamento'),
-$this->getUsuarioParam('tipo_productos'),*/
 
 				$answerJson = array("answer" => true,
 									"respuesta" => 'Se registro su empresa correctamente');

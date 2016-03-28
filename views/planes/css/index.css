@@ -47,7 +47,8 @@
 .texto-card-sevices{
 	position: relative;
 	width: 100%;
-	padding: 10px 20px 0 20px;
+	padding: 10px 20px 0 0;
+	margin-bottom: 20px;
 	text-align: center;
 }
 .margin-paralax{

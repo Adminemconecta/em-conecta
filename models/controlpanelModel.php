@@ -127,13 +127,16 @@
 
 		public function getPlanes()
 		{
-			$clientes = $this->_db->query("SELECT * FROM planes ORDER BY idplanes DESC");
+			$clientes = $this->_db->query("SELECT * FROM planes ORDER BY idplanes ASC");
 			return $clientes->fetchall();
 		}
 
 		public function getBeneficio()
 		{
-			$clientes = $this->_db->query("SELECT * FROM beneficios ORDER BY idbeneficios DESC");
+			$clientes = $this->_db->query("SELECT idplanes, planes_idplanes, beneficios_lista_beneficios  FROM beneficios
+											INNER JOIN planes
+											ON beneficios.planes_idplanes = planes.idplanes
+											ORDER BY idbeneficios ASC");
 			return $clientes->fetchall();
 		}
 

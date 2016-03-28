@@ -95,14 +95,15 @@
 							<div class="input-field col s12">
 							    <select name="select_plan">
 							    	<option disabled="" selected="" value="Plan">Plan</option>
-							      <?php for ($i=0; $i < 10; $i++) { ?>
-							      	<option value="">Option 1</option>
+							    	<?php $countvar = count($this->configuracion)?>
+							      <?php for ($i=0; $i < $countvar; $i++) { ?>
+							      	<option value="<?php echo $this->configuracion[$i]['idplanes'];?>"><?php echo $this->configuracion[$i]['planes_titulo']; ?></option>
 							      <?php } ?>
 							    </select>
 							    <label>Seleccione un plan</label>
 							</div>
 							<div class="input-field col s12 m12 l12">
-					          <textarea name="beneficios" id="textarea1" class="materialize-textarea"></textarea>
+					          <textarea name="beneficio" id="textarea1" class="materialize-textarea"></textarea>
 					          <label for="textarea1">Beneficios</label>
 					        </div>
 					    </div>

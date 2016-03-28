@@ -108,7 +108,9 @@ color back menu lateral mobil
 	color: #039be5;
 }
 .img-perfil{
-	width: 80px;
+	margin-top: 10px;
+	background: white;
+	width: 60px;
 	padding: 10px;
 }
 .img-menu-perfil{
@@ -257,7 +259,7 @@ color back menu lateral mobil
 }
 .data-menu{
 	position: absolute;
-	height: 400px;
+	height: 460px;
 	width: 300px;
 	left: 10px;
 	top: 10px;
@@ -290,7 +292,7 @@ color back menu lateral mobil
 .cuenta:hover, .tareas:hover, .eventos:hover, .configuracion:hover, .cerrar_sesion:hover{
 	background: rgb(0, 87, 74);
 }
-.icon-menu-admin{
+.icon-menu-admin, .icon-import_contacts{
 	position: relative;
 	font-size: 2em;
 	top: 7px;

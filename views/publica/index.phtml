@@ -13,6 +13,9 @@
 		<h5 class="center-align blue-text text-darken-1 font-publica" >Inscribe tu empresa</h3>
 		<div class="row">
 		    <form class="col s12" id="publica">
+		    	<input name="nombre_usuario" type="hidden" value="<?php if (Session::get('autenticado')) {
+		    		echo $_SESSION['nombre'].' '.$_SESSION['apellido'];
+		    	}else{ echo "user";} ?>">
 		      <div class="row">
 		        <div class="input-field col s12 m6 l4">
 		          <i class="icon-account_circle prefix"></i>
