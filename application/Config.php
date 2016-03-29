@@ -3,13 +3,13 @@
     define('DEFAULT_CONTROLLER', 'buscar');
     define('DEFAULT_LAYOUT', 'default');
 
-    define('APP_NAME', 'www.colombiaenlinea.com');
+    define('APP_NAME', 'www.micolombiaenlinea.com');
     define('APP_SLOGAN', 'Slogan');
-    define('APP_COMPANY', 'www.micolombiaenlinea.com');
+    define('APP_COMPANY', 'WWW.MICOLOMBIAENLINEA.COM');
     define('SESSION_TIME', 10);
 
-    define('COMPANY', 'em-conecta sas');
-    define('COMPANY_DIRECTION', 'colombiaenlinea');
+    define('COMPANY', 'EM-CONECTA-SAS');
+    define('COMPANY_DIRECTION', 'micolombiaenlinea');
     define('CIUDAD', 'Web');
     define('INFO', 'Contacte al administrador');
     define('COMPANY_ABR', 'CL');
