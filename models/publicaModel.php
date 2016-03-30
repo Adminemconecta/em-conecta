@@ -77,5 +77,17 @@
 						)
 				);
 		}
+
+		public function getDepartamento()
+		{
+			$depto = $this->_db->query("SELECT * FROM departamento ORDER BY iddepartamento ASC");
+			return $depto->fetchall();
+		}
+
+		public function getMunicipo()
+		{
+			$mun = $this->_db->query("SELECT * FROM municipio ORDER BY idmunicipio ASC");
+			return $mun->fetchall();
+		}
 	}
 ?>

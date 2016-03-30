@@ -13,6 +13,7 @@
 		}
 
 		public function index(){
+			self::pdf();
 		}
 
 		public function header()

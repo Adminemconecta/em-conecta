@@ -97,7 +97,7 @@
             <a href="<?php echo BASE_URL?>cuenta"><div class="cuenta"><span class="icon-menu-admin icon-account_box"></span>Cuenta</div></a>
             <div class="tareas"><span class="icon-menu-admin icon-check"></span>Tareas</div>
             <div class="eventos"><span class="icon-menu-admin icon-collections_bookmark"></span>Eventos</div>
-            <div class="eventos"><span class="icon-import_contacts icon-collections_bookmark"></span>Portafolio</div>
+            <a href="<?php BASE_URL ?>portafolio"><div class="eventos"><span class="icon-import_contacts icon-collections_bookmark"></span>Portafolio</div></a>
           </div>
           <div>
           <hr size="1" style="color: white;"/>

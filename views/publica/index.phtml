@@ -100,15 +100,23 @@
 		          <label for="icon-markunread">E-mail</label>
 		        </div>
 		        <div class="input-field col s12 m6 l4">
-		          <i class="icon-earth prefix"></i>
-		          <input id="icon-earth" type="text" class="validate" name="departamento">
-		          <label for="icon-earth">Departamento</label>
-		        </div>
+				    <select name="departamento">
+				    	<option value="" disabled selected>Elija una opcion</option>
+				    <?php for ($h=0; $h < count($this->depto) ; $h++) { ?>
+				    	<option value="<?php echo $this->depto[$h]['nombre']; ?>"><?php echo $this->depto[$h]['nombre']; ?></option>
+				    <?php } ?>
+				    </select>
+				    <label>Departamento</label>
+			  	</div>
 		        <div class="input-field col s12 m6 l4">
-		          <i class="icon-location prefix"></i>
-		          <input id="icon-location" type="text" class="validate" name="municipio">
-		          <label for="icon-location">Municipio</label>
-		        </div>
+				    <select name="municipio">
+				    	<option value="" disabled selected>Elija una opcion</option>
+					    <?php for ($i=0; $i < count($this->mun) ; $i++) { ?>
+					    	<option value="<?php echo $this->mun[$i]['idmunicipio']; ?>"><?php echo $this->mun[$i]['nombre']; ?></option>
+					    <?php } ?>
+				    </select>
+				    <label>Municipio</label>
+			  	</div>
 		        <div class="input-field col s12 m6 l4">
 		          <i class="icon-list-numbered prefix"></i>
 		          <input id="icon-list-numbered" type="text" class="validate" name="tipo_de_empresa">

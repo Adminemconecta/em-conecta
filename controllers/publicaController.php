@@ -10,13 +10,13 @@
 
 		public function __construct(){
 			parent::__construct();
-
 			$this->_publica = $this->loadModel('publica');
 		}
 
 		public function index()
 		{
-			
+			$this->_view->depto = $this->_publica->getDepartamento();
+			$this->_view->mun = $this->_publica->getMunicipo();
 			$this->_view->titulo = 'Publica';
 			$this->_view->setCss(array('index'));
 			$this->_view->setJs(array('index'));
