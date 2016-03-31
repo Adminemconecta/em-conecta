@@ -273,6 +273,46 @@
 
 			$this->_pdf->MultiCell(400,10, utf8_decode( $cadena_branding ),0,'C');
 
+			$this->_pdf->AddPage();
+			$this->_pdf->Image(BASE_URL.'public/img/pexels-photo-57750.jpeg',0,0,450);
+			$this->_pdf->SetTextColor(255, 255, 255);
+			$this->_pdf->SetFont('Arial','B',9);
+			$this->_pdf->Cell(280);
+			$this->_pdf->Cell(150,7, utf8_decode( 'Portafolio de negocios '.COMPANY ),0,0,'L');
+			$this->_pdf->Image(BASE_URL.'public/img/link2.png',10,10,15);
+			$this->_pdf->Ln(240);
+			$this->_pdf->SetFont('Arial','B',35);
+			$this->_pdf->Cell(150,7, utf8_decode( 'Productos' ),0,0,'L');
+
+			for ($i=0; $i < 3 ; $i++) { 
+
+				$this->_pdf->AddPage();
+				$this->_pdf->SetTextColor(0, 0, 0);
+				$this->_pdf->SetFont('Arial','B',9);
+				$this->_pdf->Cell(280);
+				$this->_pdf->Cell(150,7, utf8_decode( 'Portafolio de negocios '.COMPANY ),0,0,'L');
+				$this->_pdf->Image(BASE_URL.'public/img/link2.png',10,10,15);
+
+				$this->_pdf->Ln(50);
+
+
+				$this->_pdf->SetFont('Arial','B',32);
+				$this->_pdf->Cell(400,10, utf8_decode( 'Producto No-' ),0,0,'C');
+				$this->_pdf->Cell(80);
+					
+				$this->_pdf->Ln(160);
+
+
+				$cadena_servicio =  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó.';
+
+
+				$this->_pdf->Image(BASE_URL.'public/img/ipad-tablet-technology-touch.jpg',150,100,150);
+
+				$this->_pdf->SetFont('Arial','',15);	
+				$this->_pdf->MultiCell(400,10, utf8_decode( $cadena_servicio ),0,'L');
+
+			}
+
 			$this->_pdf->Output();
 		}
 	}
