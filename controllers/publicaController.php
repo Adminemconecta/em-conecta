@@ -122,7 +122,6 @@
             	exit;
 			}elseif ($this->getUsuarioParam('tipo_de_empresa') != '') {
 
-
 				$this->_publica->registrarEmpresa(
 						$this->getUsuarioParam('nombre_empresa'),
 						$this->getUsuarioParam('dir_ofi_central'),
@@ -151,6 +150,46 @@
             	echo json_encode($answerJson);
             	exit;
 			}
+		}
+
+		public function ajaxmunicipio($id_departamento)
+		{
+
+			$row_option = '<option value="" disabled selected>Elija un Municipio</option>';
+
+			$row = $this->_publica->getMunicipioId(
+					$id_departamento
+				);
+
+			for ($i=0; $i < count($row) ; $i++) { 
+				$idmunicipio = $row[$i]['idmunicipio'];
+				$nombre = $row[$i]['nombre'];
+				$row_option = $row_option ."<option". ' value='.$idmunicipio.">".$nombre."</option>";
+			}
+
+			$answerJson = array("answer" => true,
+								"respuesta" => $row_option);
+        	echo json_encode($answerJson);
+        	exit;
+		}
+
+		public function ajaxrut($rut)
+		{
+			$row = $this->_publica->getRut(
+						$rut
+					);
+
+				if ($row) {
+            		$answerJson = array("answer" => false,
+									"respuesta" => 'Este rut ya esta registrado');
+	            	echo json_encode($answerJson);
+	            	exit;
+				}else{
+					$answerJson = array("answer" => true,
+									"respuesta" => 'Bienvenido nuevo rut');
+	            	echo json_encode($answerJson);
+	            	exit;
+				}
 		}
 		
 	}

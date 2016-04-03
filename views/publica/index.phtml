@@ -66,8 +66,8 @@
 		        </div>
 		        <div class="input-field col s12 m6 l4">
 		          <i class="icon-file-text prefix"></i>
-		          <input id="icon-file-text" type="text" class="validate" name="rut">
-		          <label for="icon-file-text">Rut</label>
+		          <input id="icon-file-rut" type="text" class="validate" name="rut">
+		          <label for="icon-file-rut">Rut</label>
 		        </div>
 		        <div class="input-field col s12 m12 l12">
 		          <i class="icon-local_offer prefix"></i>
@@ -100,22 +100,18 @@
 		          <label for="icon-markunread">E-mail</label>
 		        </div>
 		        <div class="input-field col s12 m6 l4">
-				    <select name="departamento">
+				    <select  id="name_depato" name="departamento">
 				    	<option value="" disabled selected>Elija una opcion</option>
 				    <?php for ($h=0; $h < count($this->depto) ; $h++) { ?>
-				    	<option value="<?php echo $this->depto[$h]['nombre']; ?>"><?php echo $this->depto[$h]['nombre']; ?></option>
+				    	<option value="<?php echo $this->depto[$h]['iddepartamento']; ?>"><?php echo $this->depto[$h]['nombre']; ?></option>
 				    <?php } ?>
 				    </select>
 				    <label>Departamento</label>
 			  	</div>
 		        <div class="input-field col s12 m6 l4">
-				    <select name="municipio">
-				    	<option value="" disabled selected>Elija una opcion</option>
-					    <?php for ($i=0; $i < count($this->mun) ; $i++) { ?>
-					    	<option value="<?php echo $this->mun[$i]['idmunicipio']; ?>"><?php echo $this->mun[$i]['nombre']; ?></option>
-					    <?php } ?>
+				    <select class="browser-default" id="name_mun" name="municipio">
+				    	<option value="" disabled selected>Elija un Municipio</option>
 				    </select>
-				    <label>Municipio</label>
 			  	</div>
 		        <div class="input-field col s12 m6 l4">
 		          <i class="icon-list-numbered prefix"></i>

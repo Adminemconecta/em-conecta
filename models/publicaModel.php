@@ -89,5 +89,17 @@
 			$mun = $this->_db->query("SELECT * FROM municipio ORDER BY idmunicipio ASC");
 			return $mun->fetchall();
 		}
+
+		public function getMunicipioId($departamento_iddepartamento)
+		{
+			$mun = $this->_db->query("SELECT * FROM municipio WHERE departamento_iddepartamento = $departamento_iddepartamento;");
+			return $mun->fetchall();
+		}
+
+		public function getRut($rut)
+		{
+			$rut = $this->_db->query("SELECT idempresa FROM empresa_peticion WHERE rut = '$rut'");
+			return $rut->fetch();
+		}
 	}
 ?>
