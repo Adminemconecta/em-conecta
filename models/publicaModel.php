@@ -101,5 +101,6 @@
 			$rut = $this->_db->query("SELECT idempresa FROM empresa_peticion WHERE rut = '$rut'");
 			return $rut->fetch();
 		}
+		
 	}
 ?>

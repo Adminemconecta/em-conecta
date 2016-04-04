@@ -3,9 +3,11 @@
 	abstract class Controller
 	{
 		protected $_view;
-		private $_msn;
+		private $_google_city;
 		public function __construct(){
 			$this->_view = new View(new Request);
+			$this->_google_city = $this->loadModel('publica');
+			$this->_view->dpts = $this->_google_city->getDepartamento();
 		}
 		abstract public function index();
 

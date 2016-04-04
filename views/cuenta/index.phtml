@@ -116,7 +116,10 @@
                 <span><?php echo $this->empresa[$w]['tipo_empresa_idtipo_empresa']?></span>
               </div>
               <div class="row">
-                <button id="btn-solicitudes" class="col s12 m12 l12 btn waves-effect transparent btn-contacto">Aceptar solicitud</button>
+                <form id="registro_legal">
+                  <input name="idempresa" type="hidden" value="<?php echo $this->empresa[$w]['idempresa']?>">
+                  <button id="btn-solicitudes" class="col s12 m12 l12 btn waves-effect transparent btn-contacto">Aceptar solicitud</button>
+                </form>
               </div>
             </div>
           </li>

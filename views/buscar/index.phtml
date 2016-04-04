@@ -5,17 +5,15 @@
         <label for="first_name">¿Que buscas?</label>
       </div>
       <div class="input-field col s12 m6 l2">
-      <select>
-        <option value="" disabled selected>Ciudad</option>
-        <?php for ($i=0; $i < 50 ; $i++) { ?>
-          <option value="1">Option 1</option>
-          <option value="2">Option 2</option>
-          <option value="3">Option 3</option>
+        <select  class="browser-default" id="google_name_depato" name="departamento">
+          <option value="" disabled selected>Elija una departamento</option>
+        <?php for ($h=0; $h < count($this->dpts) ; $h++) { ?>
+          <option value="<?php echo $this->dpts[$h]['iddepartamento']; ?>"><?php echo $this->dpts[$h]['nombre']; ?></option>
         <?php } ?>
-      </select>
-    </div>
+        </select>
+      </div>
     <div class="input-field col s12 m6 l2">
-      <select>
+      <select class="browser-default">
         <option value="" disabled selected>Tipo empresa</option>
         <?php for ($i=0; $i < 50 ; $i++) { ?>
           <option value="1">Ferreteria</option>
@@ -25,7 +23,7 @@
       </select>
     </div>
     <div class="input-field col s12 m6 l2">
-      <select>
+      <select class="browser-default">
         <option value="" disabled selected>Tienda</option>
         <?php for ($i=0; $i < 50 ; $i++) { ?>
           <option value="1">Adidas</option>

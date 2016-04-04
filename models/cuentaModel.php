@@ -18,8 +18,9 @@
 
 		public function getEmpresa()
 		{
-			$mensaje = $this->_db->query("SELECT * FROM empresa_peticion ORDER BY idempresa DESC");
-			return $mensaje->fetchall();
+			$empresa = $this->_db->query("SELECT * FROM empresa_peticion ORDER BY idempresa DESC");
+			return $empresa->fetchall();
 		}
+
 	}
 ?>

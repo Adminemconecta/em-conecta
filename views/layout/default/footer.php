@@ -93,6 +93,66 @@
           }
           
           var  _BASE_URL = '<?php echo BASE_URL ?>';
+
+          $('#google_name_depato').on('change', function(e) {
+            e.preventDefault();
+
+            var data = $(this).val();
+            $("#google_name_mun").find('option').remove();
+            
+            $.ajax({
+                type: 'post',
+                dataType: 'JSON',
+                data: data,
+                url: _BASE_URL+'publica/ajaxmunicipio/'+data,
+                beforeSend: function() {
+                    $('.progresbar').fadeIn('fast');
+                },
+                success: function(response){
+
+                   if (response.answer) {
+                        $('.progresbar').fadeOut('fast');
+                        $("#google_name_mun").append(response.respuesta);
+                   }else{
+                        alert("a ocurrido un error contacte al administrador");
+                   };
+                    
+                },
+
+                error: function(){
+                    if (jqXHR.status === 0) {
+
+                    alert('Not connect: Verify Network.');
+
+                    } else if (jqXHR.status == 404) {
+
+                        alert('Requested page not found [404]');
+
+                    } else if (jqXHR.status == 500) {
+
+                        alert('Internal Server Error [500].');
+
+                    } else if (textStatus === 'parsererror') {
+
+                        alert('Requested JSON parse failed.');
+
+                    } else if (textStatus === 'timeout') {
+
+                        alert('Time out error.');
+
+                    } else if (textStatus === 'abort') {
+
+                        alert('Ajax request aborted.');
+
+                    } else {
+
+                        alert('Uncaught Error: ' + jqXHR.responseText);
+
+                   }
+                }
+            })
+            
+        })
     </script>
 </body>
 </html>
