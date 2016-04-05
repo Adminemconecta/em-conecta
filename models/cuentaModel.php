@@ -10,7 +10,7 @@
 			parent::__construct();
 		}
 
-		public function getMensaje()
+		public function getMensajes()
 		{
 			$mensaje = $this->_db->query("SELECT * FROM mensaje ORDER BY idmensaje DESC");
 			return $mensaje->fetchall();
@@ -20,6 +20,12 @@
 		{
 			$empresa = $this->_db->query("SELECT * FROM empresa_peticion ORDER BY idempresa DESC");
 			return $empresa->fetchall();
+		}
+
+		public function getMensaje($idmensaje)
+		{
+			$mensaje = $this->_db->query("SELECT * FROM mensaje WHERE idmensaje = $idmensaje");
+			return $mensaje->fetch();
 		}
 
 	}

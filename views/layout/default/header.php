@@ -87,7 +87,7 @@
       </span>
       <div class="data-menu-close"></div>
       <?php if (Session::get('autenticado')){ ?>
-        <div class="data-menu z-depth-2 teal darken-4">
+        <div class="data-menu z-depth-2 blue darken-3">
           <div class="content-figure-menu">
             <figure class="img-user-menu data-admin_menu">
               <img class="circle img-perfil" src="<?php echo BASE_URL ?>public/img/chloe-grace-moretz1.png">

@@ -290,7 +290,7 @@ color back menu lateral mobil
 	cursor: pointer;
 }
 .cuenta:hover, .tareas:hover, .eventos:hover, .configuracion:hover, .cerrar_sesion:hover{
-	background: rgb(0, 87, 74);
+	background: #87caff;
 }
 .icon-menu-admin, .icon-import_contacts{
 	position: relative;

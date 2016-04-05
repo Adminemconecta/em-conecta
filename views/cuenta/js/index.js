@@ -1,13 +1,11 @@
 $(document).ready(function(){
-      $('#registro_legal').submit(function(e) {
+      $('#ver_mensaje').submit(function(e) {
         e.preventDefault();
 
-        var data = $(this).val();
-
-        alert(data);
+        var data = $(this).serializeArray();
 
         $.ajax({
-            url: _BASE_URL+'publica/ajaxpublica',
+            url: _BASE_URL+'cuenta/ajaxpumensaje',
             type: 'post',
             dataType: 'JSON',
             data: data,
@@ -17,11 +15,12 @@ $(document).ready(function(){
             success: function(response){
 
                if (response.answer) {
-                    $(".mensajeAjax").fadeIn("clip");
-                    $('.msnAjax').html(response.respuesta);
+                    $(".content_tabs_").fadeIn("fast");
+                    $('.nombre_apellido').html(response.respuesta);
+                    $('#asunto_mensaje').html(response.asunto);
+                    $('#email_mensaje').html(response.email);
+                    $('#mensaje_mensaje').html(response.mensaje);
                     $('.progresbar').fadeOut('fast');
-                    $("#mensajeAjax").fadeAjax();
-                    $("#publica").resetear();
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);

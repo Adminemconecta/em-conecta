@@ -31,7 +31,7 @@
 										$empresa_peticion_departamento,
 										$empresa_peticion_user)
 		{
-			$this->_db->prepare("INSERT INTO empresa_peticion VALUES  (null, 
+			$this->_db->prepare("INSERT INTO empresa VALUES  (null, 
 																:nombre, 
 																:oficina_central, 
 																:fundacion, 

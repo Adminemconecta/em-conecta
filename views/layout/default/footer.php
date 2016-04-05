@@ -1,26 +1,26 @@
-<footer class="page-footer teal darken-4">
+<footer class="page-footer blue darken-3">
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="white-text">Em-Conecta</h5>
-        <p class="grey-text text-lighten-4">Conecta tu empresa al mundo a travez de la web</p>
+        <h5 class="white-text"><strong>Em-Conecta</strong></h5>
+        <p class="white-text">Conecta tu empresa al mundo a travez de la web</p>
       </div>
       <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Enlaces frecuentes</h5>
+        <h5 class="white-text"><strong>Enlaces frecuentes</strong></h5>
         <ul>
-          <li><a class="grey-text text-lighten-3" href="<?php echo BASE_URL ?>trabaja">Trabaja con nosotros</a></li>
-          <li><a class="grey-text text-lighten-3" href="<?php echo BASE_URL ?>servicios">Servicios</a></li>
-          <li><a class="grey-text text-lighten-3" href="<?php echo BASE_URL ?>nosotros">Nosotros</a></li>
-          <li><a class="grey-text text-lighten-3" href="<?php echo BASE_URL ?>planes">Planes</a></li>
-          <li><a class="grey-text text-lighten-3" href="<?php echo BASE_URL ?>contacto">Contactanos</a></li>
+          <li><a class="white-text" href="<?php echo BASE_URL ?>trabaja">Trabaja con nosotros</a></li>
+          <li><a class="white-text" href="<?php echo BASE_URL ?>servicios">Servicios</a></li>
+          <li><a class="white-text" href="<?php echo BASE_URL ?>nosotros">Nosotros</a></li>
+          <li><a class="white-text" href="<?php echo BASE_URL ?>planes">Planes</a></li>
+          <li><a class="white-text" href="<?php echo BASE_URL ?>contacto">Contactanos</a></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="footer-copyright">
-    <div class="container">
+    <div class="container white-text">
     © 2016 Copyright <?php echo COMPANY ?>
-    <a class="grey-text text-lighten-3 right" href="<?php echo BASE_URL ?>"><?php echo APP_COMPANY ?></a>
+    <a class="white-text right" href="<?php echo BASE_URL ?>"><?php echo APP_COMPANY ?></a>
     </div>
   </div>
 </footer>
@@ -79,6 +79,9 @@
             $(".data-admin_menu, .data-menu-close").click(function(){
                 $(".data-menu").hide("drop");
                 $(".data-menu-close").fadeOut("drop");
+            });
+            $(".close_content_tab").click(function(){
+                $(".content_tabs_").fadeOut("drop");
             });
           });
 
