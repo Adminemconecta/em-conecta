@@ -39,6 +39,7 @@
 
 			$portafolio = $this->_portafolio->getPortafolio();
 			$otros = $this->_portafolio->getOtros();
+			$planes = $this->_portafolio->getPlanes();
 
 			$this->_pdf->AddPage();
 			$this->_pdf->Image(BASE_URL.'public/img/formasdocument.jpg',0,0,550);
@@ -375,7 +376,10 @@
 			$this->_pdf->SetFont('Arial','B',35);
 			$this->_pdf->Cell(150,7, utf8_decode( 'Productos' ),0,0,'L');
 
-			for ($i=0; $i < 3 ; $i++) { 
+
+			$array_img = array('railway-40066.jpeg','pexels-photo-65775.jpeg','pexels-photo-27865.jpg');
+
+			for ($i=0; $i < count($planes) ; $i++) { 
 
 				$this->_pdf->AddPage();
 				$this->_pdf->Image(BASE_URL.'public/img/formasdocument.jpg',0,0,550);
@@ -389,16 +393,16 @@
 
 
 				$this->_pdf->SetFont('Arial','B',32);
-				$this->_pdf->Cell(400,10, utf8_decode( 'Producto No-' ),0,0,'C');
+				$this->_pdf->Cell(400,10, utf8_decode( $planes[$i]['planes_titulo'] ),0,0,'C');
 				$this->_pdf->Cell(80);
 					
 				$this->_pdf->Ln(160);
 
 
-				$cadena_servicio =  'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó.';
+				$cadena_servicio =  $planes[$i]['contenido'];
 
 
-				$this->_pdf->Image(BASE_URL.'public/img/ipad-tablet-technology-touch.jpg',150,100,150);
+				$this->_pdf->Image(BASE_URL.'public/img/'.$array_img[$i],150,100,150);
 
 				$this->_pdf->SetFont('Arial','',15);	
 				$this->_pdf->MultiCell(400,10, utf8_decode( $cadena_servicio ),0,'L');

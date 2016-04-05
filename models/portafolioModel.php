@@ -22,5 +22,11 @@
 			return $otros->fetch();
 		}
 
+
+		public function getPlanes()
+		{
+			$otros = $this->_db->query("SELECT * FROM planes ORDER BY idplanes DESC");
+			return $otros->fetchall();
+		}
 	}
 ?>
