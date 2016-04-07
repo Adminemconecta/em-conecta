@@ -42,7 +42,7 @@
 	    {
 	    	if (isset($_POST[$clave]) && !empty($_POST[$clave])) {
 	    		$_POST[$clave] = htmlspecialchars($_POST[$clave], ENT_QUOTES);
-	    		return $_POST[$clave];
+	    		return strtolower($_POST[$clave]);
 	    	}
 	    	return '';
 	    }
@@ -93,7 +93,7 @@
 	    protected function getUsuarioParam($clave)
 	    {
 	    	if (isset($_POST[$clave])) {
-	    		return $_POST[$clave];
+	    		return strtolower($_POST[$clave]);
 	    	}
 	    }
 

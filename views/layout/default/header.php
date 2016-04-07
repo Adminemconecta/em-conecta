@@ -63,7 +63,7 @@
             <?php } ?>
           </select>
         </div>
-        <button class="btn waves-effect teal darken-3 col s12 m12 l12" type="submit" name="action">Buscar</button>
+        <button class="btn waves-effect teal darken-3 col s12 m12 l12 margin-btn" type="submit" name="action">Buscar</button>
       </form>
     </div>
     <div class="google-maps">

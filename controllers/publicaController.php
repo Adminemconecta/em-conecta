@@ -17,6 +17,7 @@
 		{
 			$this->_view->depto = $this->_publica->getDepartamento();
 			$this->_view->mun = $this->_publica->getMunicipo();
+			$this->_view->tipo = $this->_publica->getTipo_empresa();
 			$this->_view->titulo = 'Publica';
 			$this->_view->setCss(array('index'));
 			$this->_view->setJs(array('index'));
@@ -128,11 +129,12 @@
 						$this->getUsuarioParam('fundacion'),
 						$this->getUsuarioParam('presidente'),
 						$this->getUsuarioParam('no_empleados'),
-						$this->getUsuarioParam('princ_operacion'),
 						$this->getUsuarioParam('dir_plan_indus'),
+						$this->getUsuarioParam('princ_operacion'),
 						$this->getUsuarioParam('dir_ofi_contacto'),
 						$this->getUsuarioParam('tipo_sociedad'),
 						$this->getUsuarioParam('rut'),
+						$this->getUsuarioParam('tipo_productos'),
 						$this->getUsuarioParam('dir_domicilio'),
 						$this->getUsuarioParam('dir_domicilio_comercial'),
 						$this->getUsuarioParam('tel'),
@@ -140,9 +142,7 @@
 						$this->getUsuarioParam('e_mail'),
 						$this->getUsuarioParam('municipio'),
 						$this->getUsuarioParam('tipo_de_empresa'),
-						$this->getUsuarioParam('tipo_productos'),
-						$this->getUsuarioParam('departamento'),
-						$this->getUsuarioParam('nombre_usuario')					
+						$this->getUsuarioParam('nombre_usuario')				
 					);
 
 				$answerJson = array("answer" => true,
@@ -178,6 +178,8 @@
 			$row = $this->_publica->getRut(
 						$rut
 					);
+
+			print_r($row);
 
 				if ($row) {
             		$answerJson = array("answer" => false,

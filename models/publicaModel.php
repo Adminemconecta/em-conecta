@@ -14,22 +14,22 @@
 										$oficina_central, 
 										$fundacion, 
 										$presidente, 
-										$numero_de_empleados, 
-										$principales_operaciones, 
+										$numero_de_empleados,  
 										$plantas_industriales, 
+										$principales_operaciones,
 										$oficinas_de_contacto, 
 										$tipo_sociedad,
 										$rut,
+										$empresa_tipo_productos,
 										$domicilio_legal,
 										$domicilio_comercial,
 										$telefonos,
 										$fax,
 										$e_mail,
 										$municipio_idmunicipio,
-										$tipo_empresa_idtipo_empresa,
-										$empresa_peticion_tipo_producto,
-										$empresa_peticion_departamento,
-										$empresa_peticion_user)
+										$tipo_empresa_idtipo_empresas,
+										$empresa_peticion_user
+										)
 		{
 			$this->_db->prepare("INSERT INTO empresa VALUES  (null, 
 																:nombre, 
@@ -37,21 +37,21 @@
 																:fundacion, 
 																:presidente, 
 																:numero_de_empleados, 
-																:principales_operaciones, 
 																:plantas_industriales, 
+																:principales_operaciones, 
 																:oficinas_de_contacto, 
 																:tipo_sociedad,
 																:rut,
+																:empresa_tipo_productos,
 																:domicilio_legal,
 																:domicilio_comercial,
 																:telefonos,
 																:fax,
 																:e_mail,
 																:municipio_idmunicipio,
-																:tipo_empresa_idtipo_empresa,
-																:empresa_peticion_tipo_producto,
-																:empresa_peticion_departamento,
-																:empresa_peticion_user)")
+																:tipo_empresa_idtipo_empresas,
+																:empresa_peticion_user,
+																0)")
 			->execute(
 					array(
 							':nombre'=> $nombre,
@@ -64,15 +64,14 @@
 							':oficinas_de_contacto'=> $oficinas_de_contacto,
 							':tipo_sociedad'=> $tipo_sociedad,
 							':rut'=> $rut,
+							':empresa_tipo_productos' => $empresa_tipo_productos,
 							':domicilio_legal'=> $domicilio_legal,
 							':domicilio_comercial'=> $domicilio_comercial,
 							':telefonos'=> $telefonos,
 							':fax'=> $fax,
 							':e_mail'=> $e_mail,
 							':municipio_idmunicipio'=> $municipio_idmunicipio,
-							':tipo_empresa_idtipo_empresa'=> $tipo_empresa_idtipo_empresa,
-							':empresa_peticion_tipo_producto'=> $empresa_peticion_tipo_producto,
-							':empresa_peticion_departamento'=> $empresa_peticion_departamento,
+							':tipo_empresa_idtipo_empresas'=> $tipo_empresa_idtipo_empresas,
 							':empresa_peticion_user'=> $empresa_peticion_user
 						)
 				);
@@ -98,9 +97,14 @@
 
 		public function getRut($rut)
 		{
-			$rut = $this->_db->query("SELECT idempresa FROM empresa_peticion WHERE rut = '$rut'");
+			$rut = $this->_db->query("SELECT idempresa FROM empresa WHERE rut = '$rut'");
 			return $rut->fetch();
 		}
 		
+		public function getTipo_empresa()
+		{
+			$mun = $this->_db->query("SELECT * FROM tipo_empresa ORDER BY idtipo_empresa ASC");
+			return $mun->fetchall();
+		}
 	}
 ?>

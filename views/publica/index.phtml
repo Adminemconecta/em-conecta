@@ -113,11 +113,14 @@
 				    	<option value="" disabled selected>Elija un Municipio</option>
 				    </select>
 			  	</div>
-		        <div class="input-field col s12 m6 l4">
-		          <i class="icon-list-numbered prefix"></i>
-		          <input placeholder="Ej: Ferreteria" id="icon-list-numbered" type="text" class="validate" name="tipo_de_empresa">
-		          <label for="icon-list-numbered">Tipo de empresa</label>
-		        </div>
+			  	<div class="input-field col s12 m6 l4">
+				    <select class="browser-default" id="name_mun" name="tipo_de_empresa">
+				    	<option value="" disabled selected>Elija un tipo de empresa</option>
+				    	<?php for ($w=0; $w < count($this->tipo) ; $w++) { ?>
+				    		<option value="<?php echo $this->tipo[$w]['idtipo_empresa']; ?>"><?php echo $this->tipo[$w]['tipo_empresa_nombre']; ?></option>
+				    	<?php } ?>
+				    </select>
+			  	</div>
 		      </div>
 		      <button class="btn waves-effect transparent btn-contacto" type="submit" name="action">Enviar</button>
 		    </form>

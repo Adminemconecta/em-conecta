@@ -315,6 +315,9 @@ color back menu lateral mobil
 	top: 25px;
 	font-weight: bold;
 }
+.margin-btn{
+	margin-top: 20px;
+}
 @media only screen and (max-width: 400px) and (min-width: 0px){
 	.registro-connecta{
 		width: 300px;

@@ -25,7 +25,7 @@
 
 		public function getPlanes()
 		{
-			$otros = $this->_db->query("SELECT * FROM planes ORDER BY idplanes DESC");
+			$otros = $this->_db->query("SELECT * FROM planes ORDER BY idplanes ASC");
 			return $otros->fetchall();
 		}
 	}

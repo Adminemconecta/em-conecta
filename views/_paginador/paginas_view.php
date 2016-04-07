@@ -1,4 +1,4 @@
-<div class="center-align" >
+<div class="center-align pagination-home">
 	<ul class="pagination">
 		<?php if (isset($this->_paginacion)) { ?>
 
@@ -7,7 +7,7 @@
 						<a href="<?php echo $link . $this->_paginacion['primero']; ?>"><<</a>
 					</li>
 				<?php }else{ ?>
-					<li class="disabled"><<</li>
+					<li class="disabled"><i class="icon-chevron-left"></i><i class="icon-chevron-left"></i></li>
 				<?php } ?>
 
 		&nbsp;
@@ -17,7 +17,7 @@
 					<a href="<?php echo $link . $this->_paginacion['anterior']; ?>"><</a>
 				</li>
 				<?php }else{ ?>
-					<li class="disabled"><</li>
+					<li class="disabled"><i class="icon-chevron-left"></i></li>
 				<?php } ?>
 
 		&nbsp;
@@ -45,7 +45,7 @@
 					<a href="<?php echo $link . $this->_paginacion['siguiente']; ?>">></a>
 				</li>
 				<?php }else{ ?>
-					<li class="disabled">></li>
+					<li class="disabled"><i class="icon-chevron-right"></i></li>
 				<?php } ?>
 
 
@@ -56,7 +56,7 @@
 					<a href="<?php echo $link . $this->_paginacion['ultimo']; ?>">>></a>
 				</li>
 				<?php }else{ ?>
-					<li class="disabled">>></li>
+					<li class="disabled"><i class="icon-chevron-right"></i><i class="icon-chevron-right"></i></li>
 				<?php } ?>
 
 		<?php } ?>
