@@ -4,6 +4,8 @@
     <title><?php  if(isset($this->titulo)) echo $this->titulo; ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="l5b8JU-Aq-cTO5ugLLCMFomX5q23IryLaebaGjKD3Go" />
+    <link rel="alternate" hreflang="es" href="http://www.micolombiaenlinea.com/" />
     <link rel="icon" type="image/png" href="<?php echo BASE_URL ?>public/img/link2.png" />
     <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>normalize.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>materialize.min.css">

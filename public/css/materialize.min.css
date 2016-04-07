@@ -102,6 +102,9 @@ color back menu lateral mobil
 .resutados .cont-items{
 	padding: 0; 
 }
+.resutados{
+	min-height: 500px;
+}
 .result-search{
 	padding: 20px 0 5px 10px;
 	font-size: 1.2em;

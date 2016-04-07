@@ -33,23 +33,27 @@
   </form>
 </section>
 <section class="resutados row">
-<div class="result-search">100 Empresa tienen lo que buscas en ciudad</div>
+<div class="result-search">
+<?php if (count($this->empresa) != 0) {
+  echo "Se encontraron ".count($this->empresa).'empresas que tienen lo que buscas';
+} ?>
+</div>
 <?php 
       if (isset($this->empresa) && count($this->empresa)) { ?>
 
         <div class="col s12 m12 l12 cont-items">
-          <?php for ($i=0; $i < 3 ; $i++) { ?>
+          <?php for ($i=0; $i < count($this->empresa) ; $i++) { ?>
             <div class="row col s12 m6 l4">
               <div class="card col s12 m12 l12">
                 <div class="card-image waves-effect waves-block waves-light">
                   <img class="activator" src="https://images.unsplash.com/photo-1436246745626-344c04303c72?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=be50efdcbdb70a9517ea78ea6d44c4d0">
                 </div>
                 <div class="card-content">
-                  <div class="card-title activator grey-text text-darken-4 center-align"><strong>Nombre empresa</strong></div>
-                  <p><a href="#">www.url.com</a></p>
+                  <div class="card-title activator grey-text text-darken-4 center-align"><strong><?php echo $this->empresa[$i]['empresaname']; ?></strong></div>
+                  <p><a href="<?php  BASE_URL.strtolower(str_replace(' ', '', $this->empresa[$i]['empresaname'])) ?>"><?php echo BASE_URL.strtolower(str_replace(' ', '', $this->empresa[$i]['empresaname'])); ?></a></p>
                 </div>
                 <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4"><strong>Nombre empresa</strong><i class="icon-close right"></i></span>
+                  <span class="card-title grey-text text-darken-4"><strong><?php echo $this->empresa[$i]['empresaname']; ?></strong><i class="icon-close right"></i></span>
                   <p>Here is some more information about this product that is only revealed once clicked on.</p>
                 </div>
               </div>
@@ -58,7 +62,7 @@
         </div>
 
 <?php }else{ ?>
-    <h5 class="center-align"><strong>No se encotraron resultados para tu busqueda</strong></h5>
+    <h5 class="center-align"><strong></strong></h5>
 <?php } ?>
 </section>
 <?php if (isset($this->paginacion)) {
