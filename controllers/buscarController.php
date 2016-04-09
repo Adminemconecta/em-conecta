@@ -30,7 +30,8 @@
 			$this->_view->paginacion = $paginador->getView('paginas_view', 'buscar/index');
 
 
-			$this->_view->titulo = 'Colombia';
+			$this->_view->titulo = 'Micolombiaenlinea';
+			$this->_view->description = 'Iníciate en el mercado en línea a través de micolombiaenlinea la primera empresa que encargada de tu empresa en la web. Administra tu negocio fácilmente.';
 			$this->_view->setCss(array('index'));
 			$this->_view->setJs(array('index'));
 			$this->_view->renderizar('index'); 
@@ -64,10 +65,10 @@
 			$paginador = new Paginador();
 			
 			$this->_view->titulo = 'Buscar'.$titulo_ciudad.$titulo_empresa.$titulo_search;
-			
+			$this->_view->description = 'Iníciate en el mercado en línea a través de micolombiaenlinea la primera empresa que encargada de tu empresa en la web. Administra tu negocio fácilmente.';
 			$this->_view->setCss(array('index'));
 			$this->_view->setJs(array('index'));
-			$this->_view->renderizar('index'); 
+			$this->_view->renderizar('colombia'); 
 			
 		}
 	}

@@ -4,13 +4,13 @@
 
 				<?php if ($this->_paginacion['primero']) { ?>
 					<li class="active">
-						<a href="<?php echo $link . $this->_paginacion['primero']; ?>"><<</a>
+						<a href="<?php echo $link . $this->_paginacion['primero']; ?>"><i class="icon-chevron-left"><i class="icon-chevron-left"></a>
 					</li>
 				<?php }else{ ?>
 					<li class="disabled"><i class="icon-chevron-left"></i><i class="icon-chevron-left"></i></li>
 				<?php } ?>
 
-		&nbsp;
+		<?php echo " "; ?>
 
 				<?php if ($this->_paginacion['anterior']) { ?>
 				<li class="active">
@@ -20,7 +20,7 @@
 					<li class="disabled"><i class="icon-chevron-left"></i></li>
 				<?php } ?>
 
-		&nbsp;
+		<?php echo " "; ?>
 
 				<?php for ($i = 0; $i < count($this->_paginacion['rango']); $i++) { ?>
 
@@ -38,7 +38,7 @@
 					
 				<?php } ?>
 
-		&nbsp;
+		<?php echo " "; ?>
 
 				<?php if ($this->_paginacion['siguiente']) { ?>
 				<li class="active">
@@ -49,7 +49,7 @@
 				<?php } ?>
 
 
-		&nbsp;
+		<?php echo " "; ?>
 
 				<?php if ($this->_paginacion['ultimo']) { ?>
 				<li class="active">

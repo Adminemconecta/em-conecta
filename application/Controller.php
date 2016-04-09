@@ -3,11 +3,13 @@
 	abstract class Controller
 	{
 		protected $_view;
-		private $_google_city;
+		private $_public;
+
 		public function __construct(){
 			$this->_view = new View(new Request);
-			$this->_google_city = $this->loadModel('publica');
-			$this->_view->dpts = $this->_google_city->getDepartamento();
+			$this->_public = $this->loadModel('publica');
+			$this->_view->dpts = $this->_public->getDepartamento();
+			$this->_view->type_empresa = $this->_public->getTipo_empresa();
 		}
 		abstract public function index();
 

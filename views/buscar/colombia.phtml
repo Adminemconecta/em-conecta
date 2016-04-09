@@ -1,6 +1,5 @@
-<div class="buscador">
-
-  <form id="buscar-form-serach" class="container row">
+<section class="buscador">
+  <form id="colombia-form-serach" class="container row">
     	<div class="input-field col s12 m12 l6">
         <input id="first_name" type="text" class="validate">
         <label for="first_name">¿Que buscas?</label>
@@ -31,8 +30,13 @@
     </div>
     <button class="btn waves-effect teal darken-3 col s12 m12 l12" type="submit" name="action">Buscar</button>
   </form>
-</div>
+</section>
 <section class="resutados row">
+<div class="result-search">
+<?php if (count($this->empresa) != 0) {
+  echo "Se encontraron ".count($this->empresa).' empresas que tienen lo que buscas';
+} ?>
+</div>
 <?php 
       if (isset($this->empresa) && count($this->empresa)) { ?>
 
@@ -44,11 +48,11 @@
                   <img class="activator" src="https://images.unsplash.com/photo-1436246745626-344c04303c72?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=be50efdcbdb70a9517ea78ea6d44c4d0">
                 </div>
                 <div class="card-content">
-                  <div class="card-title activator grey-text text-darken-4 center-align"><strong><?php echo ucfirst($this->empresa[$i]['empresaname']); ?></strong></div>
-                  <p><a href="<?php echo BASE_URL.strtolower(str_replace(' ', '', $this->empresa[$i]['empresaname'])) ?>"><?php echo 'www.'.strtolower(str_replace(' ', '', $this->empresa[$i]['empresaname'])).'.com'; ?></a></p>
+                  <div class="card-title activator grey-text text-darken-4 center-align"><strong><?php echo $this->empresa[$i]['empresaname']; ?></strong></div>
+                  <p><a href="<?php echo  BASE_URL.strtolower(str_replace(' ', '', $this->empresa[$i]['empresaname'])) ?>"><?php echo BASE_URL.strtolower(str_replace(' ', '', $this->empresa[$i]['empresaname'])); ?></a></p>
                 </div>
                 <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4"><strong><?php echo ucfirst($this->empresa[$i]['empresaname']); ?></strong><i class="icon-close right"></i></span>
+                  <span class="card-title grey-text text-darken-4"><strong><?php echo $this->empresa[$i]['empresaname']; ?></strong><i class="icon-close right"></i></span>
                   <p></p>
                 </div>
               </div>

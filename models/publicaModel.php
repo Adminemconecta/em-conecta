@@ -91,8 +91,8 @@
 
 		public function getMunicipioId($departamento_iddepartamento)
 		{
-			$mun = $this->_db->query("SELECT * FROM municipio WHERE departamento_iddepartamento = $departamento_iddepartamento;");
-			return $mun->fetchall();
+			$munid = $this->_db->query("SELECT * FROM municipio WHERE departamento_iddepartamento = $departamento_iddepartamento;");
+			return $munid->fetchall();
 		}
 
 		public function getRut($rut)
@@ -103,8 +103,8 @@
 		
 		public function getTipo_empresa()
 		{
-			$mun = $this->_db->query("SELECT * FROM tipo_empresa ORDER BY idtipo_empresa ASC");
-			return $mun->fetchall();
+			$empresa = $this->_db->query("SELECT * FROM tipo_empresa ORDER BY idtipo_empresa ASC");
+			return $empresa->fetchall();
 		}
 	}
 ?>

@@ -164,7 +164,7 @@
 			for ($i=0; $i < count($row) ; $i++) { 
 				$idmunicipio = $row[$i]['idmunicipio'];
 				$nombre = $row[$i]['nombre'];
-				$row_option = $row_option ."<option value='".$idmunicipio."' >".$nombre."</option>";
+				$row_option = $row_option ."<option title=".$nombre." value='".$idmunicipio."' >".$nombre."</option>";
 			}
 
 			$answerJson = array("answer" => true,

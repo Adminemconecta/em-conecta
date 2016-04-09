@@ -33,10 +33,6 @@
 
 		public function pdf()
 		{
-			if (!Session::get('autenticado')) {
-				$this->redireccionar();
-			}
-
 			$portafolio = $this->_portafolio->getPortafolio();
 			$otros = $this->_portafolio->getOtros();
 			$planes = $this->_portafolio->getPlanes();

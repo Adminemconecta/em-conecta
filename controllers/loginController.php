@@ -16,14 +16,10 @@
 		{
 			
 			if (Session::get('autenticado')) {
-				$this->redireccionar("controlpanel");
-			}
+				$this->redireccionar("dashboard");
+			}else{
 
-			$row = $this->_login->getUsuario(
-						$this->getAlphaNum('usuario_user'),
-						$this->getSql('usuario_pass')
-					);
-			$this->_view->row = $row;
+			}
 
 			$this->_view->titulo = 'Login';
 			$this->_view->setCss(array('index'));

@@ -3,7 +3,7 @@
 	/**
 	* 
 	*/
-	class controlpanelController extends Controller
+	class dashboardController extends Controller
 	{
 		private $_controlpanel;
 
