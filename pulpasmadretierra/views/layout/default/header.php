@@ -26,7 +26,7 @@
 <nav class="options transparent">
   <div class="nav-wrapper">
     <a id="fadeIn-menu" class="text-heder-menu text-header"><span class="icon-menu5"></span><?php echo " "; ?>Menu</a>
-    <a href="#" class="right text-header">Login</a>
+    <a href="<?php echo BASE_URL ?>login" class="right text-header">Login</a>
   </div>
 </nav>
 
@@ -39,9 +39,9 @@
 <div class="back-menu">
   <div id="icon-close-menu" class="icon-close black-text"></div>
   <div class="collection center-menu">
-    <a href="#!" class="collection-item">Productos</a>
-    <a href="#!" class="collection-item">Portafolio</a>
-    <a href="#!" class="collection-item">Blog</a>
+    <a href="<?php echo BASE_URL ?>" class="collection-item">Productos</a>
+    <a href="<?php echo BASE_URL ?>portafolio" class="collection-item">Portafolio</a>
+    <a href="<?php echo BASE_URL ?>blog" class="collection-item">Blog</a>
     <div class="collection-item social-div">
       <a href=""><span class="icon-menu-social icon-facebook-with-circle"></span></a>
       <a href=""><span class="icon-menu-social icon-twitter-with-circle"></span></a>

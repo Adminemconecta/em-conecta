@@ -28,10 +28,6 @@
 
     <?php } ?>
     <script type="text/javascript">
-    //backstretch
-          $(document).ready(function() {
-            jQuery.backstretch("<?php echo BASE_URL .'public/img/pexels-photo-23978-compressor.jpg'?>");
-          });
 
     //materializecss
           $(document).ready(function() {
