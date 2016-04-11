@@ -31,6 +31,7 @@
 
 
 			$this->_view->titulo = 'Micolombiaenlinea';
+			$this->_view->amp = '<Link rel = "amphtml" href = "http://www.micolombiaenlinea.com/">';
 			$this->_view->description = 'Iníciate en el mercado en línea a través de micolombiaenlinea la primera empresa que encargada de tu empresa en la web. Administra tu negocio fácilmente.';
 			$this->_view->setCss(array('index'));
 			$this->_view->setJs(array('index'));

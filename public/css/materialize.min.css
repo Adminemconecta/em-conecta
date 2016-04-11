@@ -338,4 +338,8 @@ color back menu lateral mobil
 		width: 300px;
 		margin-left: -150px;
 	}
+
+	.footer-text{
+		font-size: 1.3em;
+	}
 }

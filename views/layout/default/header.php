@@ -6,19 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="l5b8JU-Aq-cTO5ugLLCMFomX5q23IryLaebaGjKD3Go" />
     <meta name="description" content="<?php  if(isset($this->description)) echo $this->description; ?>">
+    <meta name="keywords" content="Micolombiaenlines publica facil">
     <link rel="canonical" href="http://www.micolombiaenlinea.com/"/>
     <link rel="alternate" hreflang="es" href="http://www.micolombiaenlinea.com/" />
+    <?php  if(isset($this->amp)) echo $this->amp; ?>
     <link rel="icon" type="image/png" href="<?php echo BASE_URL ?>public/img/link2.png" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>normalize.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>style.css">
-    <link href='https://fonts.googleapis.com/css?family=Sansita+One' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <?php if(isset($_layoutParams['css']) && count($_layoutParams['css'])){ ?>
-        <?php for($i=0; $i < count($_layoutParams['css']); $i++){ ?>
-        <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['css'][$i] ?>">
-        <?php } ?>
-    <?php } ?>
 </head>
 <body>
 
