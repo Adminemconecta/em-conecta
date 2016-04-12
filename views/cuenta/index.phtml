@@ -23,6 +23,28 @@
 </div>
 </div>
 
+<div class="contat_tabs_info">
+  <div class="colose_content_info"></div>
+  <div class="card_content_info white z-depth-2">
+      <div id="nombre"><strong>Nombre: </strong></div>
+      <div id="dir_ofi_central"><strong>Direccion oficina central: </strong></div>
+      <div id="dir_plantas"><strong>Direccion plantas industriales: </strong></div>
+      <div id="dir_oficina_contacto"><strong>Direccion ofina de contacto: </strong></div>
+      <div id="sociedad"><strong>Tipo de sociedad: </strong></div>
+      <div id="dir_domicilio"><strong>Direccion domicilio legal: </strong></div>
+      <div id="dir_domi_comercial"><strong>Direccion domiciloo comercial: </strong></div>
+      <div id="precidente"><strong>Presidente: </strong></div>
+      <div id="fundacion"><strong>Año de fundacion: </strong></div>
+      <div id="no_empleados"><strong>No de empleados: </strong></div>
+      <div id="rut"><strong>Rut: </strong></div>
+      <div id="fax"><strong>Fax: </strong></div>
+      <div id="telefono"><strong>Telefonos: </strong></div>
+      <div id="email"><strong>E-mail: </strong></div>
+      <div id="operaciones"><strong>Principales operaciones: </strong></div>
+      <div id="productos"><strong>Tipos de productos: </strong></div>
+  </div>
+</div>
+
 <div class="parallax-container">
   <img class="img-planes" src="<?php echo BASE_URL ?>public/img/black-and-white-city-skyline-buildings.jpg">
   <h4 class="white-text absulut-title">
@@ -43,7 +65,7 @@
         
         <form class="form_margin_mensaje " id="ver_mensaje">
           <div  class="input-field col s12 m12 l12">
-            <select  id="name_depato" name="mensaje">
+            <select  id="name_mensaje" name="mensaje">
               <option value="" disabled selected>Elija una opcion</option>
               <?php for ($h=0; $h < count($this->mensaje) ; $h++) { ?>
                 <option value="<?php echo $this->mensaje[$h]['idmensaje']; ?>"><?php echo $this->mensaje[$h]['mensaje_nombre'].' '.$this->mensaje[$h]['mensaje_apellido']; ?></option>
@@ -64,10 +86,10 @@
         
         <form class="form_margin_rut" id="ver_solicitud aceptar_solicitud">
           <div class="input-field col s12 m12 l12">
-            <select  id="name_depato" name="departamento">
+            <select  id="name_empresa" name="empresa">
               <option value="" disabled selected>Elija una opcion</option>
               <?php for ($h=0; $h < count($this->empresa) ; $h++) { ?>
-                <option value="<?php echo $this->empresa[$h]['rut']; ?>"><?php echo $this->empresa[$h]['rut']; ?></option>
+                <option value="<?php echo $this->empresa[$h]['idempresa']; ?>"><?php echo $this->empresa[$h]['rut']; ?></option>
               <?php } ?>
             </select>
             <label>Rut Empresa</label>

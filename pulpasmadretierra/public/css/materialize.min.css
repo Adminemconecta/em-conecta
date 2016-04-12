@@ -104,10 +104,10 @@
 	position: absolute;
 	width: 100%;
 	top: 50%;
-	margin-top: -200px;
+	margin-top: -245px;
 }
 .collection-item{
-	height: 100px;
+	height: 70px;
 }
 .collection {
     border: 1px none #e0e0e0;
@@ -115,7 +115,7 @@
 .collection .collection-item {
 	text-align: center;
 	background: none;
-    line-height: 5rem;
+    line-height: 4rem;
     border-bottom: 0px none #e0e0e0;
 }
 .collection a.collection-item {
@@ -129,7 +129,7 @@
 .icon-menu-social{
 	position: relative;
 	font-size: 3em;
-	top: 20px;
+	top: 7px;
     color: #1b5e20;
 }
 .social-div:hover{

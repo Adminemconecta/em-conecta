@@ -39,9 +39,12 @@
 <div class="back-menu">
   <div id="icon-close-menu" class="icon-close black-text"></div>
   <div class="collection center-menu">
-    <a href="<?php echo BASE_URL ?>" class="collection-item">Productos</a>
-    <a href="<?php echo BASE_URL ?>portafolio" class="collection-item">Portafolio</a>
-    <a href="<?php echo BASE_URL ?>blog" class="collection-item">Blog</a>
+    <a title="Productos" href="<?php echo BASE_URL ?>" class="collection-item">Productos</a>
+    <a title="Portafolio" href="<?php echo BASE_URL ?>portafolio" class="collection-item">Portafolio</a>
+    <a title="Blog" href="<?php echo BASE_URL ?>blog" class="collection-item">Blog</a>
+    <a title="Nosotros" href="<?php echo BASE_URL ?>nosotros" class="collection-item">Nosotros</a>
+    <a title="Servicios" href="<?php echo BASE_URL ?>servicios" class="collection-item">Servicios</a>
+    <a title="Contactanos" href="<?php echo BASE_URL ?>contacto" class="collection-item">Contactanos</a>
     <div class="collection-item social-div">
       <a href=""><span class="icon-menu-social icon-facebook-with-circle"></span></a>
       <a href=""><span class="icon-menu-social icon-twitter-with-circle"></span></a>

@@ -28,5 +28,11 @@
 			return $mensaje->fetch();
 		}
 
+		public function getInfoEmpresa($idempresa)
+		{
+			$info = $this->_db->query("SELECT * FROM empresa WHERE idempresa = $idempresa");
+			return $info->fetch();
+		}
+
 	}
 ?>
