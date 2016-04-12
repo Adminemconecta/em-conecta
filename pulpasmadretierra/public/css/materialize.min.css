@@ -151,6 +151,15 @@
 .icon-keyboard_arrow_down{
 	font-size: 2em;
 }
+.title_inferior{
+	position: relative;
+	text-shadow:5px 1px 3px black;
+	font-family: 'Pacifico', cursive;
+	font-size: 1.7em;
+	color: white;
+	text-align: center;
+	top:-20px; 
+}
 @media only screen and (max-width: 1665px) and (min-width: 992px){
 	.container{width:95%}
 }

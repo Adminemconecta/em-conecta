@@ -13,7 +13,7 @@
 		public function index()
 		{
 			
-			$this->_view->titulo = 'Blog pulpas madre tierra';
+			$this->_view->titulo = 'Nosotros';
 			$this->_view->amp = '';
 			$this->_view->setCss(array('index'));
 			$this->_view->setJs(array('index'));
