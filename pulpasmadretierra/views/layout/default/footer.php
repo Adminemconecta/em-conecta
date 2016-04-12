@@ -36,7 +36,7 @@
             $('.parallax').parallax();
             $('.slider').slider({
               indicators: false,
-              height: 800
+              height: 300
             });
             $('.collapsible').collapsible({
               accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
