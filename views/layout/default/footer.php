@@ -11,6 +11,7 @@
           <li><a title="Nuestra empresa" class="white-text footer-text" href="<?php echo BASE_URL ?>nosotros">Nosotros</a></li>
           <li><a title="Trabaja con nosotros" class="white-text footer-text" href="<?php echo BASE_URL ?>trabaja">Trabaja con nosotros</a></li>
           <li><a title="Contactanos" class="white-text footer-text" href="<?php echo BASE_URL ?>contacto">Contactanos</a></li>
+          <li><a title="Contactanos" class="white-text footer-text" href="<?php echo BASE_URL ?>contrato">Terminis. Cond.</a></li>
         </ul>
       </div>
     </div>

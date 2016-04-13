@@ -121,6 +121,11 @@
 									"respuesta" => 'Falta el tipo de su empresa');
             	echo json_encode($answerJson);
             	exit;
+			}elseif($this->getUsuarioParam('acepto_terminos') != 1){
+					$answerJson = array("answer" => false,
+										"respuesta" => 'Debes aceptar el contrato de términos');
+				echo json_encode($answerJson);
+				exit;
 			}elseif ($this->getUsuarioParam('tipo_de_empresa') != '') {
 
 				$this->_publica->registrarEmpresa(
@@ -142,7 +147,8 @@
 						$this->getUsuarioParam('e_mail'),
 						$this->getUsuarioParam('municipio'),
 						$this->getUsuarioParam('tipo_de_empresa'),
-						$this->getUsuarioParam('nombre_usuario')				
+						$this->getUsuarioParam('nombre_usuario'),
+						$this->getUsuarioParam('acepto_terminos')				
 					);
 
 				$answerJson = array("answer" => true,

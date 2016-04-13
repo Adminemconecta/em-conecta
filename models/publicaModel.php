@@ -28,7 +28,8 @@
 										$e_mail,
 										$municipio_idmunicipio,
 										$tipo_empresa_idtipo_empresas,
-										$empresa_peticion_user
+										$empresa_peticion_user,
+										$empresa_acepto_terminos
 										)
 		{
 			$this->_db->prepare("INSERT INTO empresa VALUES  (null, 
@@ -51,7 +52,8 @@
 																:municipio_idmunicipio,
 																:tipo_empresa_idtipo_empresas,
 																:empresa_peticion_user,
-																0)")
+																0,
+																:empresa_acepto_terminos)")
 			->execute(
 					array(
 							':nombre'=> $nombre,
@@ -72,7 +74,8 @@
 							':e_mail'=> $e_mail,
 							':municipio_idmunicipio'=> $municipio_idmunicipio,
 							':tipo_empresa_idtipo_empresas'=> $tipo_empresa_idtipo_empresas,
-							':empresa_peticion_user'=> $empresa_peticion_user
+							':empresa_peticion_user'=> $empresa_peticion_user,
+							':empresa_acepto_terminos' => $empresa_acepto_terminos
 						)
 				);
 		}

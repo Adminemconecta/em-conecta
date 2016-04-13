@@ -27,6 +27,21 @@
     left: 50%;
     margin-left: -100px;
 }
+.chek_terminos{
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	top: -15px;
+}
+.chek_terminos_href{
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	top: 5px;
+}
+.text-terminos{
+	height: 50px;
+}
 ::-webkit-input-placeholder { color: black; } /* WebKit */
 :-moz-placeholder { color: black; } /* Firefox 18- */
 ::-moz-placeholder { color: black; } /* Firefox 19+ */
