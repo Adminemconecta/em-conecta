@@ -1,3 +1,27 @@
 .container_contacto{
 	min-height: 600px;
 }
+.card .card-image {
+    position: relative;
+    padding: 50px;
+}
+.radio-icon{
+	position: relative;
+	width: 100%;
+}
+.radio-div{
+	text-align: center;
+}
+.icon-contact_mail{
+	font-size: 4em;
+}
+.btn-contacto{
+	color: #1b5e20;
+	border: 5px solid #1b5e20;
+	font-weight: bold;
+	height: 45px;
+	width: 200px;
+	position: absolute;
+	margin-left: 50%;
+	left: -100px;
+}
