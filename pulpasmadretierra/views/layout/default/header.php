@@ -44,12 +44,13 @@
     <a title="Portafolio" href="<?php echo BASE_URL ?>portafolio" class="collection-item">Portafolio</a>
     <a title="Blog" href="<?php echo BASE_URL ?>blog" class="collection-item">Blog</a>
     <a title="Nosotros" href="<?php echo BASE_URL ?>nosotros" class="collection-item">Nosotros</a>
-    <a title="Servicios" href="<?php echo BASE_URL ?>servicios" class="collection-item">Servicios</a>
+    <a title="Revista" href="<?php echo BASE_URL ?>revista" class="collection-item">Revista</a>
     <a title="Contactanos" href="<?php echo BASE_URL ?>contacto" class="collection-item">Contactanos</a>
     <div class="collection-item social-div">
-      <a href=""><span class="icon-menu-social icon-facebook-with-circle"></span></a>
-      <a href=""><span class="icon-menu-social icon-twitter-with-circle"></span></a>
-      <a href=""><span class="icon-menu-social icon-google-with-circle"></span></a>
+      <a title="Facebook" href=""><span class="icon-menu-social icon-facebook-with-circle"></span></a>
+      <a title="Twitter" href=""><span class="icon-menu-social icon-twitter-with-circle"></span></a>
+      <a title="Google plus" href=""><span class="icon-menu-social icon-google-with-circle"></span></a>
+      <a title="Instagram" href=""><span class="icon-menu-social icon-instagram-with-circle"></span></a>
     </div>s
   </div>
 </div>

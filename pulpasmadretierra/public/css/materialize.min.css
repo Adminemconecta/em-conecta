@@ -119,9 +119,12 @@
     border-bottom: 0px none #e0e0e0;
 }
 .collection a.collection-item {
-    color: #1b5e20;
+    color: white;
     font-weight: bold;
     font-size: 1.5em;
+}
+.collection a.collection-item:hover{
+	color: #1b5e20;
 }
 .collection a.collection-item:hover:not(.active) {
     background-color: white;
@@ -130,10 +133,7 @@
 	position: relative;
 	font-size: 3em;
 	top: 7px;
-    color: #1b5e20;
-}
-.social-div:hover{
-	background: white;
+    color: white;
 }
 .icon-close{
 	position: absolute;

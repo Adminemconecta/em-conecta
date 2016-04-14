@@ -1,9 +1,11 @@
-<?php 
+<?php
+
 	/**
 	* 
 	*/
-	class portafolioController extends Controller
+	class revistaController extends Controller
 	{
+		
 		private $_pdf;
 		private $_portafolio;
 
@@ -16,9 +18,11 @@
 			$this->_pdf->SetAutoPageBreak(true,15);
 		}
 
-		public function index(){
+		public function index()
+		{
 			self::pdf();
 		}
+		
 		public function header()
 		{
 			
@@ -35,4 +39,5 @@
 			$this->_pdf->Output('Portafolio '. date('Y').'.pdf','I');
 		}
 	}
+
 ?>
