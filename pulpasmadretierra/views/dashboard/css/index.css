@@ -1,5 +1,5 @@
 .container-dashboard{
-	min-height: 500px;
+	min-height: 600px;
 }
 .padding_cards{
 	padding: 10px;
@@ -17,13 +17,95 @@
 	font-size: 1.5em;
 }
 .my_card{
+	position: relative;
 	padding: 10px;
+	min-height: 580px;
+	background: #424242;
 }
 .row .col{
 	padding: 0
 }
 .container_info{
+	position: relative;
 	padding: 10px;
+}
+.container_info .collection a.collection-item:hover:not(.active) {
+    background-color: #ddd;
+}
+.container_info .collection a.collection-item {
 	background: #424242;
+    color: white;
+}
+.container_info .collection a.collection-item:hover {
+    color: black;
+}
+.container_info .collection .collection-item {
+    background-color: #fff;
+    line-height: 1.5rem;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.container_info .collection a.collection-item {
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: left;
+    height: 50px;
+}
+.tabs {
+	overflow: hidden;
+	background: #424242;
+}
+.tabs .tab a {
+    color: #fff;
+}
+.tabs .indicator {
+    background-color: #fff;
+}
+.card_nuevo{
+	position: relative;
+	width: 100%;
+}
+.userform{
+	margin-top: 20px;
+}
+.input-field label {
+ 	color: white;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ 	color: white;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+	border-bottom: 1px solid white;
+	box-shadow: 0 1px 0 0 white;
+}
+/* valid color */
+.input-field input[type=text].valid {
+	border-bottom: 1px solid white;
+	box-shadow: 0 1px 0 0 white;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+	border-bottom: 1px solid white;
+	box-shadow: 0 1px 0 0 white;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ 	color: white;
+}
+.icon_dashboard{
 	color: white;
+}
+.tabs .tab a:hover {
+    color: white;
+}
+/*displays*/
+.portafolio_card, .social_user_mail{
+	display: none;
+}
+/*displays*/
+.navigation_menu_vertical{
+	width: 60px;
 }
