@@ -1,12 +1,12 @@
-<div class="fixed-action-btn vertical click-to-toggle" style="bottom: 45px; left: 24px;">
+<div class="fixed-action-btn vertical" style="bottom: 45px; left: 24px;">
     <a class="btn-floating btn-large white">
       <i class="black-text large mdi-navigation-menu"></i>
     </a>
     <ul class="navigation_menu_vertical">
-      <li><a class="btn-floating white "><i class="icon-insert_chart"></i></a></li>
-      <li><a class="btn-floating white  darken-1"><i class="icon-format_quote"></i></a></li>
-      <li><a class="btn-floating white "><i class="icon-publish"></i></a></li>
-      <li><a class="btn-floating white "><i class="icon-attach_file"></i></a></li>
+      <li id="blog"><a class="btn-floating white "><i class="black-text icon-blog	"></i></a> <div class="btn-floating set_icon">Blog</div></li>
+      <li id="tienda"><a class="btn-floating white "><i class="black-text icon-store_mall_directory"></i></a><div class="btn-floating set_icon">Tienda</div></li>
+      <li id="portafolio"><a class="btn-floating white "><i class="black-text icon-suitcase"></i></a><div class="btn-floating set_icon">Portafolio</div></li>
+      <li id="conf_inicial"><a class="btn-floating white "><i class="black-text icon-publish"></i></a><div class="btn-floating set_icon">Confi inicial</div></li>
     </ul>
 </div>
 
@@ -123,7 +123,6 @@
 				    	</div>
 				    </div>
 				  </div>
-        
 		 		</div>
 	 		</div>
 	 	</div>
@@ -134,31 +133,70 @@
 		 			Redes sociales <span class="icon-flow-tree"></span>
 		 		</div>
 		 		<div class="container_info">
+
 		 			<div class="row">
-					    <form class="col s12">
-					      <div class="row">
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-facebook-with-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="validate">
-					          <label for="icon_prefix">Url facebook</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-twitter-with-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="validate">
-					          <label for="icon_prefix">Url twitter</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-google-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url google plus</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url instagram</label>
-					        </div>
-					      </div>
-					    </form>
+					    <div class="col s12">
+					      <ul class="tabs">
+					        <li class="tab col s3"><a href="#ulr_nuevo">Nuevo</a></li>
+					        <li class="tab col s3"><a href="#url_editar">Editar</a></li>
+					      </ul>
+					    </div>
+					    <div id="ulr_nuevo" class="col s12">
+				 			<div class="row">
+							    <form class="col s12">
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <i class="icon_dashboard icon-facebook-with-circle prefix"></i>
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Url facebook</label>
+							        </div>
+							        <div class="input-field col s12">
+							          <i class="icon_dashboard icon-twitter-with-circle prefix"></i>
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Url twitter</label>
+							        </div>
+							        <div class="input-field col s12">
+							          <i class="icon_dashboard icon-google-with-circle prefix"></i>
+							          <input id="icon_telephone" type="text" class="validate">
+							          <label for="icon_telephone">Url google plus</label>
+							        </div>
+							        <div class="input-field col s12">
+							          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
+							          <input id="icon_telephone" type="text" class="validate">
+							          <label for="icon_telephone">Url instagram</label>
+							        </div>
+							      </div>
+							    </form>
+							</div>
+					    </div>
+					    <div id="url_editar" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <i class="icon_dashboard icon-facebook-with-circle prefix"></i>
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Url facebook</label>
+							        </div>
+							        <div class="input-field col s12">
+							          <i class="icon_dashboard icon-twitter-with-circle prefix"></i>
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Url twitter</label>
+							        </div>
+							        <div class="input-field col s12">
+							          <i class="icon_dashboard icon-google-with-circle prefix"></i>
+							          <input id="icon_telephone" type="text" class="validate">
+							          <label for="icon_telephone">Url google plus</label>
+							        </div>
+							        <div class="input-field col s12">
+							          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
+							          <input id="icon_telephone" type="text" class="validate">
+							          <label for="icon_telephone">Url instagram</label>
+							        </div>
+							      </div>
+							    </form>
+							</div>
+					    </div>
 					</div>
 		 		</div>
 	 		</div>
@@ -171,69 +209,634 @@
 		 		</div>
 		 		<div class="container_info">
 		 			<div class="row">
-					    <form class="col s12">
-					      <div class="row">
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-facebook-with-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="validate">
-					          <label for="icon_prefix">Url facebook</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-twitter-with-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="validate">
-					          <label for="icon_prefix">Url twitter</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-google-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url google plus</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url instagram</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url instagram</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url instagram</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url instagram</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url instagram</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url instagram</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url instagram</label>
-					        </div>
-					        <div class="input-field col s12">
-					          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-					          <input id="icon_telephone" type="text" class="validate">
-					          <label for="icon_telephone">Url instagram</label>
-					        </div>
-					      </div>
-					    </form>
-					</div>
+					    <div class="col s12">
+					      <ul class="tabs">
+					        <li class="tab col s3"><a href="#nuevo_portafolio">Nuevo</a></li>
+					        <li class="tab col s3"><a href="#editar_portafolio">Editar</a></li>
+					      </ul>
+					    </div>
+					    <div id="nuevo_portafolio" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							        <div class="file-field input-field">
+								      <div class="btn">
+								        <span>Archivo</span>
+								        <input type="file" multiple>
+								      </div>
+								      <div class="file-path-wrapper">
+								        <input class="file-path validate" type="text" placeholder="Logo empresa">
+								      </div>
+								    </div>
+							      	<div class="row">
+								        <div class="input-field col s12">
+								          <input id="icon_prefix" type="text" class="validate">
+								          <label for="icon_prefix">Telefonos</label>
+								        </div>
+							        </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Bienvenido</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Innovacion</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Integracion</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Integridad</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Historia</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Mision</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Vision</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Marca</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Como trabajamos</label>
+								        </div>
+								    </div>
+							    </form>
+							</div>
+					    </div>
+					    <div id="editar_portafolio" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							        <div class="file-field input-field">
+								      <div class="btn">
+								        <span>Archivo</span>
+								        <input type="file" multiple>
+								      </div>
+								      <div class="file-path-wrapper">
+								        <input class="file-path validate" type="text" placeholder="Logo empresa">
+								      </div>
+								    </div>
+							      	<div class="row">
+								        <div class="input-field col s12">
+								          <input id="icon_prefix" type="text" class="validate">
+								          <label for="icon_prefix">Telefonos</label>
+								        </div>
+							        </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Bienvenido</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Innovacion</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Integracion</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Integridad</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Historia</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Mision</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Vision</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Marca</label>
+								        </div>
+								    </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Como trabajamos</label>
+								        </div>
+								    </div>
+							    </form>
+							</div>
+					    </div>
+					</div>		 			
 		 		</div>
 	 		</div>
 	 	</div>
 
+	 	<div class="card_container col s12 m6 l4">
+	 		<div class="my_card productos_cad">
+		 		<div class="card_title">
+		 			Tipo de producto <span class="icon-flow-tree"></span>
+		 		</div>
+
+		 		<div class="container_info">
+
+		 			<div class="row">
+					    <div class="col s12">
+					      <ul class="tabs">
+					        <li class="tab col s3"><a href="#tipo_nuevo">Nuevo</a></li>
+					        <li class="tab col s3"><a href="#tipo_editar">Editar</a></li>
+					        <li class="tab col s3"><a href="#tipo_eliminar">Eliminar</a></li>
+					      </ul>
+					    </div>
+					    <div id="tipo_nuevo" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Tipos de producto</label>
+							        </div>
+							      </div>
+							    </form>
+							</div>
+					    </div>
+					    <div id="tipo_editar" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Tipos de producto</label>
+							        </div>
+							      </div>
+							    </form>
+							</div>
+					    </div>
+					    <div id="tipo_eliminar" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Tipos de producto</label>
+							        </div>
+							      </div>
+							    </form>
+							</div>
+					    </div>
+					</div>		 			
+		 		</div>
+		 	</div>
+		</div>
+
+		<div class="card_container col s12 m6 l4">
+	 		<div class="my_card productos_cad">
+		 		<div class="card_title">
+		 			Producto <span class="icon-flow-tree"></span>
+		 		</div>
+
+		 		<div class="container_info">
+
+		 			<div class="row">
+					    <div class="col s12">
+					      <ul class="tabs">
+					        <li class="tab col s3"><a href="#producto_nuevo">Nuevo</a></li>
+					        <li class="tab col s3"><a href="#producto_editar">Editar</a></li>
+					        <li class="tab col s3"><a href="#producto_eliminar">Eliminar</a></li>
+					      </ul>
+					    </div>
+					    <div id="producto_nuevo" class="col s12">
+							<div class="row">
+							    <form class="col s12">
+							      <div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un tipo</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								  </div>
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Normbre del producto</label>
+							        </div>
+							      </div>
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Valor del producto</label>
+							        </div>
+							      </div>
+							      <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Descripcion</label>
+								        </div>
+								  </div>
+							    </form>
+							</div>
+					    </div>
+					    <div id="producto_editar" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un tipo</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								  </div>
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Normbre del producto</label>
+							        </div>
+							      </div>
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Valor del producto</label>
+							        </div>
+							      </div>
+							      <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Descripcion</label>
+								        </div>
+								  </div>
+							    </form>
+							</div>
+					    </div>
+					    <div id="producto_eliminar" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un tipo</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								  </div>
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Normbre del producto</label>
+							        </div>
+							      </div>
+							      <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate">
+							          <label for="icon_prefix">Valor del producto</label>
+							        </div>
+							      </div>
+							      <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Descripcion</label>
+								        </div>
+								  </div>
+							    </form>
+							</div>
+					    </div>
+					</div>		 			
+		 		</div>
+		 	</div>
+		</div>
+
+		<div class="card_container col s12 m6 l4">
+	 		<div class="my_card productos_cad">
+		 		<div class="card_title">
+		 			Tags <span class="icon-flow-tree"></span>
+		 		</div>
+
+		 		<div class="container_info">
+		 			<div class="row">
+					    <div class="col s12">
+					      <ul class="tabs">
+					        <li class="tab col s3"><a href="#tag_nuevo">Nuevo</a></li>
+					        <li class="tab col s3"><a href="#tag_editar">Editar</a></li>
+					      </ul>
+					    </div>
+					    <div id="tag_nuevo" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un producto</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								  </div>
+							      <div class="row">
+								        <div class="input-field col s12">
+								          <textarea placeholder="palabras frases separadas por comas" id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Tangs</label>
+								        </div>
+								  </div>
+							    </form>
+							</div>
+					    </div>
+					    <div id="tag_editar" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un producto</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								  </div>
+							      <div class="row">
+								        <div class="input-field col s12">
+								          <textarea placeholder="palabras frases separadas por comas" id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <label for="icon_prefix2">Tangs</label>
+								        </div>
+								  </div>
+							    </form>
+							</div>
+					    </div>
+					</div>
+        
+		 			
+		 		</div>
+		 	</div>
+		</div>
+
+		<div class="card_container col s12 m6 l4">
+	 		<div class="my_card productos_cad">
+		 		<div class="card_title">
+		 			Fotos <span class="icon-flow-tree"></span>
+		 		</div>
+
+		 		<div class="container_info">
+		 			<div class="row">
+					    <div class="col s12">
+					      <ul class="tabs">
+					        <li class="tab col s3"><a href="#foto_nuevo">Nueva foto</a></li>
+					        <li class="tab col s3"><a href="#foto_dos">Editar foto</a></li>
+					      </ul>
+					    </div>
+					    <div id="foto_nuevo" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="file-field input-field">
+								      <div class="btn">
+								        <span>Archivo</span>
+								        <input type="file" multiple>
+								      </div>
+								      <div class="file-path-wrapper">
+								        <input class="file-path validate" type="text" placeholder="Foto producto">
+								      </div>
+								  </div>
+							      <div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un producto</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								  </div>
+							    </form>
+							</div>
+					    </div>
+					    <div id="foto_dos" class="col s12">
+					    	<div class="row">
+							    <form class="col s12">
+							      <div class="file-field input-field">
+								      <div class="btn">
+								        <span>Archivo</span>
+								        <input type="file" multiple>
+								      </div>
+								      <div class="file-path-wrapper">
+								        <input class="file-path validate" type="text" placeholder="Foto producto">
+								      </div>
+								  </div>
+							      <div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un producto</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								  </div>
+							    </form>
+							</div>
+					    </div>
+					</div>
+        
+		 			
+		 		</div>
+		 	</div>
+		</div>
+
+		<div class="card_container col s12 m6 l6">
+	 		<div class="my_card blog_cad">
+		 		<div class="card_title">
+		 			Blog <span class="icon-flow-tree"></span>
+		 		</div>
+
+		 		<div class="container_info">
+		 			<div class="row">
+					    <div class="col s12">
+					      <ul class="tabs">
+					        <li class="tab col s3"><a href="#blog_nuevo">Nuevo</a></li>
+					        <li class="tab col s3"><a href="#blog_editar">Editar</a></li>
+					        <li class="tab col s3"><a href="#blog_asociar">Asociar</a></li>
+					        <li class="tab col s3"><a href="#blog_eliminar">Eliminar</a></li>
+					      </ul>
+					    </div>
+					    <div id="blog_nuevo" class="col s12">
+
+					      	<div class="row">
+						        <div class="input-field col s12">
+						          <input id="icon_prefix" type="text" class="validate">
+						          <label for="icon_prefix">Titulo</label>
+						        </div>
+					        </div>
+					        <div class="row">
+						        <div class="input-field col s12">
+						          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+						          <label for="icon_prefix2">Contenido</label>
+						        </div>
+						  	</div>
+						  	<div class="row">
+						        <div class="input-field col s12">
+						          <input id="icon_prefix" type="text" class="validate">
+						          <label for="icon_prefix">Autor</label>
+						        </div>
+					        </div>
+					        <div class="row">
+						        <div class="input-field col s12">
+						          <input id="icon_prefix" type="text" class="validate">
+						          <label for="icon_prefix">Tema</label>
+						        </div>
+					        </div>
+
+					    </div>
+
+					    <div id="blog_editar" class="col s12">
+					    	<div class="row">
+						        <div class="input-field col s12">
+						          <input id="icon_prefix" type="text" class="validate">
+						          <label for="icon_prefix">Titulo</label>
+						        </div>
+					        </div>
+					        <div class="row">
+						        <div class="input-field col s12">
+						          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+						          <label for="icon_prefix2">Contenido</label>
+						        </div>
+						  	</div>
+						  	<div class="row">
+						        <div class="input-field col s12">
+						          <input id="icon_prefix" type="text" class="validate">
+						          <label for="icon_prefix">Autor</label>
+						        </div>
+					        </div>
+					        <div class="row">
+						        <div class="input-field col s12">
+						          <input id="icon_prefix" type="text" class="validate">
+						          <label for="icon_prefix">Tema</label>
+						        </div>
+					        </div>
+					    </div>
+
+					    <div id="blog_asociar" class="col s12">
+					    	<div class="input-field col s12">
+							    <select>
+							      <option value="" disabled selected>Seleccione un producto</option>
+							      <option value="1">Option 1</option>
+							      <option value="2">Option 2</option>
+							      <option value="3">Option 3</option>
+							    </select>
+							</div>
+							<div class="input-field col s12">
+							    <select>
+							      <option value="" disabled selected>Seleccione un producto</option>
+							      <option value="1">Option 1</option>
+							      <option value="2">Option 2</option>
+							      <option value="3">Option 3</option>
+							    </select>
+							</div>
+					    </div>
+
+					    <div id="blog_eliminar" class="col s12">
+					    	<div class="input-field col s12">
+							    <select>
+							      <option value="" disabled selected>Seleccione un producto</option>
+							      <option value="1">Option 1</option>
+							      <option value="2">Option 2</option>
+							      <option value="3">Option 3</option>
+							    </select>
+							</div>
+					    </div>
+					</div>
+        
+		 		</div>
+		 	</div>
+		</div>
+
+		<div class="card_container col s12 m6 l6">
+	 		<div class="my_card blog_cad">
+		 		<div class="card_title">
+		 			Fotos Blog <span class="icon-flow-tree"></span>
+		 		</div>
+
+		 		<div class="container_info">
+
+		 			<div class="row">
+					    <div class="col s12">
+					      <ul class="tabs">
+					        <li class="tab col s3"><a href="#nuevo_blog_foto">Nuevo</a></li>
+					        <li class="tab col s3"><a href="#editar_blog_foto">Editar</a></li>
+					      </ul>
+					    </div>
+					    <div id="nuevo_blog_foto" class="col s12">
+					    	<div class="file-field input-field">
+						      <div class="btn">
+						        <span>Archivo</span>
+						        <input type="file" multiple>
+						      </div>
+						      <div class="file-path-wrapper">
+						        <input class="file-path validate" type="text" placeholder="Foto blog">
+						      </div>
+						    </div>
+						    <div class="input-field col s12">
+							    <select>
+							      <option value="" disabled selected>Seleccione un articulo</option>
+							      <option value="1">Option 1</option>
+							      <option value="2">Option 2</option>
+							      <option value="3">Option 3</option>
+							    </select>
+							</div>
+					    </div>
+					    <div id="editar_blog_foto" class="col s12">
+					    	<div class="file-field input-field">
+						      <div class="btn">
+						        <span>Archivo</span>
+						        <input type="file" multiple>
+						      </div>
+						      <div class="file-path-wrapper">
+						        <input class="file-path validate" type="text" placeholder="Foto blog">
+						      </div>
+						    </div>
+						    <div class="input-field col s12">
+							    <select>
+							      <option value="" disabled selected>Seleccione un articulo</option>
+							      <option value="1">Option 1</option>
+							      <option value="2">Option 2</option>
+							      <option value="3">Option 3</option>
+							    </select>
+							</div>
+					    </div>
+					</div>
+        
+		 			
+		 		</div>
+		 	</div>
+		</div>
     </div>
 </div>

@@ -19,7 +19,7 @@
 .my_card{
 	position: relative;
 	padding: 10px;
-	min-height: 580px;
+	min-height: 680px;
 	background: #424242;
 }
 .row .col{
@@ -102,10 +102,34 @@
     color: white;
 }
 /*displays*/
-.portafolio_card, .social_user_mail{
+.portafolio_card, .social_user_mail, .productos_cad{
 	display: none;
 }
 /*displays*/
 .navigation_menu_vertical{
 	width: 60px;
+}
+.set_icon{
+	position: absolute;
+	background-color: rgba(10, 10, 10, 0.8);
+	color: white;
+	width: 100px;
+	margin-left: 10px;
+	border-radius: 20px;
+	padding: 0;
+}
+.btn-floating:hover {
+    background-color: rgba(10, 10, 10, 0.8);
+}
+.fixed-action-btn{
+	width: 60px;
+}
+input{
+	color: white;
+}
+textarea{
+	color: white;
+}
+textarea.materialize-textarea:focus:not([readonly]) + label {
+ 	color: white;
 }
