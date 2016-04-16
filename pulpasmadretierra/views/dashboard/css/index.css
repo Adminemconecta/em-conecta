@@ -102,7 +102,7 @@
     color: white;
 }
 /*displays*/
-.portafolio_card, .social_user_mail, .productos_cad{
+.portafolio_card, .social_user_mail, .productos_cad, .blog_cad{
 	display: none;
 }
 /*displays*/

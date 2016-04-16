@@ -21,6 +21,7 @@
 	background-color: rgba(42, 44, 44, 0.8);
 	top: 0;
 	z-index: 999;
+	display: none;
 }
 .close_article{
 	position: absolute;
