@@ -3,7 +3,8 @@
       <i class="black-text large mdi-navigation-menu"></i>
     </a>
     <ul class="navigation_menu_vertical">
-      <li id="blog"><a class="btn-floating white "><i class="black-text icon-blog	"></i></a> <div class="btn-floating set_icon">Blog</div></li>
+      <li id="mail"><a class="btn-floating white"><i class="black-text icon-mail5"></i></a> <div class="btn-floating set_icon">Mail</div></li>
+      <li id="blog"><a class="btn-floating white"><i class="black-text icon-blog"></i></a> <div class="btn-floating set_icon">Blog</div></li>
       <li id="tienda"><a class="btn-floating white "><i class="black-text icon-store_mall_directory"></i></a><div class="btn-floating set_icon">Tienda</div></li>
       <li id="portafolio"><a class="btn-floating white "><i class="black-text icon-suitcase"></i></a><div class="btn-floating set_icon">Portafolio</div></li>
       <li id="conf_inicial"><a class="btn-floating white "><i class="black-text icon-publish"></i></a><div class="btn-floating set_icon">Confi inicial</div></li>
@@ -12,22 +13,25 @@
 
 <div class="container-dashboard">
 	<div class="row padding_cards">
-	 	<div class="card_container col s12 m6 l4">
-	 		<div class="my_card social_user_mail">
+
+	 	<div class="card_container  col s12 m12 l12">
+
+	 		<div class="my_card card_mail">
 		 		<div class="card_title">
 		 			Correo <span class="icon-mail_outline"></span>
 		 		</div>
-		 		<div class="container_info">
-			 		
-				  <div class="collection">
-				    <a href="#!" class="collection-item">Alan<span class="badge">1</span></a>
-				    <a href="#!" class="collection-item">Alan<span class="new badge">4</span></a>
-				    <a href="#!" class="collection-item">Alan</a>
-				    <a href="#!" class="collection-item">Alan<span class="badge">14</span></a>
-				  </div>
-            
+		 		<div class="container_info mail_email">
+			 		<ul class="collapsible popout" data-collapsible="accordion">
+						<?php for ($i=0; $i < 30; $i++) { ?>
+						    <li>
+						      <div class="collapsible-header"><i class="icon-filter_drama"></i></div>
+						      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+						    </li>
+						<?php } ?>
+					</ul>
 		 		</div>
 	 		</div>
+	 		
 	 	</div>
 
 	 	<div class="card_container col s12 m6 l4">
@@ -202,6 +206,25 @@
 	 		</div>
 	 	</div>
 
+	 	<div class="card_container col s12 m6 l4">
+	 		<div class="my_card social_user_mail">
+		 		<div class="card_title">
+		 			Favi Icon <span class="icon-http"></span>
+		 		</div>
+			    <form class="col s12">
+			        <div class="file-field input-field">
+				      <div class="btn">
+				        <span>Archivo</span>
+				        <input type="file" multiple>
+				      </div>
+				      <div class="file-path-wrapper">
+				        <input class="file-path validate" type="text" placeholder="Icono empresa">
+				      </div>
+				    </div>
+				</form>
+	 		</div>
+	 	</div>
+
 	 	<div class="card_container col s12 m12 l12">
 	 		<div class="my_card portafolio_card">
 		 		<div class="card_title">
@@ -231,6 +254,12 @@
 								        <div class="input-field col s12">
 								          <input id="icon_prefix" type="text" class="validate">
 								          <label for="icon_prefix">Telefonos</label>
+								        </div>
+							        </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <input id="icon_prefix" type="text" class="validate">
+								          <label for="icon_prefix">Direccion</label>
 								        </div>
 							        </div>
 							        <div class="row">

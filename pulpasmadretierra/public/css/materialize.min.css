@@ -23,8 +23,30 @@
 	margin: 0;
 	padding: 0;
 }
+.mensajeAjax{
+	position: fixed;
+	z-index: 3000;
+	width: 340px;
+	height: 50px;
+	left: 50%;
+	margin-left: -170px;
+	top: 80%;
+	margin-top: -50px;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	display: none;
+}
+.msnAjax{
+	position: absolute;
+	width: 100%;
+	top: 30%;
+}
 .progresbar{
-	margin-top: -10px;
+	position: fixed;
+	z-index: 5;
+	width: 100%;
+	top: -8px;
 	display: none;
 }
 .options{

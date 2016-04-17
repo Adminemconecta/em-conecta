@@ -12,6 +12,9 @@
 
 		public function index()
 		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
 			
 			$this->_view->titulo = 'Dashboard';
 			$this->_view->setCss(array('index'));

@@ -64,6 +64,12 @@
               },3000);
           }
           
+          $(document).ready(function(){
+              $('form').on( 'focus', ':input', function(){
+                  $(this).attr( 'autocomplete', 'off' );
+              });
+          }); 
+          
           var  _BASE_URL = '<?php echo BASE_URL ?>';          
     </script>
 </html>

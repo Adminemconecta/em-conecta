@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" href="<?php echo BASE_URL ?>public/img/link2.png" />
 </head>
 <body>
+
 <div class="progresbar">
   <div class="progress green lighten-2">
       <div class="indeterminate green lighten-4"></div>
@@ -34,9 +35,10 @@
   <div class="logo">
     <img class="img-logo" src="<?php echo BASE_URL.'public/img/madretierraTrans-compressor.png' ?>">
   </div>
-  <h2 title="Pulpas Madre Tierra" class="white-text text-header center-align"></span>Pulpas Madre Tierra</h2>
+  <h2 title="Pulpas Madre Tierra" class="white-text text-header center-align"><span>Pulpas Madre Tierra</span></h2>
   <h3 class="title_inferior" title="<?php  if(isset($this->titulo)) echo $this->titulo; ?>"><?php  if(isset($this->titulo)) echo $this->titulo; ?></h3>
 </section>
+
 <div class="back-menu">
   <div id="icon-close-menu" class="icon-close black-text"></div>
   <div class="collection center-menu">

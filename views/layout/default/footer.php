@@ -60,6 +60,12 @@
             });
             $('ul.tabs').tabs();
           });
+          
+          $(document).ready(function(){
+              $('form').on( 'focus', ':input', function(){
+                  $(this).attr( 'autocomplete', 'off' );
+              });
+          }); 
         
           $(document).ready(function() {
             $(".session-fade").click(function(){
