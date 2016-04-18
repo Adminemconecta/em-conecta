@@ -27,7 +27,12 @@
 <nav class="options transparent">
   <div class="nav-wrapper">
     <a id="fadeIn-menu" class="text-heder-menu text-header"><span class="icon-menu5"></span><?php echo " "; ?>Menu</a>
-    <a href="<?php echo BASE_URL ?>login" class="right text-header">Login</a>
+    <?php if (!Session::get('autenticado')) { ?>
+        <a href="<?php echo BASE_URL ?>login" class="right text-header"><h5>Iniciar sesion</h5></a>
+    <?php } else { ?>
+        <a href="<?php echo BASE_URL ?>login/cerrar" class="right text-header"><h5>Cerrar sesion</h5></a>
+    <?php }?>
+    
   </div>
 </nav>
 
@@ -49,10 +54,26 @@
     <a title="Revista" href="<?php echo BASE_URL ?>revista" class="collection-item">Revista</a>
     <a title="Contactanos" href="<?php echo BASE_URL ?>contacto" class="collection-item">Contactanos</a>
     <div class="collection-item social-div">
-      <a title="Facebook" href=""><span class="icon-menu-social icon-facebook-with-circle"></span></a>
-      <a title="Twitter" href=""><span class="icon-menu-social icon-twitter-with-circle"></span></a>
-      <a title="Google plus" href=""><span class="icon-menu-social icon-google-with-circle"></span></a>
-      <a title="Instagram" href=""><span class="icon-menu-social icon-instagram-with-circle"></span></a>
+    <?php 
+      if ($this->_redsocial[3]['social_url'] != '') { ?>
+      <a target="_blank" title="Facebook" href="<?php echo $this->_redsocial[3]['social_url'] ?>"><span class="icon-menu-social icon-facebook-with-circle"></span></a>
+    <?php  }  ?>
+
+    <?php
+      if ($this->_redsocial[2]['social_url'] != '') { ?>
+        <a target="_blank" title="Twitter" href="<?php echo $this->_redsocial[2]['social_url'] ?>"><span class="icon-menu-social icon-twitter-with-circle"></span></a>
+    <?php  }
+    ?>
+
+    <?php
+      if ($this->_redsocial[1]['social_url'] != '') { ?>
+        <a target="_blank" title="Google plus" href="<?php echo $this->_redsocial[1]['social_url'] ?>"><span class="icon-menu-social icon-google-with-circle"></span></a>
+    <?php  } ?>
+
+    <?php
+      if ($this->_redsocial[0]['social_url'] != '') { ?>
+        <a target="_blank" title="Instagram" href="<?php echo $this->_redsocial[0]['social_url'] ?>"><span class="icon-menu-social icon-instagram-with-circle"></span></a>
+    <?php  }  ?>
     </div>s
   </div>
 </div>

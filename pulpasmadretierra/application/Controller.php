@@ -3,10 +3,14 @@
 	abstract class Controller
 	{
 		protected $_view;
-		private $_msn;
+		private $_red;
+
 		public function __construct(){
 			$this->_view = new View(new Request);
+			$this->_red = $this->loadModel('dashboard');
+			$this->_view->_redsocial = $this->_red->getRedSocial();
 		}
+
 		abstract public function index();
 
 		protected function loadModel($modelo)

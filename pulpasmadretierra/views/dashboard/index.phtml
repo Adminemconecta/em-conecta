@@ -22,10 +22,21 @@
 		 		</div>
 		 		<div class="container_info mail_email">
 			 		<ul class="collapsible popout" data-collapsible="accordion">
-						<?php for ($i=0; $i < 30; $i++) { ?>
+						<?php for ($i=0; $i < count( $this->mensaje ); $i++) { ?>
 						    <li>
-						      <div class="collapsible-header"><i class="icon-filter_drama"></i></div>
-						      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+						      <div class="collapsible-header white"><span class="left"><strong><?php echo ucwords($this->mensaje[$i]['mensaje_nombre']).' '.ucwords($this->mensaje[$i]['mensaje_apellido']); ?></strong></span><span class="right hide-on-med-and-down"><strong><?php echo ucfirst($this->mensaje[$i]['mensaje_asunto']); ?></strong></span></div>
+						      <div class="collapsible-body white">
+						      		<h4 class="padding_titles">
+						      			<?php echo ucfirst($this->mensaje[$i]['mensaje_asunto']); ?>
+						      		</h4>
+						      		<h5 class="padding_titles">
+						      			<?php echo ucwords($this->mensaje[$i]['mensaje_nombre']).' '.ucwords($this->mensaje[$i]['mensaje_apellido']); ?><br>
+						      			<h6 class="padding_titles"><?php echo ucfirst($this->mensaje[$i]['mensaje_email']); ?></h6>
+						      		</h5>
+								     <p>
+								     	<?php echo ucfirst($this->mensaje[$i]['mensaje_mensaje']); ?>
+								     </p>
+						      </div>
 						    </li>
 						<?php } ?>
 					</ul>
@@ -53,10 +64,9 @@
 				    	<div class="container_info">
 			 		
 							<div class="collection">
-							    <a href="#!" class="collection-item">Alan<span class="badge">1</span></a>
-							    <a href="#!" class="collection-item">Alan<span class="new badge">4</span></a>
-							    <a href="#!" class="collection-item">Alan</a>
-							    <a href="#!" class="collection-item">Alan<span class="badge">14</span></a>
+							<?php for ($i=0; $i < count($this->usuarios); $i++) { ?>
+								<a href="#!" class="collection-item"><?php echo ucwords($this->usuarios[$i]['usuario_nombre'].' '.$this->usuarios[$i]['usuario_apellido']) ?><span class="<?php if ($this->usuarios[$i]['usuario_activate'] == 1){echo "badge";}else{echo "new badge";} ?> "><?php if ($this->usuarios[$i]['usuario_activate'] == 1){echo "Activado";}else{ echo 'Activar';} ?></span></a>
+							<?php } ?>
 							</div>
 			            
 					 	</div>
@@ -64,34 +74,35 @@
 				    <div id="test2" class="col s12">
 				    	<div class="card_nuevo">
 				    		<div class="userform">
-							    <form class="col s12">
+							    <form id="form_nuevo_usuario" class="col s12">
 							      <div class="row">
 							      	<div class="input-field col s12">
 							          <i class="icon_dashboard icon-user2 prefix"></i>
-							          <input id="icon_prefix" type="text" class="validate">
+							          <input id="icon_prefix" type="text" class="validate" name="nombre">
 							          <label for="icon_prefix">Nombre</label>
 							        </div>
 							        <div class="input-field col s12">
 							          <i class="icon_dashboard icon-user2 prefix"></i>
-							          <input id="icon_prefix" type="text" class="validate">
+							          <input id="icon_prefix" type="text" class="validate" name="apellido">
 							          <label for="icon_prefix">Apellido</label>
 							        </div>
 							        <div class="input-field col s12">
 							          <i class="icon_dashboard icon-account_circle prefix"></i>
-							          <input id="icon_prefix" type="text" class="validate">
+							          <input id="icon_prefix" type="text" class="validate" name="usuario">
 							          <label for="icon_prefix">Nombre de usuario</label>
 							        </div>
 							        <div class="input-field col s12">
 							          <i class="icon_dashboard icon-key3 prefix"></i>
-							          <input id="icon_telephone" type="password" class="validate">
+							          <input id="icon_telephone" type="password" class="validate" name="pass">
 							          <label for="icon_telephone">Contraseña</label>
 							        </div>
 							        <div class="input-field col s12">
 							          <i class="icon_dashboard icon-key3 prefix"></i>
-							          <input id="icon_telephone" type="password" class="validate">
+							          <input id="icon_telephone" type="password" class="validate" name="validar_pass">
 							          <label for="icon_telephone">Validar contraseña</label>
 							        </div>
 							      </div>
+							      <button class="col s12 btn waves-effect black-text white" type="submit">Guardar</button>
 							    </form>
 							</div>
 				    	</div>
@@ -99,29 +110,26 @@
 				    <div id="test3" class="col s12">
 				    	<div class="card_nuevo">
 				    		<div class="userform">
-							    <form class="col s12">
+							    <form id="form_editar_usuario" class="col s12">
+							    	<input type="hidden" name="idusuario"  value="<?php echo $_SESSION['idusuario']; ?>">
 							      <div class="row">
 							        <div class="input-field col s12">
-							          <i class="icon_dashboard icon-search prefix"></i>
-							          <input id="icon_prefix" type="text" class="validate">
-							          <label for="icon_prefix">Buscar usuario</label>
-							        </div>
-							        <div class="input-field col s12">
 							          <i class="icon_dashboard icon-account_circle prefix"></i>
-							          <input id="icon_prefix" type="text" class="validate">
+							          <input name="usuario" id="icon_prefix" type="text" class="validate" value="<?php echo $_SESSION['usuario'] ?>">
 							          <label for="icon_prefix">Nombre de usuario</label>
 							        </div>
 							        <div class="input-field col s12">
 							          <i class="icon_dashboard icon-key3 prefix"></i>
-							          <input id="icon_telephone" type="password" class="validate">
+							          <input name="pass" id="icon_telephone" type="password" class="validate">
 							          <label for="icon_telephone">Contraseña</label>
 							        </div>
 							        <div class="input-field col s12">
 							          <i class="icon_dashboard icon-key3 prefix"></i>
-							          <input id="icon_telephone" type="password" class="validate">
+							          <input name="validar_pass" id="icon_telephone" type="password" class="validate">
 							          <label for="icon_telephone">Validar contraseña</label>
 							        </div>
 							      </div>
+							      <button class="col s12 btn waves-effect black-text white" type="submit">editar</button>
 							    </form>
 							</div>
 				    	</div>
@@ -142,62 +150,27 @@
 					    <div class="col s12">
 					      <ul class="tabs">
 					        <li class="tab col s3"><a href="#ulr_nuevo">Nuevo</a></li>
-					        <li class="tab col s3"><a href="#url_editar">Editar</a></li>
 					      </ul>
 					    </div>
 					    <div id="ulr_nuevo" class="col s12">
 				 			<div class="row">
-							    <form class="col s12">
+							    <form id="nueva_red_social" class="col s12">
 							      <div class="row">
 							        <div class="input-field col s12">
-							          <i class="icon_dashboard icon-facebook-with-circle prefix"></i>
-							          <input id="icon_prefix" type="text" class="validate">
-							          <label for="icon_prefix">Url facebook</label>
-							        </div>
+								    <select name="nuevo_red_social">
+									      <option value="" disabled selected>Seleccione un red</option>
+									      <?php for ($i=0; $i < count($this->redsocial); $i++) { ?>
+									      	<option value="<?php echo $this->redsocial[$i]['idsocial'] ?>"><?php echo $this->redsocial[$i]['social_nombre']; ?></option>
+									      <?php } ?>
+									</select>
+									</div>
 							        <div class="input-field col s12">
-							          <i class="icon_dashboard icon-twitter-with-circle prefix"></i>
-							          <input id="icon_prefix" type="text" class="validate">
-							          <label for="icon_prefix">Url twitter</label>
-							        </div>
-							        <div class="input-field col s12">
-							          <i class="icon_dashboard icon-google-with-circle prefix"></i>
-							          <input id="icon_telephone" type="text" class="validate">
-							          <label for="icon_telephone">Url google plus</label>
-							        </div>
-							        <div class="input-field col s12">
-							          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-							          <input id="icon_telephone" type="text" class="validate">
-							          <label for="icon_telephone">Url instagram</label>
+							          <i class="icon_dashboard icon-http prefix"></i>
+							          <input placeholder="debe contener http://" id="icon_telephone" type="url" class="validate" name="url_redsocial">
+							          <label for="icon_telephone">Url red social</label>
 							        </div>
 							      </div>
-							    </form>
-							</div>
-					    </div>
-					    <div id="url_editar" class="col s12">
-					    	<div class="row">
-							    <form class="col s12">
-							      <div class="row">
-							        <div class="input-field col s12">
-							          <i class="icon_dashboard icon-facebook-with-circle prefix"></i>
-							          <input id="icon_prefix" type="text" class="validate">
-							          <label for="icon_prefix">Url facebook</label>
-							        </div>
-							        <div class="input-field col s12">
-							          <i class="icon_dashboard icon-twitter-with-circle prefix"></i>
-							          <input id="icon_prefix" type="text" class="validate">
-							          <label for="icon_prefix">Url twitter</label>
-							        </div>
-							        <div class="input-field col s12">
-							          <i class="icon_dashboard icon-google-with-circle prefix"></i>
-							          <input id="icon_telephone" type="text" class="validate">
-							          <label for="icon_telephone">Url google plus</label>
-							        </div>
-							        <div class="input-field col s12">
-							          <i class="icon_dashboard icon-instagram-with-circle prefix"></i>
-							          <input id="icon_telephone" type="text" class="validate">
-							          <label for="icon_telephone">Url instagram</label>
-							        </div>
-							      </div>
+							      <button class="col s12 btn waves-effect black-text white" type="submit">Guardar</button>
 							    </form>
 							</div>
 					    </div>
@@ -229,168 +202,177 @@
 	 		<div class="my_card portafolio_card">
 		 		<div class="card_title">
 		 			Portafolio <span class="icon-flow-tree"></span>
+		 			<div id="respuesta"></div>
 		 		</div>
 		 		<div class="container_info">
 		 			<div class="row">
 					    <div class="col s12">
 					      <ul class="tabs">
-					        <li class="tab col s3"><a href="#nuevo_portafolio">Nuevo</a></li>
-					        <li class="tab col s3"><a href="#editar_portafolio">Editar</a></li>
+					        <li class="tab col s3 <?php if(count($this->portafolio) != 0){echo 'disabled';}else{echo '';} ?>"><a href="#nuevo_portafolio">Nuevo</a></li>
+					        <li class="tab col s3"><a class="<?php if(count($this->portafolio) != 0){echo 'active';}else{echo '';} ?>" href="#editar_portafolio">Editar</a></li>
 					      </ul>
 					    </div>
 					    <div id="nuevo_portafolio" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="form_portafolio" class="col s12" enctype="multipart/form-data">
 							        <div class="file-field input-field">
 								      <div class="btn">
 								        <span>Archivo</span>
-								        <input type="file" multiple>
+								        <input name="img_Logo" type="file" multiple>
 								      </div>
 								      <div class="file-path-wrapper">
-								        <input class="file-path validate" type="text" placeholder="Logo empresa">
+								        <input name="nombre_logo" class="file-path validate" type="text" placeholder="El logo debe aproximarse a ser cuadrado">
 								      </div>
 								    </div>
 							      	<div class="row">
 								        <div class="input-field col s12">
-								          <input id="icon_prefix" type="text" class="validate">
+								          <input id="icon_prefix" type="text" class="validate" name="telefono">
 								          <label for="icon_prefix">Telefonos</label>
 								        </div>
 							        </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <input id="icon_prefix" type="text" class="validate">
+								          <input id="icon_prefix" type="text" class="validate" name="direccion">
 								          <label for="icon_prefix">Direccion</label>
 								        </div>
 							        </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="bienvenido"></textarea>
 								          <label for="icon_prefix2">Bienvenido</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="innovacion"></textarea>
 								          <label for="icon_prefix2">Innovacion</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="integracion"></textarea>
 								          <label for="icon_prefix2">Integracion</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="integridad"></textarea>
 								          <label for="icon_prefix2">Integridad</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="historia"></textarea>
 								          <label for="icon_prefix2">Historia</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="mision"></textarea>
 								          <label for="icon_prefix2">Mision</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="vision"></textarea>
 								          <label for="icon_prefix2">Vision</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="marca"></textarea>
 								          <label for="icon_prefix2">Marca</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="trabajo"></textarea>
 								          <label for="icon_prefix2">Como trabajamos</label>
 								        </div>
 								    </div>
+								    <button class="col s12 btn waves-effect black-text white" type="submit">Guardar</button>
 							    </form>
 							</div>
 					    </div>
 					    <div id="editar_portafolio" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="editar_form_portafolio" class="col s12" enctype="multipart/form-data">
 							        <div class="file-field input-field">
 								      <div class="btn">
 								        <span>Archivo</span>
-								        <input type="file" multiple>
+								        <input name="editar_img_Logo" type="file" multiple>
 								      </div>
 								      <div class="file-path-wrapper">
-								        <input class="file-path validate" type="text" placeholder="Logo empresa">
+								        <input name="editar_nombre_logo" class="file-path validate" type="text" placeholder="El logo debe aproximarse a ser cuadrado">
 								      </div>
 								    </div>
 							      	<div class="row">
 								        <div class="input-field col s12">
-								          <input id="icon_prefix" type="text" class="validate">
+								          <input id="icon_prefix" type="text" class="validate" name="telefono" value="<?php echo $this->portafolio[0]['portafolio_telefonos'] ?>">
 								          <label for="icon_prefix">Telefonos</label>
 								        </div>
 							        </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <input id="icon_prefix" type="text" class="validate" name="direccion" value="<?php echo $this->portafolio[0]['portafolio_direccion'] ?>">
+								          <label for="icon_prefix">Direccion</label>
+								        </div>
+							        </div>
+							        <div class="row">
+								        <div class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="bienvenido"><?php echo $this->portafolio[0]['portafolio_bienvenido']?></textarea>
 								          <label for="icon_prefix2">Bienvenido</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="innovacion" ><?php echo $this->portafolio[0]['portafolio_innovacion']?></textarea>
 								          <label for="icon_prefix2">Innovacion</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="integracion"><?php echo $this->portafolio[0]['portafolio_integracion']?></textarea>
 								          <label for="icon_prefix2">Integracion</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="integridad"><?php echo $this->portafolio[0]['portafolio_integridad']?></textarea>
 								          <label for="icon_prefix2">Integridad</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="historia" ><?php echo $this->portafolio[0]['portafolio_historia_cultura']?></textarea>
 								          <label for="icon_prefix2">Historia</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="mision" ><?php echo $this->portafolio[0]['portafolio_mision']?></textarea>
 								          <label for="icon_prefix2">Mision</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="vision" ><?php echo $this->portafolio[0]['portafolio_vision']?></textarea>
 								          <label for="icon_prefix2">Vision</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="marca"><?php echo $this->portafolio[0]['portafolio_marca']?></textarea>
 								          <label for="icon_prefix2">Marca</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="trabajo"><?php echo $this->portafolio[0]['portafolio_como_trabajamos']?></textarea>
 								          <label for="icon_prefix2">Como trabajamos</label>
 								        </div>
 								    </div>
+								    <button class="col s12 btn waves-effect black-text white" type="submit">Editar</button>
 							    </form>
 							</div>
 					    </div>

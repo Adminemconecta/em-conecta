@@ -52,6 +52,8 @@
 					Session::set('activate', $row['usuario_activate']);
 					Session::set('nombre', $row['usuario_nombre']);
 					Session::set('apellido', $row['usuario_apellido']);
+					Session::set('usuario', $row['usuario_usuario']);
+					Session::set('idusuario', $row['idusuario']);
 					Session::set('tiempo', time());
 					$answerJson = array("answer" => true);
 	            	echo json_encode($answerJson);
