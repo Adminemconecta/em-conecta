@@ -261,6 +261,116 @@
 
 			}
 		}
+
+		public function ajaxeditarimg()
+		{
+			if (isset($_FILES["editar_img_Logo"]))
+			{
+			    $file = $_FILES["editar_img_Logo"];
+			    $nombre = $file["name"];
+			    $tipo = $file["type"];
+			    $ruta_provisional = $file["tmp_name"];
+			    $carpeta = ROOT.'public/img/carpeta/';
+			    $ruta_img = BASE_URL.'public/img/carpeta/'.$nombre;
+			    
+			    if ($tipo != 'image/jpg' && $tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/gif')
+			    {
+			      echo "Error, el archivo no es una imagen"; 
+			    }else{
+			        $src = $carpeta.$nombre;
+			        move_uploaded_file($ruta_provisional, $src);
+			        echo '<div class="logo"><img class="img-logo" src="'.$ruta_img.'"></div>';
+			    }
+			}
+		}
+
+
+		public function ajaxeditarportafolio()
+		{
+			if ($this->getUsuarioParam('nombre_logo') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta logo');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('telefono') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta telefono');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('direccion') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta direccion');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('bienvenido') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta bienvenido');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('innovacion') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta innovacion');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('integracion') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta integracion');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('integridad') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta integridad');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('historia') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta historia');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('mision') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta mision');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('vision') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta vision');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('marca') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta marca');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('trabajo') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta trabajo');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+				$this->_dashboard->editarPortafolio(
+						$this->getUsuarioParam('telefono'),
+						$this->getUsuarioParam('nombre_logo'),
+						$this->getUsuarioParam('bienvenido'),
+						$this->getUsuarioParam('innovacion'),
+						$this->getUsuarioParam('integracion'),
+						$this->getUsuarioParam('integridad'),
+						$this->getUsuarioParam('historia'),
+						$this->getUsuarioParam('mision'),
+						$this->getUsuarioParam('vision'),
+						$this->getUsuarioParam('marca'),
+						$this->getUsuarioParam('trabajo'),
+						$this->getUsuarioParam('direccion')
+
+					);
+				$answerJson = array("answer" => true,
+									"respuesta" => 'Se inserto la configuracion inicial');
+            	echo json_encode($answerJson);
+            	exit;
+
+			}
+		}
 	}
 
 ?>

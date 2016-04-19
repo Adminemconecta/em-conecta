@@ -336,3 +336,92 @@ $(document).ready(function(){
         
     })
 });
+
+$(document).ready(function(){
+
+        $("input[name='editar_img_Logo']").on("change", function(){
+
+            var formData = new FormData($("#editar_form_portafolio")[0]);
+            var ruta = _BASE_URL+'dashboard/ajaxeditarimg';
+
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+        });
+
+});
+
+$(document).ready(function(){
+      $('#editar_form_portafolio').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/ajaxeditarportafolio',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#editar_form_portafolio").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});

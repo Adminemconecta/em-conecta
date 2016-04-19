@@ -202,14 +202,21 @@
 	 		<div class="my_card portafolio_card">
 		 		<div class="card_title">
 		 			Portafolio <span class="icon-flow-tree"></span>
-		 			<div id="respuesta"></div>
+		 			<div id="respuesta">
+		 				<?php 
+		 					if ($this->portafolio[0]['portafolio_logo_name'] != '') { ?>
+		 						<div class="logo"><img class="img-logo" src="<?php echo BASE_URL.'public/img/carpeta/'.$this->portafolio[0]['portafolio_logo_name'] ?>"></div>
+		 				<?php }else{ ?>
+
+		 				<?php } ?>
+		 			</div>
 		 		</div>
 		 		<div class="container_info">
 		 			<div class="row">
 					    <div class="col s12">
 					      <ul class="tabs">
 					        <li class="tab col s3 <?php if(count($this->portafolio) != 0){echo 'disabled';}else{echo '';} ?>"><a href="#nuevo_portafolio">Nuevo</a></li>
-					        <li class="tab col s3"><a class="<?php if(count($this->portafolio) != 0){echo 'active';}else{echo '';} ?>" href="#editar_portafolio">Editar</a></li>
+					        <li class="tab col s3 <?php if(count($this->portafolio) == 0){echo 'disabled';}else{echo '';} ?>"><a class="<?php if(count($this->portafolio) != 0){echo 'active';}else{echo '';} ?>" href="#editar_portafolio">Editar</a></li>
 					      </ul>
 					    </div>
 					    <div id="nuevo_portafolio" class="col s12">
@@ -297,6 +304,7 @@
 					    <div id="editar_portafolio" class="col s12">
 					    	<div class="row">
 							    <form id="editar_form_portafolio" class="col s12" enctype="multipart/form-data">
+							    	<input type="hidden" value="">
 							        <div class="file-field input-field">
 								      <div class="btn">
 								        <span>Archivo</span>
@@ -308,67 +316,67 @@
 								    </div>
 							      	<div class="row">
 								        <div class="input-field col s12">
-								          <input id="icon_prefix" type="text" class="validate" name="telefono" value="<?php echo $this->portafolio[0]['portafolio_telefonos'] ?>">
+								          <input id="icon_prefix" type="text" class="validate" name="telefono" value="<?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_telefonos'];} ?>">
 								          <label for="icon_prefix">Telefonos</label>
 								        </div>
 							        </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <input id="icon_prefix" type="text" class="validate" name="direccion" value="<?php echo $this->portafolio[0]['portafolio_direccion'] ?>">
+								          <input id="icon_prefix" type="text" class="validate" name="direccion" value="<?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_direccion']; }?>">
 								          <label for="icon_prefix">Direccion</label>
 								        </div>
 							        </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="bienvenido"><?php echo $this->portafolio[0]['portafolio_bienvenido']?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="bienvenido"><?php if(count($this->portafolio) == 0){echo "";}else{ echo $this->portafolio[0]['portafolio_bienvenido'];}?></textarea>
 								          <label for="icon_prefix2">Bienvenido</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="innovacion" ><?php echo $this->portafolio[0]['portafolio_innovacion']?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="innovacion" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_innovacion'];}?></textarea>
 								          <label for="icon_prefix2">Innovacion</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="integracion"><?php echo $this->portafolio[0]['portafolio_integracion']?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="integracion"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_integracion'];}?></textarea>
 								          <label for="icon_prefix2">Integracion</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="integridad"><?php echo $this->portafolio[0]['portafolio_integridad']?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="integridad"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_integridad'];}?></textarea>
 								          <label for="icon_prefix2">Integridad</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="historia" ><?php echo $this->portafolio[0]['portafolio_historia_cultura']?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="historia" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_historia_cultura'];}?></textarea>
 								          <label for="icon_prefix2">Historia</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="mision" ><?php echo $this->portafolio[0]['portafolio_mision']?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="mision" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_mision'];}?></textarea>
 								          <label for="icon_prefix2">Mision</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="vision" ><?php echo $this->portafolio[0]['portafolio_vision']?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="vision" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_vision'];}?></textarea>
 								          <label for="icon_prefix2">Vision</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="marca"><?php echo $this->portafolio[0]['portafolio_marca']?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="marca"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_marca'];}?></textarea>
 								          <label for="icon_prefix2">Marca</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="trabajo"><?php echo $this->portafolio[0]['portafolio_como_trabajamos']?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="trabajo"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_como_trabajamos'];}?></textarea>
 								          <label for="icon_prefix2">Como trabajamos</label>
 								        </div>
 								    </div>
