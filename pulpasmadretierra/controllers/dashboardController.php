@@ -593,28 +593,52 @@
 			}
 		}
 
+		public function ajaxgetProducto($idproducto)
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+
+			$row = $this->_dashboard->getProducto($idproducto);
+
+			$answerJson = array("answer" => true,
+								"nombre" => '<input id="icon_prefix" name="nombre_producto" value="'.$row['producto_nombre'].'" type="text" class="validate"><label class="active" for="icon_prefix">Normbre del producto</label>',
+								"valor" => '<input id="icon_prefix" name="valor_producto" type="text" value="'.$row['producto_valor'].'" class="validate"><label class="active" for="icon_prefix">Valor del producto</label>',
+								"descripcion" => '<textarea id="icon_prefix2" name="descripcion_producto" class="materialize-textarea">'.$row['producto_descripcion'].'</textarea><label class="active" for="icon_prefix2">Descripcion</label>'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+			
+		}
+
 		public function ajaxeditarproducto()
 		{
 			if (!Session::get('autenticado')) {
 				$this->redireccionar();
 			}
 
-			if ($this->getUsuarioParam('producto_select_tipo_producto') == '') {
+			if ($this->getUsuarioParam('select_editar_producto') == '') {
 				$answerJson = array("answer" => false,
-									"respuesta" => 'Selecciona un tipo');
+									"respuesta" => 'Selecciona un producto');
             	echo json_encode($answerJson);
             	exit;
-			}elseif($this->getUsuarioParam('producto_nombre_producto') == ''){
+			}elseif($this->getUsuarioParam('select_editar_tipo_producto') == ''){
 				$answerJson = array("answer" => false,
-									"respuesta" => 'Falta nombre del producto');
+									"respuesta" => 'Seleccione un tipo de producto');
             	echo json_encode($answerJson);
             	exit;
-			}elseif($this->getUsuarioParam('producto_valor_producto') == ''){
+			}elseif($this->getUsuarioParam('nombre_producto') == ''){
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falta el nombre del producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif($this->getUsuarioParam('valor_producto') == ''){
 				$answerJson = array("answer" => false,
 									"respuesta" => 'Falta el valor del producto');
             	echo json_encode($answerJson);
             	exit;
-			}elseif($this->getUsuarioParam('producto_descripcion_producto') == ''){
+			}elseif($this->getUsuarioParam('descripcion_producto') == ''){
 				$answerJson = array("answer" => false,
 									"respuesta" => 'Falta la descripcion del producto');
             	echo json_encode($answerJson);
@@ -622,15 +646,15 @@
 			}else{
 
 				$this->_dashboard->productoEditarProducto(
-							$this->getUsuarioParam('producto_descripcion_producto'),
-							$this->getUsuarioParam('producto_valor_producto'),
-							$this->getUsuarioParam('producto_nombre_producto'),
-							$this->getUsuarioParam('producto_select_tipo_producto'),
-							$this->getUsuarioParam('hiden_producto')
+							$this->getUsuarioParam('descripcion_producto'),
+							$this->getUsuarioParam('valor_producto'),
+							$this->getUsuarioParam('nombre_producto'),
+							$this->getUsuarioParam('select_editar_tipo_producto'),
+							$this->getUsuarioParam('select_editar_producto')
 					);
 
 				$answerJson = array("answer" => true,
-									"respuesta" => 'Se reistro un producto exitosamente');
+									"respuesta" => 'Se edito el producto exitosamente');
             	echo json_encode($answerJson);
             	exit;
 			}
@@ -638,8 +662,74 @@
 
 		public function ajaxeliminarproducto()
 		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('select_eliminar_producto') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+				$this->_dashboard->productoEliminar($this->getUsuarioParam('select_eliminar_producto'));
+
+				$answerJson = array("answer" => true,
+									"respuesta" => 'Se elimino el producto exitosamente');
+            	echo json_encode($answerJson);
+            	exit;
+			}
+		}
+
+		public function ajaxnuevotag()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('select_nuevo_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('nuevo_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan tags');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+				$this->_dashboard->registrarTag(
+							$this->getUsuarioParam('nuevo_tag'),
+							$this->getUsuarioParam('select_nuevo_tag')
+						);
+
+				$answerJson = array("answer" => true,
+									"respuesta" => 'Se insertaron tags exitosamente');
+            	echo json_encode($answerJson);
+            	exit;
+			}
+		}
+
+
+		public function ajaxEditarTags($idtags)
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+
+			$row = $this->_dashboard->getTag($idtags);
+
+			$answerJson = array("answer" => true,
+								"tags" => '<textarea name="editar_tag" placeholder="palabras frases separadas por comas" id="icon_prefix2" class="materialize-textarea">'.$row['tags_lsitado_tags'].'</textarea>'
+					);
+            	echo json_encode($answerJson);
+            	exit;
 			
 		}
+
 	}
 
 ?>

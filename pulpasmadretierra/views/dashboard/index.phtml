@@ -510,65 +510,57 @@
 					    </div>
 					    <div id="producto_editar" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="form_editar_producto" class="col s12">
 							      <div class="input-field col s12">
-								    <select>
+								    <select id="producto_select_editar_producto" name="select_editar_producto">
 								      <option value="" disabled selected>Seleccione un producto</option>
 								      <?php for ($b=0; $b < count($this->productos); $b++) { ?>
 								      		<option value="<?php echo $this->productos[$b]['idproducto']; ?>"><?php echo $this->productos[$b]['producto_nombre']; ?></option>
 								      <?php } ?>
 								    </select>
 								  </div>
+								  <div class="input-field col s12">
+								    <select id="producto_select_editar_producto" name="select_editar_tipo_producto">
+								    <option value="" disabled selected>Seleccione un tipo de producto</option>
+								     <?php for ($c=0; $c < count($this->tiposproductos); $c++) { ?>
+								      		<option value="<?php echo $this->tiposproductos[$c]['idproductos_tipo'] ?>"><?php echo $this->tiposproductos[$c]['productos_tipo_nombre'] ?></option>
+								      <?php } ?>
+								    </select>
+								  </div>
 							      <div class="row">
-							        <div class="input-field col s12">
-							          <input id="icon_prefix" type="text" class="validate">
+							        <div id="editar_nombre_producto" class="input-field col s12">
+							          <input id="icon_prefix" name="nombre_producto" type="text" class="validate">
 							          <label for="icon_prefix">Normbre del producto</label>
 							        </div>
 							      </div>
 							      <div class="row">
-							        <div class="input-field col s12">
-							          <input id="icon_prefix" type="text" class="validate">
+							        <div id="editar_valor_producto" class="input-field col s12">
+							          <input id="icon_prefix" name="valor_producto" type="text" class="validate">
 							          <label for="icon_prefix">Valor del producto</label>
 							        </div>
 							      </div>
 							      <div class="row">
-								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								        <div id="editar_descripcion_producto" class="input-field col s12">
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="descripcion_producto"></textarea>
 								          <label for="icon_prefix2">Descripcion</label>
 								        </div>
 								  </div>
+								  <button class="col s12 btn waves-effect black-text white" type="submit">editar</button>
 							    </form>
 							</div>
 					    </div>
 					    <div id="producto_eliminar" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="form_eliminar_producto" class="col s12">
 							      <div class="input-field col s12">
-								    <select>
-								      <option value="" disabled selected>Seleccione un tipo</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								    <select id="producto_select_eliminar_producto" name="select_eliminar_producto">
+								      <option value="" disabled selected>Seleccione un producto</option>
+								      <?php for ($d=0; $d < count($this->productos); $d++) { ?>
+								      		<option value="<?php echo $this->productos[$d]['idproducto']; ?>"><?php echo $this->productos[$d]['producto_nombre']; ?></option>
+								      <?php } ?>
 								    </select>
 								  </div>
-							      <div class="row">
-							        <div class="input-field col s12">
-							          <input id="icon_prefix" type="text" class="validate">
-							          <label for="icon_prefix">Normbre del producto</label>
-							        </div>
-							      </div>
-							      <div class="row">
-							        <div class="input-field col s12">
-							          <input id="icon_prefix" type="text" class="validate">
-							          <label for="icon_prefix">Valor del producto</label>
-							        </div>
-							      </div>
-							      <div class="row">
-								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-								          <label for="icon_prefix2">Descripcion</label>
-								        </div>
-								  </div>
+								  <button class="col s12 btn waves-effect black-text white" type="submit">eliminar</button>
 							    </form>
 							</div>
 					    </div>
@@ -593,41 +585,43 @@
 					    </div>
 					    <div id="tag_nuevo" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="nuevo_list_tags" class="col s12">
 							      <div class="input-field col s12">
-								    <select>
+								    <select id="producto_select_tag" name="select_nuevo_tag">
 								      <option value="" disabled selected>Seleccione un producto</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								      <?php for ($e=0; $e < count($this->productos); $e++) { ?>
+								      		<option value="<?php echo $this->productos[$e]['idproducto']; ?>"><?php echo $this->productos[$e]['producto_nombre']; ?></option>
+								      <?php } ?>
 								    </select>
 								  </div>
 							      <div class="row">
 								        <div class="input-field col s12">
-								          <textarea placeholder="palabras frases separadas por comas" id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea name="nuevo_tag" placeholder="palabras frases separadas por comas" id="icon_prefix2" class="materialize-textarea"></textarea>
 								          <label for="icon_prefix2">Tangs</label>
 								        </div>
 								  </div>
+								  <button class="col s12 btn waves-effect black-text white" type="submit">guardar</button>
 							    </form>
 							</div>
 					    </div>
 					    <div id="tag_editar" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="editar_list_tags" class="col s12">
 							      <div class="input-field col s12">
-								    <select>
+								    <select id="editar_producto_select_tag" name="select_editar_tag">
 								      <option value="" disabled selected>Seleccione un producto</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								      <?php for ($f=0; $f < count($this->productos); $f++) { ?>
+								      		<option value="<?php echo $this->productos[$f]['idproducto']; ?>"><?php echo $this->productos[$f]['producto_nombre']; ?></option>
+								      <?php } ?>
 								    </select>
 								  </div>
 							      <div class="row">
-								        <div class="input-field col s12">
-								          <textarea placeholder="palabras frases separadas por comas" id="icon_prefix2" class="materialize-textarea"></textarea>
+								        <div id="editar_tags_" class="input-field col s12">
+								          <textarea name="editar_tag" placeholder="palabras frases separadas por comas" id="icon_prefix2" class="materialize-textarea"></textarea>
 								          <label for="icon_prefix2">Tangs</label>
 								        </div>
 								  </div>
+								  <button class="col s12 btn waves-effect black-text white" type="submit">editar</button>
 							    </form>
 							</div>
 					    </div>
@@ -665,11 +659,11 @@
 								      </div>
 								  </div>
 							      <div class="input-field col s12">
-								    <select>
+								    <select id="editar_producto_select_tag" name="select_editar_tag">
 								      <option value="" disabled selected>Seleccione un producto</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								      <?php for ($f=0; $f < count($this->productos); $f++) { ?>
+								      		<option value="<?php echo $this->productos[$f]['idproducto']; ?>"><?php echo $this->productos[$f]['producto_nombre']; ?></option>
+								      <?php } ?>
 								    </select>
 								  </div>
 							    </form>

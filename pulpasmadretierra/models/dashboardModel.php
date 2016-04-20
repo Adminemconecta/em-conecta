@@ -253,6 +253,12 @@
 			return $datos->fetchall();
 		}
 
+		public function getProducto($idproducto)
+		{
+			$datos = $this->_db->query("SELECT * FROM producto WHERE idproducto = $idproducto");
+			return $datos->fetch();
+		}
+
 
 		public function productoEditarProducto($producto_descripcion, 
 										$producto_valor, 
@@ -262,7 +268,7 @@
 
 			)
 		{
-			$this->_db->prepare("UPDATE portafolio 
+			$this->_db->prepare("UPDATE producto 
 									SET producto_descripcion = :producto_descripcion, 
 										producto_valor = :producto_valor, 
 										producto_nombre = :producto_nombre, 
@@ -278,6 +284,32 @@
 							':idproducto' => $idproducto
 						)
 				);	
+		}
+
+
+		public function productoEliminar($idproducto)
+		{
+			$this->_db->query("DELETE FROM producto WHERE idproducto = $idproducto");
+		}
+
+		public function registrarTag($tags_lsitado_tags, $producto_idproducto)
+		{
+			$this->_db->prepare("INSERT INTO tags VALUES  (null, 
+																:tags_lsitado_tags, 
+																:producto_idproducto
+																)")
+			->execute(
+					array(
+							':tags_lsitado_tags' => $tags_lsitado_tags,
+							':producto_idproducto' => $producto_idproducto
+						)
+				);
+		}
+
+		public function getTag($idtags)
+		{
+			$datos = $this->_db->query("SELECT * FROM tags WHERE idtags = $idtags");
+			return $datos->fetch();
 		}
 
 	}

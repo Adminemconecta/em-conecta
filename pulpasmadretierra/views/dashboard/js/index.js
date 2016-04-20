@@ -747,10 +747,75 @@ $(document).ready(function(){
     })
 });
 
+//cargar producto
+$(document).ready(function(){
+
+      $('#producto_select_editar_producto').on('change', function(e) {
+        e.preventDefault();
+
+        var data = $(this).val();
+
+        $.ajax({
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            url: _BASE_URL+'dashboard/ajaxgetProducto/'+data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $('.progresbar').fadeOut('fast');
+                    $('#editar_nombre_producto').html(response.nombre)
+                    $('#editar_valor_producto').html(response.valor)
+                    $('#editar_descripcion_producto').html(response.descripcion)
+               }else{
+                    alert("a ocurrido un error contacte al administrador");
+               };
+                
+            },
+
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
 //editar producto
 
 $(document).ready(function(){
-      $('#form_nuevo_producto').submit(function(e) {
+      $('#form_editar_producto').submit(function(e) {
         e.preventDefault();
 
         var data = $(this).serializeArray();
@@ -770,7 +835,7 @@ $(document).ready(function(){
                     $('.msnAjax').html(response.respuesta);
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
-                    $("#form_nuevo_producto").resetear();
+                    $("#form_editar_producto").resetear();
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -780,6 +845,208 @@ $(document).ready(function(){
                };
                 
             },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+//eliminar producto
+
+$(document).ready(function(){
+      $('#form_eliminar_producto').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+        //var data = $("#producto_select_eliminar_producto").val();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/ajaxeliminarproducto',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_eliminar_producto").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+//nuevo tag
+
+$(document).ready(function(){
+      $('#nuevo_list_tags').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/ajaxnuevotag',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#nuevo_list_tags").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+//editar tag
+$(document).ready(function(){
+
+      $('#editar_producto_select_tag').on('change', function(e) {
+        e.preventDefault();
+
+        var data = $(this).val();
+
+        $.ajax({
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            url: _BASE_URL+'dashboard/ajaxEditarTags/'+data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $('.progresbar').fadeOut('fast');
+                    $('#editar_tags_').html(response.tags)
+               }else{
+                    alert("a ocurrido un error contacte al administrador");
+               };
+                
+            },
+
             error: function(){
                 if (jqXHR.status === 0) {
 
