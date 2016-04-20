@@ -258,14 +258,24 @@ $(document).ready(function(){
             $.ajax({
                 url: ruta,
                 type: "POST",
+                dataType: 'JSON',
                 data: formData,
                 contentType: false,
                 processData: false,
-                success: function(datos)
+                beforeSend: function() {
+                    $('.progresbar').fadeIn('fast');
+                },
+                success: function(response)
                 {
-                    $("#respuesta").html(datos);
+                    if (response.answer) {
+                        $("#respuesta").html(response.respuesta);
+                        $("#input_new_file_name").html(response.datainput);
+                        $('.progresbar').fadeOut('fast');
+                    }
+                   
                 }
             });
+           
         });
 
 });
@@ -347,12 +357,21 @@ $(document).ready(function(){
             $.ajax({
                 url: ruta,
                 type: "POST",
+                dataType: 'JSON',
                 data: formData,
                 contentType: false,
                 processData: false,
-                success: function(datos)
+                beforeSend: function() {
+                    $('.progresbar').fadeIn('fast');
+                },
+                success: function(response)
                 {
-                    $("#respuesta").html(datos);
+                    if (response.answer) {
+                        $("#respuesta").html(response.respuesta);
+                        $("#edtar_input_new_file_name").html(response.datainput);
+                        $('.progresbar').fadeOut('fast');
+                    }
+                   
                 }
             });
         });
@@ -381,6 +400,377 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#editar_form_portafolio").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+$(document).ready(function(){
+
+        $("input[name='img_favi_icon']").on("change", function(){
+
+            var formData = new FormData($("#form_favi_icon")[0]);
+            var ruta = _BASE_URL+'dashboard/faviicon';
+
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                dataType: 'JSON',
+                data: formData,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('.progresbar').fadeIn('fast');
+                },
+                success: function(response)
+                {
+                    if (response.answer) {
+                        $(".mensajeAjax").fadeIn("clip");
+                        $(".msnAjax").html(response.respuesta);
+                        $('.progresbar').fadeOut('fast');
+                    }
+                   
+                }
+            });
+           
+        });
+
+});
+
+$(document).ready(function(){
+      $('#form_tipo_producto').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/ajaxnuevotipoproducto',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_tipo_producto").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+$(document).ready(function(){
+      $('#form_editar_tipo').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/ajaxeditartipoproducto',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_editar_tipo").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+$(document).ready(function(){
+      $('#form_eliminar_tipo').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/ajaxdeletetipoproducto',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_eliminar_tipo").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+//producto
+
+$(document).ready(function(){
+      $('#form_nuevo_producto').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/ajaxnuevoproducto',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_nuevo_producto").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+//editar producto
+
+$(document).ready(function(){
+      $('#form_nuevo_producto').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/ajaxeditarproducto',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_nuevo_producto").resetear();
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);

@@ -184,11 +184,11 @@
 		 		<div class="card_title">
 		 			Favi Icon <span class="icon-http"></span>
 		 		</div>
-			    <form class="col s12">
+			    <form id="form_favi_icon" class="col s12">
 			        <div class="file-field input-field">
 				      <div class="btn">
 				        <span>Archivo</span>
-				        <input type="file" multiple>
+				        <input name="img_favi_icon" type="file" multiple>
 				      </div>
 				      <div class="file-path-wrapper">
 				        <input class="file-path validate" type="text" placeholder="Icono empresa">
@@ -204,11 +204,11 @@
 		 			Portafolio <span class="icon-flow-tree"></span>
 		 			<div id="respuesta">
 		 				<?php 
-		 					if ($this->portafolio[0]['portafolio_logo_name'] != '') { ?>
+		 				if (isset($this->portafolio[0]['portafolio_logo_name'])) {
+		 					if ($this->portafolio[0]['portafolio_logo_name'] != '') {?>
 		 						<div class="logo"><img class="img-logo" src="<?php echo BASE_URL.'public/img/carpeta/'.$this->portafolio[0]['portafolio_logo_name'] ?>"></div>
-		 				<?php }else{ ?>
-
-		 				<?php } ?>
+		 					<?php }
+		 				}?>
 		 			</div>
 		 		</div>
 		 		<div class="container_info">
@@ -227,7 +227,7 @@
 								        <span>Archivo</span>
 								        <input name="img_Logo" type="file" multiple>
 								      </div>
-								      <div class="file-path-wrapper">
+								      <div id="input_new_file_name" class="file-path-wrapper">
 								        <input name="nombre_logo" class="file-path validate" type="text" placeholder="El logo debe aproximarse a ser cuadrado">
 								      </div>
 								    </div>
@@ -304,79 +304,79 @@
 					    <div id="editar_portafolio" class="col s12">
 					    	<div class="row">
 							    <form id="editar_form_portafolio" class="col s12" enctype="multipart/form-data">
-							    	<input type="hidden" value="">
+							    	<input name="portafolio_name" type="hidden" value="<?php echo $this->portafolio[0]['idportafolio']; ?>">
 							        <div class="file-field input-field">
 								      <div class="btn">
 								        <span>Archivo</span>
 								        <input name="editar_img_Logo" type="file" multiple>
 								      </div>
-								      <div class="file-path-wrapper">
-								        <input name="editar_nombre_logo" class="file-path validate" type="text" placeholder="El logo debe aproximarse a ser cuadrado">
+								      <div id="edtar_input_new_file_name" class="file-path-wrapper">
+								        <input name="editar_nombre_logo" class="file-path validate" type="text" value="<?php echo $this->portafolio[0]['portafolio_logo_name'] ?>" placeholder="El logo debe aproximarse a ser cuadrado">
 								      </div>
 								    </div>
 							      	<div class="row">
 								        <div class="input-field col s12">
-								          <input id="icon_prefix" type="text" class="validate" name="telefono" value="<?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_telefonos'];} ?>">
+								          <input id="icon_prefix" type="text" class="validate" name="editar_telefono" value="<?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_telefonos'];} ?>">
 								          <label for="icon_prefix">Telefonos</label>
 								        </div>
 							        </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <input id="icon_prefix" type="text" class="validate" name="direccion" value="<?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_direccion']; }?>">
+								          <input id="icon_prefix" type="text" class="validate" name="editar_direccion" value="<?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_direccion']; }?>">
 								          <label for="icon_prefix">Direccion</label>
 								        </div>
 							        </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="bienvenido"><?php if(count($this->portafolio) == 0){echo "";}else{ echo $this->portafolio[0]['portafolio_bienvenido'];}?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="editar_bienvenido"><?php if(count($this->portafolio) == 0){echo "";}else{ echo $this->portafolio[0]['portafolio_bienvenido'];}?></textarea>
 								          <label for="icon_prefix2">Bienvenido</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="innovacion" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_innovacion'];}?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="editar_innovacion" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_innovacion'];}?></textarea>
 								          <label for="icon_prefix2">Innovacion</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="integracion"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_integracion'];}?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="editar_integracion"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_integracion'];}?></textarea>
 								          <label for="icon_prefix2">Integracion</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="integridad"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_integridad'];}?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="editar_integridad"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_integridad'];}?></textarea>
 								          <label for="icon_prefix2">Integridad</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="historia" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_historia_cultura'];}?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="editar_historia" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_historia_cultura'];}?></textarea>
 								          <label for="icon_prefix2">Historia</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="mision" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_mision'];}?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="editar_mision" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_mision'];}?></textarea>
 								          <label for="icon_prefix2">Mision</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="vision" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_vision'];}?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="editar_vision" ><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_vision'];}?></textarea>
 								          <label for="icon_prefix2">Vision</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="marca"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_marca'];}?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="editar_marca"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_marca'];}?></textarea>
 								          <label for="icon_prefix2">Marca</label>
 								        </div>
 								    </div>
 							        <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea" name="trabajo"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_como_trabajamos'];}?></textarea>
+								          <textarea id="icon_prefix2" class="materialize-textarea" name="editar_trabajo"><?php if(count($this->portafolio) == 0){echo "";}else{echo $this->portafolio[0]['portafolio_como_trabajamos'];}?></textarea>
 								          <label for="icon_prefix2">Como trabajamos</label>
 								        </div>
 								    </div>
@@ -407,37 +407,50 @@
 					    </div>
 					    <div id="tipo_nuevo" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="form_tipo_producto" class="col s12">
 							      <div class="row">
 							        <div class="input-field col s12">
-							          <input id="icon_prefix" type="text" class="validate">
+							          <input name="name_tipo_poducto" id="icon_prefix" type="text" class="validate">
 							          <label for="icon_prefix">Tipos de producto</label>
 							        </div>
 							      </div>
+							      <button class="col s12 btn waves-effect black-text white" type="submit">guardar</button>
 							    </form>
 							</div>
 					    </div>
 					    <div id="tipo_editar" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="form_editar_tipo" class="col s12">
+							      <div class="input-field col s12">
+								    <select name="select_tipo_producto">
+								      <option value="" disabled selected>Seleccione un tipo</option>
+								      <?php for ($a=0; $a < count($this->tiposproductos); $a++) { ?>
+								      		<option value="<?php echo $this->tiposproductos[$a]['idproductos_tipo'] ?>"><?php echo $this->tiposproductos[$a]['productos_tipo_nombre'] ?></option>
+								      <?php } ?>
+								    </select>
+								  </div>
 							      <div class="row">
 							        <div class="input-field col s12">
-							          <input id="icon_prefix" type="text" class="validate">
+							          <input name="editar_name_tipo_producto" id="icon_prefix" type="text" class="validate">
 							          <label for="icon_prefix">Tipos de producto</label>
 							        </div>
 							      </div>
+							      <button class="col s12 btn waves-effect black-text white" type="submit">Editar</button>
 							    </form>
 							</div>
 					    </div>
 					    <div id="tipo_eliminar" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
-							      <div class="row">
-							        <div class="input-field col s12">
-							          <input id="icon_prefix" type="text" class="validate">
-							          <label for="icon_prefix">Tipos de producto</label>
-							        </div>
-							      </div>
+							    <form id="form_eliminar_tipo" class="col s12">
+							      <div class="input-field col s12">
+								    <select name="select_delete_tipo_producto">
+								      <option value="" disabled selected>Seleccione un tipo</option>
+								      <?php for ($a=0; $a < count($this->tiposproductos); $a++) { ?>
+								      		<option value="<?php echo $this->tiposproductos[$a]['idproductos_tipo'] ?>"><?php echo $this->tiposproductos[$a]['productos_tipo_nombre'] ?></option>
+								      <?php } ?>
+								    </select>
+								  </div>
+							      <button class="col s12 btn waves-effect black-text white" type="submit">eliminar</button>
 							    </form>
 							</div>
 					    </div>
@@ -464,33 +477,34 @@
 					    </div>
 					    <div id="producto_nuevo" class="col s12">
 							<div class="row">
-							    <form class="col s12">
+							    <form id="form_nuevo_producto" class="col s12">
 							      <div class="input-field col s12">
-								    <select>
+								    <select name="producto_select_tipo_producto">
 								      <option value="" disabled selected>Seleccione un tipo</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								      <?php for ($a=0; $a < count($this->tiposproductos); $a++) { ?>
+								      		<option value="<?php echo $this->tiposproductos[$a]['idproductos_tipo'] ?>"><?php echo $this->tiposproductos[$a]['productos_tipo_nombre'] ?></option>
+								      <?php } ?>
 								    </select>
 								  </div>
 							      <div class="row">
 							        <div class="input-field col s12">
-							          <input id="icon_prefix" type="text" class="validate">
+							          <input name="producto_nombre_producto" id="icon_prefix" type="text" class="validate">
 							          <label for="icon_prefix">Normbre del producto</label>
 							        </div>
 							      </div>
 							      <div class="row">
 							        <div class="input-field col s12">
-							          <input id="icon_prefix" type="text" class="validate">
+							          <input name="producto_valor_producto" id="icon_prefix" type="text" class="validate">
 							          <label for="icon_prefix">Valor del producto</label>
 							        </div>
 							      </div>
 							      <div class="row">
 								        <div class="input-field col s12">
-								          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+								          <textarea name="producto_descripcion_producto" id="icon_prefix2" class="materialize-textarea"></textarea>
 								          <label for="icon_prefix2">Descripcion</label>
 								        </div>
 								  </div>
+								  <button class="col s12 btn waves-effect black-text white" type="submit">guardar</button>
 							    </form>
 							</div>
 					    </div>
@@ -499,10 +513,10 @@
 							    <form class="col s12">
 							      <div class="input-field col s12">
 								    <select>
-								      <option value="" disabled selected>Seleccione un tipo</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								      <option value="" disabled selected>Seleccione un producto</option>
+								      <?php for ($b=0; $b < count($this->productos); $b++) { ?>
+								      		<option value="<?php echo $this->productos[$b]['idproducto']; ?>"><?php echo $this->productos[$b]['producto_nombre']; ?></option>
+								      <?php } ?>
 								    </select>
 								  </div>
 							      <div class="row">
