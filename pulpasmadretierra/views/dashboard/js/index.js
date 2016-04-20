@@ -468,6 +468,8 @@ $(document).ready(function(){
                         $(".mensajeAjax").fadeIn("clip");
                         $(".msnAjax").html(response.respuesta);
                         $('.progresbar').fadeOut('fast');
+                        $("#mensajeAjax").fadeAjax();
+                        $("#editar_form_portafolio").resetear();
                     }
                    
                 }

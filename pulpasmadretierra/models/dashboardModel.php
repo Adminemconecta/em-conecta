@@ -312,6 +312,18 @@
 			return $datos->fetch();
 		}
 
+		public function registrarFaviIcon($logo_nombre)
+		{
+			$this->_db->prepare("INSERT INTO favi_icon VALUES  (null, 
+																:logo_nombre
+																)")
+			->execute(
+					array(
+							':logo_nombre' => $logo_nombre
+						)
+				);
+		}
+
 	}
 	
 ?>

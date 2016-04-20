@@ -167,7 +167,7 @@
 			    $tipo = $file["type"];
 			    $ruta_provisional = $file["tmp_name"];
 			    $carpeta = ROOT.'public/img/carpeta/';
-			    $ruta_img = BASE_URL.'public/img/carpeta/'.$nombre;
+			    $ruta_img = BASE_URL.'public/img/'.$nombre;
 			    
 			    if ($tipo != 'image/jpg' && $tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/gif')
 			    {
@@ -180,7 +180,7 @@
 			    	$renames = time().'.'.$ext;
 			        $src = $carpeta.$renames;
 			        move_uploaded_file($ruta_provisional, $src);
-			    	$ruta_img = BASE_URL.'public/img/carpeta/'.$renames;
+			    	$ruta_img = BASE_URL.'public/img/'.$renames;
 			    	
 			    	$answerJson = array("answer" => true,
 										"respuesta" => '<div class="logo"><img class="img-logo" src="'.$ruta_img.'"></div>',
@@ -457,6 +457,10 @@
 			        $src = $carpeta.$renames;
 			        move_uploaded_file($ruta_provisional, $src);
 			    	$ruta_img = BASE_URL.'public/img/'.$renames;
+
+			    	$this->_dashboard->registrarFaviIcon(
+			    			$renames
+			    		);
 			    	
 			    	$answerJson = array("answer" => true,
 										"respuesta" => 'Se ha guardado la imagen correctamente');
@@ -466,6 +470,7 @@
 			}
 
 		}
+
 
 		public function ajaxnuevotipoproducto()
 		{
@@ -727,6 +732,11 @@
 					);
             	echo json_encode($answerJson);
             	exit;
+			
+		}
+
+		public function registrarimagenes()
+		{
 			
 		}
 
