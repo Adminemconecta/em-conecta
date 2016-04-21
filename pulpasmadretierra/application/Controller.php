@@ -3,12 +3,13 @@
 	abstract class Controller
 	{
 		protected $_view;
-		private $_red;
+		private $_public;
 
 		public function __construct(){
 			$this->_view = new View(new Request);
-			$this->_red = $this->loadModel('dashboard');
-			$this->_view->_redsocial = $this->_red->getRedSocial();
+			$this->_public = $this->loadModel('dashboard');
+			$this->_view->_redsocial = $this->_public->getRedSocial();
+			$this->_view->logoname = $this->_public->getPortafolio();
 		}
 
 		abstract public function index();

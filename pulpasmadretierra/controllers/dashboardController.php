@@ -154,7 +154,8 @@
             	exit;
 			}
 		}
-
+//imagen de portafolio
+		
 		public function ajaximg()
 		{
 			if (!Session::get('autenticado')) {
@@ -166,7 +167,7 @@
 			    $nombre = $file["name"];
 			    $tipo = $file["type"];
 			    $ruta_provisional = $file["tmp_name"];
-			    $carpeta = ROOT.'public/img/carpeta/';
+			    $carpeta = ROOT.'public/img/';
 			    $ruta_img = BASE_URL.'public/img/'.$nombre;
 			    
 			    if ($tipo != 'image/jpg' && $tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/gif')
@@ -219,16 +220,6 @@
 			}elseif ($this->getUsuarioParam('innovacion') == '') {
 				$answerJson = array("answer" => false,
 									"respuesta" => 'Falta innovacion');
-            	echo json_encode($answerJson);
-            	exit;
-			}elseif ($this->getUsuarioParam('integracion') == '') {
-				$answerJson = array("answer" => false,
-									"respuesta" => 'Falta integracion');
-            	echo json_encode($answerJson);
-            	exit;
-			}elseif ($this->getUsuarioParam('integridad') == '') {
-				$answerJson = array("answer" => false,
-									"respuesta" => 'Falta integridad');
             	echo json_encode($answerJson);
             	exit;
 			}elseif ($this->getUsuarioParam('historia') == '') {
@@ -298,7 +289,7 @@
 			    $nombre = $file["name"];
 			    $tipo = $file["type"];
 			    $ruta_provisional = $file["tmp_name"];
-			    $carpeta = ROOT.'public/img/carpeta/';
+			    $carpeta = ROOT.'public/img/';
 			    
 			    if ($tipo != 'image/jpg' && $tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/gif')
 			    {
@@ -312,7 +303,7 @@
 			    	$renames = time().'.'.$ext;
 			    	$src = $carpeta.$renames;
 			        move_uploaded_file($ruta_provisional, $src);
-			        $ruta_img = BASE_URL.'public/img/carpeta/'.$renames;
+			        $ruta_img = BASE_URL.'public/img/'.$renames;
 
 			        $answerJson = array("answer" => true,
 										"respuesta" => '<div class="logo"><img class="img-logo" src="'.$ruta_img.'"></div>',
@@ -326,7 +317,7 @@
 			    	$renames = time().'.'.$ext;
 			        $src = $carpeta.$renames;
 			        move_uploaded_file($ruta_provisional, $src);
-			    	$ruta_img = BASE_URL.'public/img/carpeta/'.$renames;
+			    	$ruta_img = BASE_URL.'public/img/'.$renames;
 
 			        $answerJson = array("answer" => true,
 										"respuesta" => '<div class="logo"><img class="img-logo" src="'.$ruta_img.'"></div>',
@@ -367,16 +358,6 @@
 			}elseif ($this->getUsuarioParam('editar_innovacion') == '') {
 				$answerJson = array("answer" => false,
 									"respuesta" => 'Falta innovacion');
-            	echo json_encode($answerJson);
-            	exit;
-			}elseif ($this->getUsuarioParam('editar_integracion') == '') {
-				$answerJson = array("answer" => false,
-									"respuesta" => 'Falta integracion');
-            	echo json_encode($answerJson);
-            	exit;
-			}elseif ($this->getUsuarioParam('editar_integridad') == '') {
-				$answerJson = array("answer" => false,
-									"respuesta" => 'Falta integridad');
             	echo json_encode($answerJson);
             	exit;
 			}elseif ($this->getUsuarioParam('editar_historia') == '') {
@@ -718,7 +699,7 @@
 		}
 
 
-		public function ajaxEditarTags($idtags)
+		public function ajaxEditartags($idtags)
 		{
 			if (!Session::get('autenticado')) {
 				$this->redireccionar();
@@ -735,11 +716,343 @@
 			
 		}
 
-		public function registrarimagenes()
+		public function agregartags()
 		{
-			
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('select_id_editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan tags');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+			$row = $this->_dashboard->editarListaTags(
+					$this->getUsuarioParam('editar_tag'),
+					$this->getUsuarioParam('select_id_editar_tag')
+				);
+
+			$answerJson = array("answer" => true,
+								"respuesta" => 'Se han modificado los tags de su producto'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+            }
+		}
+//imagen de producto
+		public function registrarimagen()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if (isset($_FILES["input_img_producto"]))
+			{
+			    $file = $_FILES["input_img_producto"];
+			    $nombre = $file["name"];
+			    $tipo = $file["type"];
+			    $ruta_provisional = $file["tmp_name"];
+			    $carpeta = ROOT.'public/img/productos/';
+			    $ruta_img = BASE_URL.'public/img/productos/'.$nombre;
+			    
+			    if ($tipo != 'image/jpg' && $tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/gif')
+			    {
+			    	$answerJson = array("answer" => false,
+										"respuesta" => 'Error, el archivo no es una imagen');
+	            	echo json_encode($answerJson);
+			    }else{
+			        $array_extension = explode('.', $nombre);
+			    	$ext = array_pop($array_extension);
+			    	$renames = time().'.'.$ext;
+			        $src = $carpeta.$renames;
+			        move_uploaded_file($ruta_provisional, $src);
+			    	$ruta_img = BASE_URL.'public/img/productos/'.$renames;
+			    		
+			    	$answerJson = array("answer" => true,
+										"respuesta" => 'Se ha guardado la imagen correctamente',
+										"responseinput" => '<input class="file-path validate" value="'.$renames.'" type="text" placeholder="Foto producto" name="file_img_producto">');
+	            	echo json_encode($answerJson);
+	            	exit;
+			    }
+			}
+
 		}
 
+		public function registrarnameimg()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('file_img_producto') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Busca una imagen para el producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('select_nuevo_producto') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+			$row = $this->_dashboard->registrarNameProducto(
+					$this->getUsuarioParam('file_img_producto'),
+					$this->getUsuarioParam('select_nuevo_producto')
+				);
+
+			$answerJson = array("answer" => true,
+								"respuesta" => 'Se guardo la relacion correctamente'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+            }
+		}
+
+		public function editarfotoproducto()
+		{
+			
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('file_img_producto') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Busca una imagen para el producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('select_nuevo_foto_producto') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+			$row = $this->_dashboard->editarNameProducto(
+					$this->getUsuarioParam('file_img_producto'),
+					$this->getUsuarioParam('select_nuevo_foto_producto')
+				);
+
+			$answerJson = array("answer" => true,
+								"respuesta" => 'Se guardo la relacion correctamente'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+            }
+
+		}
+
+// fin imagen de producto
+
+		public function registrarimagenproducto()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if (isset($_FILES["input_img_producto_editar"]))
+			{
+			    $file = $_FILES["input_img_producto_editar"];
+			    $nombre = $file["name"];
+			    $tipo = $file["type"];
+			    $ruta_provisional = $file["tmp_name"];
+			    $carpeta = ROOT.'public/img/productos/';
+			    $ruta_img = BASE_URL.'public/img/productos/'.$nombre;
+			    
+			    if ($tipo != 'image/jpg' && $tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/gif')
+			    {
+			    	$answerJson = array("answer" => false,
+										"respuesta" => 'Error, el archivo no es una imagen');
+	            	echo json_encode($answerJson);
+			    }else{
+			        $array_extension = explode('.', $nombre);
+			    	$ext = array_pop($array_extension);
+			    	$renames = time().'.'.$ext;
+			        $src = $carpeta.$renames;
+			        move_uploaded_file($ruta_provisional, $src);
+			    	$ruta_img = BASE_URL.'public/img/productos/'.$renames;
+			    				    	
+			    	$answerJson = array("answer" => true,
+										"respuesta" => 'Se ha guardado la imagen correctamente',
+										"responseinput" => '<input class="file-path validate" value="'.$renames.'" type="text" placeholder="Foto producto" name="file_img_producto">');
+	            	echo json_encode($answerJson);
+	            	exit;
+			    }
+			}
+
+		}
+
+//inicio blog nuevo
+
+		public function registrararticulo()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('blog_nuevo_tema') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Falata tema');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('blog_nuevo_autor') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan autor');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('blog_nuevo_titulo') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan titulo');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('blog_nuevo_contenido') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan contenido');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+				$this->_dashboard->registrarBlog(
+					$this->getUsuarioParam('blog_nuevo_titulo'),
+					$this->getUsuarioParam('blog_nuevo_contenido'),
+					$this->getUsuarioParam('blog_nuevo_autor'),
+					$this->getUsuarioParam('blog_nuevo_tema')
+				);
+
+			$answerJson = array("answer" => true,
+								"respuesta" => 'Se guardo el articulo exitosamente'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+            }
+		}
+
+//fin blog nuevo
+
+//incio blog editar
+
+		public function editararticulo($value='')
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('select_id_editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan tags');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan tags');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan tags');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan tags');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+			$row = $this->_dashboard->editarListaTags(
+					$this->getUsuarioParam('editar_tag'),
+					$this->getUsuarioParam('select_id_editar_tag')
+				);
+
+			$answerJson = array("answer" => true,
+								"respuesta" => 'Se han modificado los tags de su producto'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+            }
+		}
+
+//fin blog editar
+
+//incio blog asociar
+
+		public function asocialprodutoarticulo()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('select_id_editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan tags');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+			$row = $this->_dashboard->editarListaTags(
+					$this->getUsuarioParam('editar_tag'),
+					$this->getUsuarioParam('select_id_editar_tag')
+				);
+
+			$answerJson = array("answer" => true,
+								"respuesta" => 'Se han modificado los tags de su producto'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+            }
+		}
+//fin blog aociar
+
+//incio blog eliminar
+
+		public function eliminararticulo()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('select_id_editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Fatan tags');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+			$row = $this->_dashboard->editarListaTags(
+					$this->getUsuarioParam('editar_tag'),
+					$this->getUsuarioParam('select_id_editar_tag')
+				);
+
+			$answerJson = array("answer" => true,
+								"respuesta" => 'Se han modificado los tags de su producto'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+            }
+		}
+//fin blog eliminar
 	}
 
 ?>

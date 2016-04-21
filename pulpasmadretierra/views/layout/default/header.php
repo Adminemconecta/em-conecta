@@ -38,7 +38,7 @@
 
 <section class="titulo-publica">
   <div class="logo">
-    <img class="img-logo" src="<?php echo BASE_URL.'public/img/madretierraTrans-compressor.png' ?>">
+    <img class="img-logo" src="<?php if( count($this->logoname) != 0){echo BASE_URL.'public/img/'.$this->logoname[0]['portafolio_logo_name'];}else{echo BASE_URL.'public/img/food-healthy-meal-grain-compressor.jpg';}  ?>">
   </div>
   <h2 title="Pulpas Madre Tierra" class="white-text text-header center-align"><span>Pulpas Madre Tierra</span></h2>
   <h3 class="title_inferior" title="<?php  if(isset($this->titulo)) echo $this->titulo; ?>"><?php  if(isset($this->titulo)) echo $this->titulo; ?></h3>

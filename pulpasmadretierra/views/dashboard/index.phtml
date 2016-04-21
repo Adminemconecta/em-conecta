@@ -206,7 +206,7 @@
 		 				<?php 
 		 				if (isset($this->portafolio[0]['portafolio_logo_name'])) {
 		 					if ($this->portafolio[0]['portafolio_logo_name'] != '') {?>
-		 						<div class="logo"><img class="img-logo" src="<?php echo BASE_URL.'public/img/carpeta/'.$this->portafolio[0]['portafolio_logo_name'] ?>"></div>
+		 						<div class="logo"><img class="img-logo" src="<?php echo BASE_URL.'public/img/'.$this->portafolio[0]['portafolio_logo_name'] ?>"></div>
 		 					<?php }
 		 				}?>
 		 			</div>
@@ -608,7 +608,7 @@
 					    	<div class="row">
 							    <form id="editar_list_tags" class="col s12">
 							      <div class="input-field col s12">
-								    <select id="editar_producto_select_tag" name="select_editar_tag">
+								    <select id="editar_producto_select_tag" name="select_id_editar_tag">
 								      <option value="" disabled selected>Seleccione un producto</option>
 								      <?php for ($f=0; $f < count($this->productos); $f++) { ?>
 								      		<option value="<?php echo $this->productos[$f]['idproducto']; ?>"><?php echo $this->productos[$f]['producto_nombre']; ?></option>
@@ -648,52 +648,53 @@
 					    </div>
 					    <div id="foto_nuevo" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="form_fotos_producto" class="col s12">
 							      <div class="file-field input-field">
 								      <div class="btn">
 								        <span>Archivo</span>
-								        <input type="file" multiple>
+								        <input id="input_img_producto" type="file" multiple name="input_img_producto">
 								      </div>
-								      <div class="file-path-wrapper">
-								        <input class="file-path validate" type="text" placeholder="Foto producto">
+								      <div id="new_input_fille" class="file-path-wrapper">
+								        <input class="file-path validate" type="text" placeholder="Foto producto" name="file_img_producto">
 								      </div>
 								  </div>
 							      <div class="input-field col s12">
-								    <select id="editar_producto_select_tag" name="select_editar_tag">
+								    <select id="editar_producto_select_tag" name="select_nuevo_producto">
 								      <option value="" disabled selected>Seleccione un producto</option>
 								      <?php for ($f=0; $f < count($this->productos); $f++) { ?>
 								      		<option value="<?php echo $this->productos[$f]['idproducto']; ?>"><?php echo $this->productos[$f]['producto_nombre']; ?></option>
 								      <?php } ?>
 								    </select>
 								  </div>
+								  <button class="col s12 btn waves-effect black-text white" type="submit">guardar</button>
 							    </form>
 							</div>
 					    </div>
 					    <div id="foto_dos" class="col s12">
 					    	<div class="row">
-							    <form class="col s12">
+							    <form id="form_editar_img_producto" class="col s12">
 							      <div class="file-field input-field">
 								      <div class="btn">
 								        <span>Archivo</span>
-								        <input type="file" multiple>
+								        <input id="input_img_producto_editar" type="file" multiple name="input_img_producto_editar">
 								      </div>
-								      <div class="file-path-wrapper">
-								        <input class="file-path validate" type="text" placeholder="Foto producto">
+								      <div id="newinput_fille" class="file-path-wrapper">
+								        <input class="file-path validate" type="text" placeholder="Foto producto" name="file_img_producto">
 								      </div>
 								  </div>
 							      <div class="input-field col s12">
-								    <select>
+								    <select id="editar_producto_select_tag" name="select_nuevo_foto_producto">
 								      <option value="" disabled selected>Seleccione un producto</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								      <?php for ($f=0; $f < count($this->productos); $f++) { ?>
+								      		<option value="<?php echo $this->productos[$f]['idproducto']; ?>"><?php echo $this->productos[$f]['producto_nombre']; ?></option>
+								      <?php } ?>
 								    </select>
 								  </div>
+								  <button class="col s12 btn waves-effect black-text white" type="submit">editar</button>
 							    </form>
 							</div>
 					    </div>
 					</div>
-        
 		 			
 		 		</div>
 		 	</div>
@@ -716,89 +717,99 @@
 					      </ul>
 					    </div>
 					    <div id="blog_nuevo" class="col s12">
-
-					      	<div class="row">
-						        <div class="input-field col s12">
-						          <input id="icon_prefix" type="text" class="validate">
-						          <label for="icon_prefix">Titulo</label>
+					    	<form id="form_nuevo_blog">
+						        <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate" name="blog_nuevo_tema">
+							          <label for="icon_prefix">Tema</label>
+							        </div>
 						        </div>
-					        </div>
-					        <div class="row">
-						        <div class="input-field col s12">
-						          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-						          <label for="icon_prefix2">Contenido</label>
+							  	<div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate" name="blog_nuevo_autor">
+							          <label for="icon_prefix">Autor</label>
+							        </div>
 						        </div>
-						  	</div>
-						  	<div class="row">
-						        <div class="input-field col s12">
-						          <input id="icon_prefix" type="text" class="validate">
-						          <label for="icon_prefix">Autor</label>
+						      	<div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate" name="blog_nuevo_titulo">
+							          <label for="icon_prefix">Titulo</label>
+							        </div>
 						        </div>
-					        </div>
-					        <div class="row">
-						        <div class="input-field col s12">
-						          <input id="icon_prefix" type="text" class="validate">
-						          <label for="icon_prefix">Tema</label>
-						        </div>
-					        </div>
-
+						        <div class="row">
+							        <div class="input-field col s12">
+							          <textarea id="icon_prefix2" class="materialize-textarea" name="blog_nuevo_contenido"></textarea>
+							          <label for="icon_prefix2">Contenido</label>
+							        </div>
+							  	</div>
+							  	<button class="col s12 btn waves-effect black-text white" type="submit">guardar</button>
+					        </form>
 					    </div>
 
 					    <div id="blog_editar" class="col s12">
-					    	<div class="row">
-						        <div class="input-field col s12">
-						          <input id="icon_prefix" type="text" class="validate">
-						          <label for="icon_prefix">Titulo</label>
+					    	<form id="form_editar_blog">
+						        <div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate" name="blog_editar_tema">
+							          <label for="icon_prefix">Tema</label>
+							        </div>
 						        </div>
-					        </div>
-					        <div class="row">
-						        <div class="input-field col s12">
-						          <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-						          <label for="icon_prefix2">Contenido</label>
+							  	<div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate" name="blog_editar_autor">
+							          <label for="icon_prefix">Autor</label>
+							        </div>
 						        </div>
-						  	</div>
-						  	<div class="row">
-						        <div class="input-field col s12">
-						          <input id="icon_prefix" type="text" class="validate">
-						          <label for="icon_prefix">Autor</label>
+						    	<div class="row">
+							        <div class="input-field col s12">
+							          <input id="icon_prefix" type="text" class="validate" name="blog_editar_titulo">
+							          <label for="icon_prefix">Titulo</label>
+							        </div>
 						        </div>
-					        </div>
-					        <div class="row">
-						        <div class="input-field col s12">
-						          <input id="icon_prefix" type="text" class="validate">
-						          <label for="icon_prefix">Tema</label>
-						        </div>
-					        </div>
+						        <div class="row">
+							        <div class="input-field col s12">
+							          <textarea id="icon_prefix2" class="materialize-textarea" name="blog_editar_contenido"></textarea>
+							          <label for="icon_prefix2">Contenido</label>
+							        </div>
+							  	</div>
+							  	<button class="col s12 btn waves-effect black-text white" type="submit">editar</button>
+					        </form>
 					    </div>
 
 					    <div id="blog_asociar" class="col s12">
-					    	<div class="input-field col s12">
-							    <select>
-							      <option value="" disabled selected>Seleccione un producto</option>
-							      <option value="1">Option 1</option>
-							      <option value="2">Option 2</option>
-							      <option value="3">Option 3</option>
-							    </select>
-							</div>
-							<div class="input-field col s12">
-							    <select>
-							      <option value="" disabled selected>Seleccione un producto</option>
-							      <option value="1">Option 1</option>
-							      <option value="2">Option 2</option>
-							      <option value="3">Option 3</option>
-							    </select>
-							</div>
+					    	<form>
+						    	<div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un producto</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								</div>
+								<div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un producto</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								</div>
+								<button class="col s12 btn waves-effect black-text white" type="submit">asociar</button>
+							</form>
 					    </div>
 
 					    <div id="blog_eliminar" class="col s12">
-					    	<div class="input-field col s12">
-							    <select>
-							      <option value="" disabled selected>Seleccione un producto</option>
-							      <option value="1">Option 1</option>
-							      <option value="2">Option 2</option>
-							      <option value="3">Option 3</option>
-							    </select>
-							</div>
+					    	<form id="form_eliminar">
+						    	<div class="input-field col s12">
+								    <select>
+								      <option value="" disabled selected>Seleccione un producto</option>
+								      <option value="1">Option 1</option>
+								      <option value="2">Option 2</option>
+								      <option value="3">Option 3</option>
+								    </select>
+								</div>
+								<button class="col s12 btn waves-effect black-text white" type="submit">eliminar</button>
+							</form>
 					    </div>
 					</div>
         

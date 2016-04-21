@@ -324,6 +324,77 @@
 				);
 		}
 
+
+		public function editarListaTags($tags_lsitado_tags, $producto_idproducto)
+		{
+			$this->_db->prepare("UPDATE tags 
+									SET tags_lsitado_tags = :tags_lsitado_tags
+									WHERE producto_idproducto = :producto_idproducto")
+
+			->execute(
+					array(
+							':tags_lsitado_tags' => $tags_lsitado_tags,
+							':producto_idproducto' => $producto_idproducto
+						)
+				);	
+		}
+
+		public function registrarNameProducto($fotos_name, $producto_idproducto)
+		{
+			$this->_db->prepare("INSERT INTO fotos VALUES  (null, 
+																:fotos_name,
+																:producto_idproducto
+																)")
+			->execute(
+					array(
+							':fotos_name' => $fotos_name,
+							':producto_idproducto' => $producto_idproducto
+						)
+				);
+		}
+
+		public function editarNameProducto($fotos_name, $producto_idproducto)
+		{
+			$this->_db->prepare("UPDATE fotos 
+									SET fotos_name = :fotos_name
+									WHERE producto_idproducto = :producto_idproducto")
+			
+			->execute(
+					array(
+							':fotos_name' => $fotos_name,
+							':producto_idproducto' => $producto_idproducto
+						)
+				);
+		}
+
+		public function registrarBlog($blog_titlulo, 
+										$blog_contenido, 
+										$blog_autor, 
+										$blog_tema
+										)
+		{
+
+			date_default_timezone_set('America/Bogota');
+			$blog_fecha_pub = date("Y-m-d");
+			
+			$this->_db->prepare("INSERT INTO blog VALUES  (null, 
+																:blog_titlulo, 
+																:blog_contenido,
+																:blog_fecha_pub,
+																:blog_autor, 
+																:blog_tema,
+																null
+																)")
+			->execute(
+					array(
+							':blog_titlulo' => $blog_titlulo,
+							':blog_contenido' => $blog_contenido,
+							':blog_fecha_pub'=> $blog_fecha_pub,
+							':blog_autor' => $blog_autor,
+							':blog_tema' => $blog_tema
+						)
+				);
+		}
 	}
 	
 ?>

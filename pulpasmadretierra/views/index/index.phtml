@@ -1,11 +1,11 @@
 <div class="container-info row container">
-	<?php for ($i=0; $i < 3; $i++) { ?>
+	<?php for ($i=0; $i < count($this->productos); $i++) { ?>
 		<div class="container-pading col s12 m6 l4">
 			<div class="card">
-				<div title="<?php echo "pulpas antioxidantes"; ?>" class="Titulo-articulo center-align" >Pulpas antioxidantes</div>
-				<div title="<?php echo "valor"; ?>" class="title-valor center-align">$10.000</div>
+				<div title="<?php echo $this->productos[$i]['producto_nombre']; ?>" class="Titulo-articulo center-align" ><?php echo $this->productos[$i]['producto_nombre']; ?></div>
+				<div title="<?php echo $this->productos[$i]['producto_valor']; ?>" class="title-valor center-align"><?php echo $this->productos[$i]['producto_valor'] ?></div>
 			  	<div class="container-item-img" >
-					<img title="<?php echo "nombre-foto"; ?>" alt="Nombre de la foto" class="img-item" src="<?php echo BASE_URL.'public/img/pexels-photo-54370-compressor.jpeg' ?>">
+					<img title="<?php echo $this->productos[$i]['producto_nombre']; ?>" alt="<?php echo $this->productos[$i]['producto_nombre']; ?>" class="img-item" src="<?php echo BASE_URL.'public/img/productos/'.$this->productos[$i]['fotos_name'] ?>">
 				</div>
 				<div class="card-content">
 				  	<div class="activator center-align padding-arrow">
@@ -14,7 +14,7 @@
 				</div>
 				<div class="card-reveal">
 				  <span title="Caracteristicas" class="card-title grey-text text-darken-4"><strong>Caracteristicas</strong><i class="icon-keyboard_arrow_down right"></i></span>
-				  <p></p>
+				  <p><?php echo $this->productos[$i]['producto_descripcion'] ?></p>
 				</div>
 			</div>
 		</div>
