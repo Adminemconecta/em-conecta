@@ -1431,3 +1431,372 @@ $(document).ready(function(){
         
     })
 });
+
+$(document).ready(function(){
+
+      $('#select_editar_blog').on('change', function(e) {
+        e.preventDefault();
+
+        var data = $(this).val();
+        $.ajax({
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            url: _BASE_URL+'dashboard/cargararticulo/'+data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $('.progresbar').fadeOut('fast');
+                    $('#blog_editar_tema').html(response.tema);
+                    $('#blog_editar_autor').html(response.autor);
+                    $('#blog_editar_titulo').html(response.titulo);
+                    $('#blog_editar_contenido').html(response.contenido);
+               }else{
+                    alert("a ocurrido un error contacte al administrador");
+               };
+                
+            },
+
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+$(document).ready(function(){
+      $('#form_editar_blog').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/editararticulo',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_editar_blog").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+$(document).ready(function(){
+      $('#form_asociacion_producto_blog').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/asocialprodutoarticulo',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_asociacion_producto_blog").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+$(document).ready(function(){
+      $('#form_eliminar').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/eliminararticulo',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_eliminar").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+
+$(document).ready(function(){
+
+        $("input[name='fille_foto_articulo']").on("change", function(){
+
+            var formData = new FormData($("#form_foto_articulo")[0]);
+            var ruta = _BASE_URL+'dashboard/fotoarticulonuevo';
+
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                dataType: 'JSON',
+                data: formData,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('.progresbar').fadeIn('fast');
+                },
+                success: function(response)
+                {
+                    if (response.answer) {
+                        $(".mensajeAjax").fadeIn("clip");
+                        $(".msnAjax").html(response.respuesta);
+                        $("#input_file_article_js").html(response.responseinput);
+                        $('.progresbar').fadeOut('fast');
+                        $("#mensajeAjax").fadeAjax();
+                        $("#editar_form_portafolio").resetear();
+                    }
+                   
+                }
+            });
+           
+        });
+
+});
+
+
+$(document).ready(function(){
+      $('#form_foto_articulo').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/registrarnameimagenes',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_foto_articulo").resetear();
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});

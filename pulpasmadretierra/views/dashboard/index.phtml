@@ -748,26 +748,34 @@
 
 					    <div id="blog_editar" class="col s12">
 					    	<form id="form_editar_blog">
+					    		<div class="input-field col s12">
+								    <select id="select_editar_blog" name="select_editar_articulo">
+								      <option value="" disabled selected>Seleccione un tema</option>
+								      <?php for ($f=0; $f < count($this->articulos); $f++) { ?>
+								      	<option value="<?php echo $this->articulos[$f]['idblog']?>"><?php echo $this->articulos[$f]['blog_titlulo']?></option>
+								     <?php } ?>
+								    </select>
+								</div>
 						        <div class="row">
-							        <div class="input-field col s12">
+							        <div id="blog_editar_tema" class="input-field col s12">
 							          <input id="icon_prefix" type="text" class="validate" name="blog_editar_tema">
 							          <label for="icon_prefix">Tema</label>
 							        </div>
 						        </div>
 							  	<div class="row">
-							        <div class="input-field col s12">
+							        <div id="blog_editar_autor" class="input-field col s12">
 							          <input id="icon_prefix" type="text" class="validate" name="blog_editar_autor">
 							          <label for="icon_prefix">Autor</label>
 							        </div>
 						        </div>
 						    	<div class="row">
-							        <div class="input-field col s12">
+							        <div id="blog_editar_titulo" class="input-field col s12">
 							          <input id="icon_prefix" type="text" class="validate" name="blog_editar_titulo">
 							          <label for="icon_prefix">Titulo</label>
 							        </div>
 						        </div>
 						        <div class="row">
-							        <div class="input-field col s12">
+							        <div id="blog_editar_contenido" class="input-field col s12">
 							          <textarea id="icon_prefix2" class="materialize-textarea" name="blog_editar_contenido"></textarea>
 							          <label for="icon_prefix2">Contenido</label>
 							        </div>
@@ -777,21 +785,21 @@
 					    </div>
 
 					    <div id="blog_asociar" class="col s12">
-					    	<form>
+					    	<form id="form_asociacion_producto_blog">
 						    	<div class="input-field col s12">
-								    <select>
-								      <option value="" disabled selected>Seleccione un producto</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								    <select id="select_asociar_blog" name="select_asociar_articulo">
+								      <option value="" disabled selected>Seleccione un tema</option>
+								      <?php for ($g=0; $g < count($this->articulos); $g++) { ?>
+								      	<option value="<?php echo $this->articulos[$g]['idblog']?>"><?php echo $this->articulos[$g]['blog_titlulo']?></option>
+								     <?php } ?>
 								    </select>
 								</div>
 								<div class="input-field col s12">
-								    <select>
+								    <select id="producto_select_asociar_blog" name="select_nueva_asociacion">
 								      <option value="" disabled selected>Seleccione un producto</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								      <?php for ($h=0; $h < count($this->productos); $h++) { ?>
+								      		<option value="<?php echo $this->productos[$h]['idproducto']; ?>"><?php echo $this->productos[$h]['producto_nombre']; ?></option>
+								      <?php } ?>
 								    </select>
 								</div>
 								<button class="col s12 btn waves-effect black-text white" type="submit">asociar</button>
@@ -801,11 +809,11 @@
 					    <div id="blog_eliminar" class="col s12">
 					    	<form id="form_eliminar">
 						    	<div class="input-field col s12">
-								    <select>
-								      <option value="" disabled selected>Seleccione un producto</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
+								    <select id="select_asociar_blog" name="select_eliminar_articulo">
+								      <option value="" disabled selected>Seleccione un tema</option>
+								      <?php for ($j=0; $j < count($this->articulos); $j++) { ?>
+								      	<option value="<?php echo $this->articulos[$j]['idblog']?>"><?php echo $this->articulos[$j]['blog_titlulo']?></option>
+								     <?php } ?>
 								    </select>
 								</div>
 								<button class="col s12 btn waves-effect black-text white" type="submit">eliminar</button>
@@ -832,24 +840,28 @@
 					        <li class="tab col s3"><a href="#editar_blog_foto">Editar</a></li>
 					      </ul>
 					    </div>
+
 					    <div id="nuevo_blog_foto" class="col s12">
-					    	<div class="file-field input-field">
-						      <div class="btn">
-						        <span>Archivo</span>
-						        <input type="file" multiple>
-						      </div>
-						      <div class="file-path-wrapper">
-						        <input class="file-path validate" type="text" placeholder="Foto blog">
-						      </div>
-						    </div>
-						    <div class="input-field col s12">
-							    <select>
-							      <option value="" disabled selected>Seleccione un articulo</option>
-							      <option value="1">Option 1</option>
-							      <option value="2">Option 2</option>
-							      <option value="3">Option 3</option>
-							    </select>
-							</div>
+					    	<form id="form_foto_articulo">
+						    	<div class="file-field input-field">
+							      <div class="btn">
+							        <span>Archivo</span>
+							        <input id="fille_foto_articulo" name="fille_foto_articulo" type="file" multiple>
+							      </div>
+							      <div id="input_file_article_js" class="file-path-wrapper">
+							        <input name="text_fille_foto_articulo" class="file-path validate" type="text" placeholder="Foto blog">
+							      </div>
+							    </div>
+							    <div class="input-field col s12">
+								    <select id="select_foto_blog" name="select_foto_nuevo_articulo">
+								      <option value="" disabled selected>Seleccione un tema</option>
+								      <?php for ($j=0; $j < count($this->articulos); $j++) { ?>
+								      	<option value="<?php echo $this->articulos[$j]['idblog']?>"><?php echo $this->articulos[$j]['blog_titlulo']?></option>
+								     <?php } ?>
+								    </select>
+								</div>
+								<button class="col s12 btn waves-effect black-text white" type="submit">asociar</button>
+							</form>
 					    </div>
 					    <div id="editar_blog_foto" class="col s12">
 					    	<div class="file-field input-field">

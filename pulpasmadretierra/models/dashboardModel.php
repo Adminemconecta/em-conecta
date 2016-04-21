@@ -395,6 +395,84 @@
 						)
 				);
 		}
+
+		public function getArticulos()
+		{
+			$datos = $this->_db->query("SELECT * FROM blog");
+			return $datos->fetchall();
+		}
+
+		public function getarticulo($idblog)
+		{
+			$datos = $this->_db->query("SELECT * FROM blog WHERE idblog = $idblog");
+			return $datos->fetch();
+		}
+
+		public function editarArticulo($blog_titlulo,
+										$blog_contenido,
+										$blog_autor,
+										$blog_tema,
+										$idblog
+			)
+		{
+			date_default_timezone_set('America/Bogota');
+			$blog_fecha_pub = date("Y-m-d");
+
+			$this->_db->prepare("UPDATE blog 
+									SET blog_titlulo = :blog_titlulo,
+										blog_contenido = :blog_contenido,
+										blog_fecha_pub = :blog_fecha_pub,
+										blog_autor = :blog_autor,
+										blog_tema = :blog_tema
+									WHERE idblog = :idblog")
+			
+			->execute(
+					array(
+							':blog_titlulo' => $blog_titlulo,
+							':blog_contenido' => $blog_contenido,
+							':blog_fecha_pub' => $blog_fecha_pub,
+							':blog_autor' => $blog_autor,
+							':blog_tema' => $blog_tema,
+							':idblog' => $idblog
+						)
+				);
+		}
+
+		public function asociarBlogProducto($idblog,
+											$producto_idproducto
+				)
+		{
+			$this->_db->prepare("UPDATE blog 
+									SET producto_idproducto = :producto_idproducto
+									WHERE idblog = :idblog")
+			->execute(
+					array(
+							':producto_idproducto' => $producto_idproducto,
+							':idblog' => $idblog
+						)
+				);
+		}
+
+		public function deletearticulo($idblog)
+		{
+			$this->_db->query("DELETE FROM blog WHERE idblog = $idblog");
+		}
+
+		public function registrarFotoArticulo($fotos_name, $producto_idproducto)
+		{
+			$this->_db->prepare("INSERT INTO fotos VALUES  (null, 
+																	
+																fotos_blog_nombre
+																:producto_idproducto
+																
+																)")
+			->execute(
+					array(
+							':blog_idblog' => $blog_idblog,
+							':blog_idblog' => $blog_idblog
+						)
+				);
+		}
 	}
 	
 ?>

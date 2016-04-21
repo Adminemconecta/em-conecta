@@ -23,6 +23,7 @@
 			$this->_view->portafolio = $this->_dashboard->getPortafolio();
 			$this->_view->tiposproductos = $this->_dashboard->getTipoProducto();
 			$this->_view->productos = $this->_dashboard->getProductos();
+			$this->_view->articulos = $this->_dashboard->getArticulos();
 
 			$this->_view->titulo = 'Dashboard';
 			$this->_view->setCss(array('index'));
@@ -938,46 +939,66 @@
 
 //incio blog editar
 
-		public function editararticulo($value='')
+		public function cargararticulo($idblog)
 		{
 			if (!Session::get('autenticado')) {
 				$this->redireccionar();
 			}
+			
+			$row = $this->_dashboard->getarticulo($idblog);
+			
+			$answerJson = array("answer" => true,
+								"tema" => '<input id="icon_prefix" type="text" class="validate" value="'.$row['blog_tema'].'" name="blog_editar_tema"><label class="active" for="icon_prefix">Tema</label>',
+								"autor" => '<input id="icon_prefix" type="text" class="validate" value="'.$row['blog_autor'].'" name="blog_editar_autor"><label class="active" for="icon_prefix">Autor</label>',
+								"titulo" => '<input id="icon_prefix" type="text" class="validate" value="'.$row['blog_titlulo'].'" name="blog_editar_titulo"><label class="active" for="icon_prefix">Titulo</label>',
+								"contenido" => '<textarea id="icon_prefix2" class="materialize-textarea" name="blog_editar_contenido">'.$row['blog_contenido'].'</textarea><label class="active" for="icon_prefix2">Contenido</label>'
+								);
+        	echo json_encode($answerJson);
 
-			if ($this->getUsuarioParam('select_id_editar_tag') == '') {
+		}
+
+		public function editararticulo()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+			if ($this->getUsuarioParam('select_editar_articulo') == '') {
 				$answerJson = array("answer" => false,
-									"respuesta" => 'Selecciona un producto');
+									"respuesta" => 'Seleccione un tema');
             	echo json_encode($answerJson);
             	exit;
-			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+			}elseif ($this->getUsuarioParam('blog_editar_tema') == '') {
 				$answerJson = array("answer" => false,
-									"respuesta" => 'Fatan tags');
+									"respuesta" => 'Falata tema');
             	echo json_encode($answerJson);
             	exit;
-			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+			}elseif ($this->getUsuarioParam('blog_editar_autor') == '') {
 				$answerJson = array("answer" => false,
-									"respuesta" => 'Fatan tags');
+									"respuesta" => 'Fatan autor');
             	echo json_encode($answerJson);
             	exit;
-			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+			}elseif ($this->getUsuarioParam('blog_editar_titulo') == '') {
 				$answerJson = array("answer" => false,
-									"respuesta" => 'Fatan tags');
+									"respuesta" => 'Fatan titulo');
             	echo json_encode($answerJson);
             	exit;
-			}elseif ($this->getUsuarioParam('editar_tag') == '') {
+			}elseif ($this->getUsuarioParam('blog_editar_contenido') == '') {
 				$answerJson = array("answer" => false,
-									"respuesta" => 'Fatan tags');
+									"respuesta" => 'Fatan contenido');
             	echo json_encode($answerJson);
             	exit;
 			}else{
 
-			$row = $this->_dashboard->editarListaTags(
-					$this->getUsuarioParam('editar_tag'),
-					$this->getUsuarioParam('select_id_editar_tag')
+			$row = $this->_dashboard->editarArticulo(
+					$this->getUsuarioParam('blog_editar_titulo'),
+					$this->getUsuarioParam('blog_editar_contenido'),
+					$this->getUsuarioParam('blog_editar_autor'),
+					$this->getUsuarioParam('blog_editar_tema'),
+					$this->getUsuarioParam('select_editar_articulo')
 				);
 
 			$answerJson = array("answer" => true,
-								"respuesta" => 'Se han modificado los tags de su producto'
+								"respuesta" => 'Se ha editado el articulo con exito'
 					);
             	echo json_encode($answerJson);
             	exit;
@@ -994,25 +1015,25 @@
 				$this->redireccionar();
 			}
 
-			if ($this->getUsuarioParam('select_id_editar_tag') == '') {
+			if ($this->getUsuarioParam('select_asociar_articulo') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un tema');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('select_nueva_asociacion') == '') {
 				$answerJson = array("answer" => false,
 									"respuesta" => 'Selecciona un producto');
             	echo json_encode($answerJson);
             	exit;
-			}elseif ($this->getUsuarioParam('editar_tag') == '') {
-				$answerJson = array("answer" => false,
-									"respuesta" => 'Fatan tags');
-            	echo json_encode($answerJson);
-            	exit;
 			}else{
 
-			$row = $this->_dashboard->editarListaTags(
-					$this->getUsuarioParam('editar_tag'),
-					$this->getUsuarioParam('select_id_editar_tag')
+				 $this->_dashboard->asociarBlogProducto(
+					$this->getUsuarioParam('select_asociar_articulo'),
+					$this->getUsuarioParam('select_nueva_asociacion')
 				);
 
 			$answerJson = array("answer" => true,
-								"respuesta" => 'Se han modificado los tags de su producto'
+								"respuesta" => 'Se han asociado correctamente'
 					);
             	echo json_encode($answerJson);
             	exit;
@@ -1028,31 +1049,94 @@
 				$this->redireccionar();
 			}
 
-			if ($this->getUsuarioParam('select_id_editar_tag') == '') {
+			if ($this->getUsuarioParam('select_eliminar_articulo') == '') {
 				$answerJson = array("answer" => false,
-									"respuesta" => 'Selecciona un producto');
-            	echo json_encode($answerJson);
-            	exit;
-			}elseif ($this->getUsuarioParam('editar_tag') == '') {
-				$answerJson = array("answer" => false,
-									"respuesta" => 'Fatan tags');
+									"respuesta" => 'Selecciona un articulo');
             	echo json_encode($answerJson);
             	exit;
 			}else{
 
-			$row = $this->_dashboard->editarListaTags(
-					$this->getUsuarioParam('editar_tag'),
-					$this->getUsuarioParam('select_id_editar_tag')
+			$row = $this->_dashboard->deletearticulo(
+					$this->getUsuarioParam('select_eliminar_articulo')
 				);
 
-			$answerJson = array("answer" => true,
-								"respuesta" => 'Se han modificado los tags de su producto'
+				$answerJson = array("answer" => true,
+								"respuesta" => 'Se se elimino un articulo'
 					);
             	echo json_encode($answerJson);
             	exit;
             }
 		}
 //fin blog eliminar
+
+		public function fotoarticulonuevo()
+		{
+			if (!Session::get('autenticado')) {
+					$this->redireccionar();
+				}
+
+			if (isset($_FILES["fille_foto_articulo"]))
+			{
+			    $file = $_FILES["fille_foto_articulo"];
+			    $nombre = $file["name"];
+			    $tipo = $file["type"];
+			    $ruta_provisional = $file["tmp_name"];
+			    $carpeta = ROOT.'public/img/blog/';
+			    $ruta_img = BASE_URL.'public/img/blog/'.$nombre;
+			    
+			    if ($tipo != 'image/jpg' && $tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/gif')
+			    {
+			    	$answerJson = array("answer" => false,
+										"respuesta" => 'Error, el archivo no es una imagen');
+	            	echo json_encode($answerJson);
+			    }else{
+			        $array_extension = explode('.', $nombre);
+			    	$ext = array_pop($array_extension);
+			    	$renames = time().'.'.$ext;
+			        $src = $carpeta.$renames;
+			        move_uploaded_file($ruta_provisional, $src);
+			    	$ruta_img = BASE_URL.'public/img/blog/'.$renames;
+			    				    	
+			    	$answerJson = array("answer" => true,
+										"respuesta" => 'Se ha guardado la imagen correctamente',
+										"responseinput" => '<input name="text_fille_foto_articulo" class="file-path validate" value="'.$renames.'" type="text" placeholder="Foto blog">');
+	            	echo json_encode($answerJson);
+	            	exit;
+			    }
+			}
+		}
+
+		public function registrarnameimagenes()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('text_fille_foto_articulo') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un tema');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('select_foto_nuevo_articulo') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+				 $this->_dashboard->registrarfotosblog(
+					$this->getUsuarioParam('text_fille_foto_articulo'),
+					$this->getUsuarioParam('select_foto_nuevo_articulo')
+				);
+
+			$answerJson = array("answer" => true,
+								"respuesta" => 'Se han asociado correctamente'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+            }
+		}
 	}
+
 
 ?>
