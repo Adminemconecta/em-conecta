@@ -1,40 +1,33 @@
-<div class="container_aticle">
-	<div class="close_article"></div>
-	<div class="aticle white">
-		<div class="title_article center-align">
-			<strong>un titulo para el articulo</strong>
-		</div>
-		<div class="container_article">
-			Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
-		</div>
-		<div class="autor_article right-align">
-			<span class="icon-subtext icon-account_circle"></span> <?php echo "un autor "; ?>
-		</div>
-	</div>
-</div>
 <div class="container_blog row">
-	<?php for ($i=0; $i <  3; $i++) { ?>
+	<?php for ($i=0; $i <  count($this->blogfoto); $i++) { ?>
 		<div class="container_card_foro col s12 m6 l4">
 			<div class="container_card white z-depth-3">
 				<div class="card_foro">
 					<div class="slider">
 					    <ul class="slides">
 					      <li>
-					        <img src="<?php echo BASE_URL ?>public/img/nature-red-bush-young-compressor.jpg"> <!-- random image -->
+					        <img src="<?php echo BASE_URL. 'public/img/blog/'.$this->blogfoto[$i]['fotos_blog_nombre']?>"> <!-- random image -->
 					        <div class="caption left-align">
-					          <h4>titulo para el articulo</h4>
+					          <h4><?php echo $this->blogfoto[$i]['blog_titlulo']?></h4>
 					        </div>
 					      </li>
 					    </ul>
 					</div>
 				</div>
 				<div class="container_previw_aricle">
-					Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido
+					<?php 
+						$string = strlen ($this->blogfoto[$i]['blog_contenido']);
+						if ($string <= 400) {
+							echo $this->blogfoto[$i]['blog_contenido'];
+						}else{
+							echo substr($this->blogfoto[$i]['blog_contenido'], 0, 400) .'.... <a href="'.BASE_URL.'blog/articulo/'.$this->blogfoto[$i]['idblog'].'" id="verarticulo">Ver todo el articulo</a>';
+						}
+					?>
 				</div>
 				<div class="container_icons center-align">
-					<span class="icon-subtext icon-account_circle"></span> <?php echo "un autor "; ?>
-					<span class="icon-subtext icon-calendar2"></span> <?php echo " una fecha "; ?>
-					<span class="icon-subtext icon-clapperboard"></span><?php echo " un tema"; ?>
+					<span class="icon-subtext icon-account_circle"></span> <?php echo $this->blogfoto[$i]['blog_autor']; ?>
+					<span class="icon-subtext icon-calendar2"></span> <?php echo $this->blogfoto[$i]['blog_fecha_pub']; ?>
+					<span class="icon-subtext icon-clapperboard"></span><?php echo $this->blogfoto[$i]['blog_tema']; ?>
 				</div>
 			</div>
 		</div>

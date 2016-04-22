@@ -1124,9 +1124,77 @@
             	exit;
 			}else{
 
-				 $this->_dashboard->registrarfotosblog(
+				 $this->_dashboard->registrarFotoArticulo(
 					$this->getUsuarioParam('text_fille_foto_articulo'),
 					$this->getUsuarioParam('select_foto_nuevo_articulo')
+				);
+
+			$answerJson = array("answer" => true,
+								"respuesta" => 'Se han asociado correctamente'
+					);
+            	echo json_encode($answerJson);
+            	exit;
+            }
+		}
+
+		public function fotoarticuloeditar()
+		{
+			if (!Session::get('autenticado')) {
+					$this->redireccionar();
+				}
+
+			if (isset($_FILES["editar_foto_artiulo"]))
+			{
+			    $file = $_FILES["editar_foto_artiulo"];
+			    $nombre = $file["name"];
+			    $tipo = $file["type"];
+			    $ruta_provisional = $file["tmp_name"];
+			    $carpeta = ROOT.'public/img/blog/';
+			    $ruta_img = BASE_URL.'public/img/blog/'.$nombre;
+			    
+			    if ($tipo != 'image/jpg' && $tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/gif')
+			    {
+			    	$answerJson = array("answer" => false,
+										"respuesta" => 'Error, el archivo no es una imagen');
+	            	echo json_encode($answerJson);
+			    }else{
+			        $array_extension = explode('.', $nombre);
+			    	$ext = array_pop($array_extension);
+			    	$renames = time().'.'.$ext;
+			        $src = $carpeta.$renames;
+			        move_uploaded_file($ruta_provisional, $src);
+			    	$ruta_img = BASE_URL.'public/img/blog/'.$renames;
+			    				    	
+			    	$answerJson = array("answer" => true,
+										"respuesta" => 'Se ha guardado la imagen correctamente',
+										"responseinput" => '<input name="text_fille_editar_foto_articulo" class="file-path validate" value="'.$renames.'" type="text" placeholder="Foto blog">');
+	            	echo json_encode($answerJson);
+	            	exit;
+			    }
+			}
+		}
+
+		public function editarnameimagenes()
+		{
+			if (!Session::get('autenticado')) {
+				$this->redireccionar();
+			}
+
+			if ($this->getUsuarioParam('text_fille_editar_foto_articulo') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un tema');
+            	echo json_encode($answerJson);
+            	exit;
+			}elseif ($this->getUsuarioParam('select_foto_editar_articulo') == '') {
+				$answerJson = array("answer" => false,
+									"respuesta" => 'Selecciona un producto');
+            	echo json_encode($answerJson);
+            	exit;
+			}else{
+
+				 $this->_dashboard->editarFotoArticulo(
+					$this->getUsuarioParam('text_fille_editar_foto_articulo'),
+					$this->getUsuarioParam('select_foto_editar_articulo')
 				);
 
 			$answerJson = array("answer" => true,

@@ -66,6 +66,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_nuevo_usuario").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -201,6 +202,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#nueva_red_social").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -302,6 +304,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_portafolio").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -400,6 +403,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#editar_form_portafolio").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -501,6 +505,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_tipo_producto").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -568,6 +573,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_editar_tipo").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -635,6 +641,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_eliminar_tipo").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -704,6 +711,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_nuevo_producto").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -838,6 +846,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_editar_producto").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -908,6 +917,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_eliminar_producto").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -977,6 +987,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#nuevo_list_tags").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -1109,6 +1120,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#editar_list_tags").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -1215,6 +1227,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_fotos_producto").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -1318,6 +1331,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_editar_img_producto").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -1387,6 +1401,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_nuevo_blog").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -1518,6 +1533,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_editar_blog").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -1585,6 +1601,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_asociacion_producto_blog").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -1652,6 +1669,7 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_eliminar").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);
@@ -1756,6 +1774,109 @@ $(document).ready(function(){
                     $('.progresbar').fadeOut('fast');
                     $("#mensajeAjax").fadeAjax();
                     $("#form_foto_articulo").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
+               }else{
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+
+               };
+                
+            },
+            error: function(){
+                if (jqXHR.status === 0) {
+
+                alert('Not connect: Verify Network.');
+
+                } else if (jqXHR.status == 404) {
+
+                    alert('Requested page not found [404]');
+
+                } else if (jqXHR.status == 500) {
+
+                    alert('Internal Server Error [500].');
+
+                } else if (textStatus === 'parsererror') {
+
+                    alert('Requested JSON parse failed.');
+
+                } else if (textStatus === 'timeout') {
+
+                    alert('Time out error.');
+
+                } else if (textStatus === 'abort') {
+
+                    alert('Ajax request aborted.');
+
+                } else {
+
+                    alert('Uncaught Error: ' + jqXHR.responseText);
+
+               }
+            }
+        })
+        
+    })
+});
+
+$(document).ready(function(){
+
+        $("input[name='editar_foto_artiulo']").on("change", function(){
+
+            var formData = new FormData($("#form_editar_foto_articulo")[0]);
+            var ruta = _BASE_URL+'dashboard/fotoarticuloeditar';
+
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                dataType: 'JSON',
+                data: formData,
+                contentType: false,
+                processData: false,
+                beforeSend: function() {
+                    $('.progresbar').fadeIn('fast');
+                },
+                success: function(response)
+                {
+                    if (response.answer) {
+                        $(".mensajeAjax").fadeIn("clip");
+                        $(".msnAjax").html(response.respuesta);
+                        $("#input_file_path_foto_blog").html(response.responseinput);
+                        $('.progresbar').fadeOut('fast');
+                        $("#mensajeAjax").fadeAjax();
+                        $("#editar_form_portafolio").resetear();
+                    }
+                   
+                }
+            });
+           
+        });
+
+});
+$(document).ready(function(){
+      $('#form_editar_foto_articulo').submit(function(e) {
+        e.preventDefault();
+
+        var data = $(this).serializeArray();
+
+        $.ajax({
+            url: _BASE_URL+'dashboard/editarnameimagenes',
+            type: 'post',
+            dataType: 'JSON',
+            data: data,
+            beforeSend: function() {
+                $('.progresbar').fadeIn('fast');
+            },
+            success: function(response){
+
+               if (response.answer) {
+                    $(".mensajeAjax").fadeIn("clip");
+                    $('.msnAjax').html(response.respuesta);
+                    $('.progresbar').fadeOut('fast');
+                    $("#mensajeAjax").fadeAjax();
+                    $("#form_editar_foto_articulo").resetear();
+                    $('body').load(_BASE_URL+"dashboard");
                }else{
                     $(".mensajeAjax").fadeIn("clip");
                     $('.msnAjax').html(response.respuesta);

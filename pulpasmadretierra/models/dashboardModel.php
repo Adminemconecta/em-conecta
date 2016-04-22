@@ -458,21 +458,35 @@
 			$this->_db->query("DELETE FROM blog WHERE idblog = $idblog");
 		}
 
-		public function registrarFotoArticulo($fotos_name, $producto_idproducto)
+		public function registrarFotoArticulo($fotos_blog_nombre, $blog_idblog)
 		{
-			$this->_db->prepare("INSERT INTO fotos VALUES  (null, 
-																	
-																fotos_blog_nombre
-																:producto_idproducto
-																
+			$this->_db->prepare("INSERT INTO fotos_blog VALUES  (null, 
+																:fotos_blog_nombre,
+																:blog_idblog
 																)")
 			->execute(
 					array(
-							':blog_idblog' => $blog_idblog,
+							':fotos_blog_nombre' => $fotos_blog_nombre,
 							':blog_idblog' => $blog_idblog
 						)
 				);
 		}
+
+		public function editarFotoArticulo($fotos_blog_nombre, $blog_idblog)
+		{
+
+			$this->_db->prepare("UPDATE fotos_blog 
+									SET fotos_blog_nombre = :fotos_blog_nombre
+									WHERE blog_idblog = :blog_idblog")
+			->execute(
+					array(
+							':fotos_blog_nombre' => $fotos_blog_nombre,
+							':blog_idblog' => $blog_idblog
+						)
+				);
+			
+		}
+
 	}
 	
 ?>

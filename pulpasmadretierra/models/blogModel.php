@@ -2,7 +2,7 @@
 	/**
 	* 
 	*/
-	class indexModel extends Model
+	class blogModel extends Model
 	{
 		
 		function __construct()
@@ -11,30 +11,16 @@
 		}
 
 
-		public function registrarblog($mensaje_nombre, 
-											$mensaje_apellido, 
-											$mensaje_asunto, 
-											$mensaje_email, 
-											$mensaje_mensaje
-										)
+		public function getBlogArticulos()
 		{
-			$this->_db->prepare("INSERT INTO mensaje VALUES  (null, 
-																:mensaje_nombre, 
-																:mensaje_apellido, 
-																:mensaje_asunto, 
-																:mensaje_email, 
-																:mensaje_mensaje
-																)")
-			->execute(
-					array(
-							':mensaje_nombre'=> $mensaje_nombre,
-							':mensaje_apellido'=> $mensaje_apellido,
-							':mensaje_asunto'=> $mensaje_asunto,
-							':mensaje_email'=> $mensaje_email,
-							':mensaje_mensaje'=> $mensaje_mensaje
-						)
-				);
+			$datos = $this->_db->query("SELECT * FROM blogfoto ORDER BY idblog DESC");
+			return $datos->fetchall();
 		}
-			
+
+		public function getBlogArticulo($idblog)
+		{
+			$datos = $this->_db->query("SELECT * FROM blogfoto WHERE idblog = $idblog");
+			return $datos->fetch();
+		}
 	}
 ?>

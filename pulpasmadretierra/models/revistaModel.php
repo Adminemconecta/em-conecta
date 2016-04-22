@@ -2,7 +2,7 @@
 	/**
 	* 
 	*/
-	class portafolioModel extends Model
+	class revistaModel extends Model
 	{
 		
 		function __construct()
@@ -19,7 +19,7 @@
 
 		public function getProductos()
 		{
-			$datos = $this->_db->query("SELECT * FROM producto_view ORDER BY idproducto DESC");
+			$datos = $this->_db->query("SELECT * FROM producto_view LIMIT 0,10 ORDER BY idproducto DESC ");
 			return $datos->fetchall();
 		}
 	}
