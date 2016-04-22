@@ -32,7 +32,7 @@
     <button class="btn waves-effect teal darken-3 col s12 m12 l12" type="submit" name="action">Buscar</button>
   </form>
 </div>
-<section class="resutados row">
+<div class="resutados row">
 <?php 
       if (isset($this->empresa) && count($this->empresa)) { ?>
 
@@ -41,7 +41,7 @@
             <div class="row col s12 m6 l4">
               <div class="card col s12 m12 l12">
                 <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="<?php echo BASE_URL.'public/img/perfilesweb/pulas_madretierra.jpg' ?>">
+                  <img alt="<?php echo $this->empresa[$i]['empresaname'] ?>" title="<?php echo $this->empresa[$i]['empresaname'] ?>" class="activator" src="<?php echo BASE_URL.'public/img/perfilesweb/pulpas_madretierra.jpg' ?>">
                 </div>
                 <div class="card-content">
                   <div class="card-title activator grey-text text-darken-4 center-align"><strong><?php echo ucfirst($this->empresa[$i]['empresaname']); ?></strong></div>
@@ -68,7 +68,7 @@
 <?php }else{ ?>
     <h5 class="center-align"><strong>Aun no hay registros en la base de datos</strong></h5>
 <?php } ?>
-</section>
+</div>
 <?php if (isset($this->paginacion)) {
     echo $this->paginacion;
 } ?>
