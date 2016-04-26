@@ -1,0 +1,31 @@
+# variables declaration
+fab = document.querySelector ".fab"
+fabCtr = document.querySelector ".fab-ctr"
+nav = document.querySelector ".nav"
+links = document.querySelector ".links"
+close = document.querySelector ".close"
+ripple = document.querySelector ".ripple"
+
+# fab click
+fab.addEventListener "click", ->
+  fabCtr.classList.add "active"
+  ripple.classList.add "off"
+  setTimeout ( -> nav.classList.add "active"), 200
+  setTimeout ( 
+    -> 
+      fab.classList.add "active"
+      links.classList.add "active"
+  ), 150
+
+# close click
+close.addEventListener "click", ->
+  links.classList.remove "active"
+  fab.classList.remove "active"
+  setTimeout ( -> nav.classList.remove "active"), 200
+  setTimeout ( 
+    ->
+      fabCtr.classList.remove "active"
+      ripple.classList.remove "off"
+  ), 150
+
+balapaCop "Material Share Interaction", "#999"

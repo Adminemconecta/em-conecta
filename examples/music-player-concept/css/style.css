@@ -1,0 +1,224 @@
+body{
+  font-family:Roboto;
+  z-index:0;
+  color:#263238;
+}
+
+.card {
+  display: block;
+  position: relative;
+  margin: 100px auto;
+  background: #eceff1;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+  width: 380px;
+  text-align: center;
+  animation: slide .5s ease-in-out;
+  z-index: 1;
+}
+
+.shadow:hover,
+.shadow:focus,
+.shadow:active {
+  box-shadow: 0 0 6px rgba(0, 0, 0, .16), 0 6px 12px rgba(0, 0, 0, .32);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1
+  }
+}
+
+@keyframes enter {
+  0% {
+   transform: translateY(125%);
+    visibility: hidden;
+    opacity: 0;
+    
+  }
+  90% {
+    transform: translateY(-25%);
+    visibility: visible;
+    opacity: 1
+  }
+}
+
+.frame {
+  display: inline-block;
+  position: relative;
+  height: 250px;
+  width: 100%;
+  box-shadow: inset 0px -60px 50px -10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.pic {
+  width: 100%;
+  transform: translateY(-25%);
+  position: relative;
+  z-index: -1;
+  animation: enter 1s ease-in-out;
+}
+
+
+
+.details {
+  left: 0;
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  bottom: 5%;
+  width: 100%;
+  color: #eceff1;
+}
+
+.title {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  animation: enter .5s ease-in-out;
+}
+
+.artist {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  animation: enter 0.7s ease-in-out;
+}
+
+.controls {
+  position: relative;
+}
+
+.progress {
+  height: 5px;
+  border-radius: 5px;
+  background: #ff9800;
+}
+
+.time {
+  position: relative;
+  display: block;
+  margin: 0 15px;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.play {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.control {
+  position: relative;
+  display: block;
+  margin: 15px;
+  font-size: 12px;
+  font-family: 'Roboto';
+  font-weight: 600;
+}
+
+.control > i {
+  font-size: 3em;
+}
+
+.fab {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  text-align: center;
+  color: #263238;
+  margin: 15px 5px;
+  cursor: pointer;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+  position: relative;
+  z-index: 998;
+  overflow: hidden;
+}
+
+.shadow {
+  box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+}
+
+.fab.mini {
+  width: 36px;
+  height: 36px;
+}
+
+.fab.feature > i {
+  font-size: 1.6em;
+  line-height: 55px;
+}
+
+.fab > i {
+  font-size: 2.4em;
+  line-height: 55px;
+  display:block;
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-in-out;
+}
+
+.fab.mini > i {
+  font-size: 1.4em;
+  line-height: 35px;
+}
+
+.is-played > i {
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -o-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+/* Ripple */
+
+.ink {
+  display: block;
+  position: absolute;
+  background: rgba(38, 50, 56, 0.4);
+  border-radius: 100%;
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  webkit-transform: scale(0);
+  transform: scale(0);
+}
+/*animation effect*/
+
+.ink.animate {
+  animation: ripple 0.5s ease-in-out;
+}
+
+@keyframes ripple {
+  /*scale the element to 250% to safely cover the entire link and fade it out*/
+  
+  100% {
+    opacity: 0;
+    -moz-transform: scale(5);
+    -ms-transform: scale(5);
+    webkit-transform: scale(5);
+    transform: scale(5);
+  }
+}

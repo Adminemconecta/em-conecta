@@ -1,0 +1,58 @@
+body {
+  height: 100vh;
+    background: url(http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/06/forest-patrol.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.fade-in-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: white;
+  z-index: 9999999999;
+}
+
+.card {
+  opacity: 0;
+  
+  .material-icons {
+    line-height: 48px;
+  }
+  
+  .card-reveal .material-icons  {
+    line-height: 38px;
+  }
+  
+  .card-reveal {
+    overflow:hidden;
+    padding: 0 20px 0 20px;
+    border-top: 20px solid white;
+    border-bottom: 20px solid white;
+  }
+  
+  a {
+    font-weight: 300;
+  }
+  
+  .ps-scrollbar-y-rail {
+    top: 20px;
+    right: 10px;
+  }
+  
+  .thinner {
+    font-weight: 300;
+  }
+  
+  .card-content {
+    opacity: 0;
+  }
+  
+  .material-icons {
+    color: #aaa;
+  }
+}

@@ -1,0 +1,180 @@
+// patrykzabielski.com
+// dribbble.com/Zabielski
+
+@import "bourbon";
+$green: #14C852;
+$white: #fff;
+
+$black-100: 	rgba(0,0,0,1);
+$black-90: 		rgba(0,0,0,0.9);
+$black-80: 		rgba(0,0,0,0.8);
+$black-70: 		rgba(0,0,0,0.7);
+$black-60: 		rgba(0,0,0,0.6);
+$black-50: 		rgba(0,0,0,0.5);
+$black-40: 		rgba(0,0,0,0.4);
+$black-30: 		rgba(0,0,0,0.3);
+$black-20: 		rgba(0,0,0,0.2);
+$black-10: 		rgba(0,0,0,0.1);
+
+$transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+.wrapper {
+	position: absolute;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+	height: 100%;
+	width: 100%;
+	background: $black-10;
+}
+
+.widget {
+	width: 100%;
+	max-width: 430px;
+	height: 452px;
+	border: 1px solid $black-20;
+	background-color: $white;
+	border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+	-webkit-box-shadow: 0px 7px 30px 0px rgba(50, 50, 50, 0.32);
+	-moz-box-shadow:    0px 7px 30px 0px rgba(50, 50, 50, 0.32);
+	box-shadow:         0px 7px 30px 0px rgba(50, 50, 50, 0.32);
+	@include transition($transition);
+}
+
+.widget__photo {
+	width: 100%;
+	height: 300px;
+	background: url('http://www.bonappetit.com/wp-content/uploads/2012/05/uchi-restaurant-auston-646.jpg') no-repeat center / cover;
+	@include transition($transition);
+	position: relative;
+	@include transform(scale(1));
+	&:after {
+		@include transition($transition);
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background-color: $black-60;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 10;
+	}
+}
+
+.widget__details {
+	padding: 30px;
+	position: relative;
+}
+
+.widget__badges {
+	position: absolute;
+	right: 30px;
+	top: 30px;
+}
+
+.widget__badge {
+	font-size: 12px;
+	display: inline-block;
+	border: 1px solid $black-20;
+	color: $black-50;
+	width: 40px;
+	text-align: center;
+	padding: 2px 0;
+	border-radius: 3px;
+}
+
+.widget__badge.widget__badge--rating {
+	background-color: $green;
+	border-color: $green;
+	color: $white;
+}
+
+.widget__name {
+	font-size: 18px;
+	color: $black-80;
+	font-weight: 600;
+	width: 100%;
+	padding: 0 80px 0 0;
+}
+
+.widget__type {
+	font-size: 12px;
+	color: $black-60;
+}
+
+.widget__info span {
+	color: $black-70;
+	font-size: 14px;
+	display: block;
+	width: 100%;
+	margin-bottom: 4px;
+	&:first-of-type {
+		margin-top: 15px;
+	}
+}
+
+.widget__table {
+	width: 100%;
+	tr td {
+		color: $black-70;
+		line-height: 25px;
+		&:first-child {
+			color: $black-40;
+		}
+	}
+}
+
+.widget__overlay {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	height: 100%;
+	background-color: $black-60;
+}
+.widget__button {
+	cursor: pointer;
+	@include transition($transition);
+	position: absolute;
+	margin: 0 auto;
+	padding: 10px 0;
+	width: 70%;
+	background-color: $green;
+	border-radius: 4px;
+	color: $white;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 600;
+	font-size: 12px;
+	left: 0;
+	right: 0;
+	top: -40px;
+}
+// Hovers
+
+.widget {
+	&:hover {
+		.widget__button {
+			top: 32px;
+		}
+		.widget__photo {
+			height: 100px;
+			@include transform(scale(1.3));
+			&:after {
+				opacity: 1;
+			}
+		}
+		.widget__overlay {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+
+
