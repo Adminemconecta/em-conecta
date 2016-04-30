@@ -141,3 +141,45 @@ textarea{
 textarea.materialize-textarea:focus:not([readonly]) + label {
  	color: white;
 }
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+    box-shadow: none;
+}
+.padding{
+	font-size: 1.5em;
+	padding: 10px 0 10px 0;
+}
+.img-container{
+	margin: 2px 0 0 0;
+}
+.radio-img{
+	height: 50px;
+	width: 50px;
+	border-radius: 30px;
+}
+.padding-menu-search{
+	height: 55px;
+}
+.icon-user-tie{
+	margin-right: 20px; 
+}
+.side-nav .collapsible-body {
+    background-color: #424242;
+}
+.side-nav a {
+    color: #FFF;
+}
+.side-nav li:hover, .side-nav li.active {
+    background: #424242;
+}
+.side-nav .collapsible-body ul li:hover {
+    background: #616161;
+}
+.side-nav .collapsible-header{
+	font-size: 0.90em;
+}
+.side-nav .collapsible-body li a {
+    font-size: 0.90em;
+}
+.paddingmenu{
+	padding: 10px 0 10px 0;
+}

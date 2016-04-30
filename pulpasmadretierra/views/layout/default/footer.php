@@ -1,17 +1,11 @@
-<div class="footer-copyright green darken-3">
-  <div class="container white-text">
-  © 2016 Copyright <?php echo COMPANY ?>
-  <a title="url <?php echo APP_COMPANY ?>" class="white-text hide-on-small-only right" href="<?php echo BASE_URL ?>"><?php echo APP_COMPANY ?></a>
-  </div>
-</div>
-</body>
-    <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>normalize.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>style.css">
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+    <link property="normalize" rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>normalize.css">
+    <link property="materializecss" rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>materialize.min.css">
+    <link property="icomoon" rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>style.css">
+    <link property="www.micolombiaenlinea.com" href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <?php if(isset($_layoutParams['css']) && count($_layoutParams['css'])){ ?>
         <?php for($i=0; $i < count($_layoutParams['css']); $i++){ ?>
-        <link rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['css'][$i] ?>">
+        <link property="www.micolombiaenlinea.com" rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['css'][$i] ?>">
         <?php } ?>
     <?php } ?>
     <script src="<?php echo BASE_URL; ?>public/js/jquery-2.2.0.min.js" type="text/javascript"></script>
@@ -72,4 +66,5 @@
           
           var  _BASE_URL = '<?php echo BASE_URL ?>';          
     </script>
+</body>
 </html>

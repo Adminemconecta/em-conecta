@@ -16,6 +16,11 @@
 			$this->_css = array();
 		}
 
+		public function render()
+		{
+			# code...
+		}
+
 		public function renderizar($vista, $item = false)
 		{
 

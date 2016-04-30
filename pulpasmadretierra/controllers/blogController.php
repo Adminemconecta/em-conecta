@@ -20,7 +20,7 @@
 			$this->_view->amp = '';
 			$this->_view->setCss(array('index'));
 			$this->_view->setJs(array('index'));
-			$this->_view->renderizar('index'); 
+			$this->_view->renderizar('index', true); 
 			
 		}
 

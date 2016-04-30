@@ -12,6 +12,21 @@
 			$this->_dashboard = $this->loadModel('dashboard');
 		}
 
+		public function dashboard()
+		{
+			$this->_view->mensaje = $this->_dashboard->getMensajes();
+			$this->_view->usuarios = $this->_dashboard->getUsuarios();
+			$this->_view->redsocial = $this->_dashboard->getRedSocial();
+			$this->_view->portafolio = $this->_dashboard->getPortafolio();
+			$this->_view->tiposproductos = $this->_dashboard->getTipoProducto();
+			$this->_view->productos = $this->_dashboard->getProductos();
+			$this->_view->articulos = $this->_dashboard->getArticulos();
+			
+			$this->_view->titulo = 'Dashboard';
+			$this->_view->setCss(array('index'));
+			$this->_view->setJs(array('index'));
+			$this->_view->renderizar('dashboard'); 
+		}
 		public function index()
 		{
 			if (!Session::get('autenticado')) {
@@ -28,7 +43,7 @@
 			$this->_view->titulo = 'Dashboard';
 			$this->_view->setCss(array('index'));
 			$this->_view->setJs(array('index'));
-			$this->_view->renderizar('index'); 
+			$this->_view->renderizar('index', true); 
 			
 		}
 

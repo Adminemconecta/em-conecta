@@ -109,11 +109,10 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="icon-menu"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a title="Buscar" href="<?php echo BASE_URL ?>">Buscar</a></li>
-        <li><a title="Servicios micolombiaenlinea" href="<?php echo BASE_URL ?>servicios">Nuestros servicios</a></li>
         <li><a title="Nuestros planes" href="<?php echo BASE_URL ?>planes">Planes</a></li>
         <li><a title="Portafolio" href="<?php echo BASE_URL ?>portafolio">Portafolio</a></li>
         <li class="google-show-api"><a href="#">Mapa de empresas</a></li>
-        <li><a title="Publica con nosotros" href="<?php echo BASE_URL ?>publica">Publica con nosotros</a></li>
+        <li><a title="Inscribe tu empresa" href="<?php echo BASE_URL ?>publica">Inscribe tu empresa</a></li>
       </ul>
       <!-- menu lateral -->
       <ul class="side-nav" id="mobile-demo">
@@ -125,15 +124,15 @@
         </div>
       <?php } ?>
         <li><a title="Buscar" href="<?php echo BASE_URL ?>">Buscar</a></li>
-        <li><a title="Servicios micolombiaenlinea" href="<?php echo BASE_URL ?>servicios">Nuestros servicios</a></li>
         <li><a title="Nuestros planes" href="<?php echo BASE_URL ?>planes">Planes</a></li>
         <li><a title="Portafolio" href="<?php echo BASE_URL ?>portafolio">Portafolio</a></li>
         <li class="google-show-api"><a href="#">Mapa de empresas</a></li>
-        <li><a title="Publica con nosotros" href="<?php echo BASE_URL ?>publica">Publica con nosotros</a></li>
+        <li><a title="Inscribe tu empresa" href="<?php echo BASE_URL ?>publica">Inscribe tu empresa</a></li>
       </ul>
       <!-- menu lateral -->
     </div>
 </nav>
 <section class="titulo-publica">
   <h2 title="micolombiaenlinea" class="center-align"><span class="icon-link blue-text text-darken-1"></span>Mi colombia en linea</h2>
+  <h6 title="micolombiaenlinea" class="conectamos">Conectamos tus ideas con el mundo</h6>
 </section>

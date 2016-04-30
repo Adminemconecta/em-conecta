@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow: 
+http://www.micolombiaenlinea.com/Sitemap.xml

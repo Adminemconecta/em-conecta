@@ -8,11 +8,11 @@
     define('APP_COMPANY', 'www.pulpasmadretierra.com');
     define('SESSION_TIME', 10);
 
-    define('COMPANY', 'em-conecta');
-    define('COMPANY_DIRECTION', 'www.pulpasmadretierra.com');
+    define('COMPANY', 'em-conecta-sas');
+    define('COMPANY_DIRECTION', 'pulpasmadretierra');
     define('CIUDAD', 'Web');
     define('INFO', 'Contacte al administrador');
-    define('COMPANY_ABR', 'PMT');
+    define('COMPANY_ABR', 'CL');
 
     define("DB_HOST", "localhost");
     define("DB_USER", "root");

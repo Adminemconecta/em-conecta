@@ -1,0 +1,76 @@
+<div class="row center-align paddingmenu">
+	<div class="col s12 m12 l12 padding-menu-search grey-text darken-2">
+		<div class="row">
+			<div class="col s1 m1 l1">
+				<h5 data-activates="slide-out" class="button-collapse show-on-large icon-menu"></h5>
+			</div>
+			<div class="col s4 l4 m4">
+				<nav class="white">
+				    <div class="nav-wrapper">
+				      <form>
+				        <div class="input-field">
+				          <input id="search" type="search" required placeholder="Buscar">
+				          <label for="search"><span class="icon-search"></span></label>
+				        </div>
+				      </form>
+				    </div>
+				</nav>
+			</div>
+			<div class="col s1 m1 l1">
+				<h5 class="icon-drive"></h5>
+			</div>
+			<div class="col s1 m1 l1">
+				<h5 class="icon-markunread"></h5>
+			</div>
+			<div class="col s1 m1 l1">
+				<h5 class="icon-notifications"></h5>
+			</div>
+			<div class="col s4 m4 l4 row">
+				<div class="img-container col s4 m4 l4">
+					<img class="radio-img" src="<?php echo BASE_URL?>public/img/portafolio/girl-pretty-beautiful-young-47215-compressor.jpeg">
+				</div>
+				<div class="menu-container col s8 m8 l8">
+					<h5 class='dropdown-button' href='#' data-activates='dropdown1'>nombre de usuario<span class="icon-arrow_drop_down"></span></h5>
+
+					<!-- Dropdown Structure -->
+					<ul id='dropdown1' class='dropdown-content'>
+					    <li><a href="#!">one</a></li>
+					    <li class="divider"></li>
+					    <li><a href="#!">two</a></li>
+					    <li class="divider"></li>
+					    <li><a href="#!">three</a></li>
+					</ul>
+					<!-- Dropdown Trigger -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="grey lighten-4">
+		<div class="my_card card_mail">
+		 		<div class="card_title">
+		 			Correo <span class="icon-mail_outline"></span>
+		 		</div>
+		 		<div class="container_info mail_email">
+			 		<ul class="collapsible popout" data-collapsible="accordion">
+						<?php for ($i=0; $i < count( $this->mensaje ); $i++) { ?>
+						    <li>
+						      <div class="collapsible-header white"><span class="left"><strong><?php echo ucwords($this->mensaje[$i]['mensaje_nombre']).' '.ucwords($this->mensaje[$i]['mensaje_apellido']); ?></strong></span><span class="right hide-on-med-and-down"><strong><?php echo ucfirst($this->mensaje[$i]['mensaje_asunto']); ?></strong></span></div>
+						      <div class="collapsible-body white">
+						      		<h4 class="padding_titles">
+						      			<?php echo ucfirst($this->mensaje[$i]['mensaje_asunto']); ?>
+						      		</h4>
+						      		<h5 class="padding_titles">
+						      			<?php echo ucwords($this->mensaje[$i]['mensaje_nombre']).' '.ucwords($this->mensaje[$i]['mensaje_apellido']); ?><br>
+						      			<h6 class="padding_titles"><?php echo ucfirst($this->mensaje[$i]['mensaje_email']); ?></h6>
+						      		</h5>
+								     <p>
+								     	<?php echo ucfirst($this->mensaje[$i]['mensaje_mensaje']); ?>
+								     </p>
+						      </div>
+						    </li>
+						<?php } ?>
+					</ul>
+		 		</div>
+	 		</div>
+	</div>
+</div>

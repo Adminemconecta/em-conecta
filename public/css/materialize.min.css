@@ -321,6 +321,27 @@ color back menu lateral mobil
 .margin-btn{
 	margin-top: 20px;
 }
+.conectamos{
+	position: relative;
+	font-size: 1.9em;
+	text-align: center;
+	font-weight: bold;
+	top: -20px;
+	color: #1E88E5;
+	font-family: 'Sansita One', cursive;
+}
+@media only screen and (max-width: 600px) and (min-width: 0px){
+
+	.conectamos{
+		position: relative;
+		font-size: 1.5em;
+		text-align: center;
+		font-weight: bold;
+		top: -20px;
+		color: #1E88E5;
+		font-family: 'Sansita One', cursive;
+	}
+}
 @media only screen and (max-width: 400px) and (min-width: 0px){
 	.registro-connecta{
 		width: 300px;
