@@ -1,0 +1,129 @@
+.padding-menu-search{
+	height: 55px;
+}
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav{
+    box-shadow: none;
+}
+/*displays*/
+.portafolio_card, /*.social_user_mail,*/ .productos_cad, .blog_cad, .card_mail{
+	display: none; 
+}
+/*displays*/
+.img-container{
+	margin: 2px 0 0 0;
+}
+.radio-img{
+	height: 50px;
+	width: 50px;
+	border-radius: 30px;
+}
+.cards_container{
+	position: relative;
+	top: 60px;
+	padding-top: 10px;
+	background: #e0e0e0;
+}
+.my_card{
+	height: 1200px;
+	overflow-y: scroll; 
+}
+.card_mail{
+	top: -40px;
+}
+.side-nav .collapsible-body {
+    background-color: #424242;
+}
+.side-nav a {
+    color: #FFF;
+}
+.side-nav li:hover, .side-nav li.active {
+    background: #424242;
+}
+.side-nav .collapsible-body ul li:hover {
+    background: #616161;
+}
+.side-nav .collapsible-header{
+	font-size: 0.90em;
+}
+.side-nav .collapsible-body li a {
+    font-size: 0.90em;
+}
+.radio-img-name{
+	position: relative;
+	top: -15px;
+	width: 50px;
+	padding: 1.5px;
+	border-radius: 30px;
+	font-weight: bold;
+	font-size: 2em;
+}
+.card .card-name{
+	font-size: 1.5em;
+	font-weight: bold;
+	padding-top: 20px;
+}
+.card .card-mail{
+	position: relative;
+	padding: 30px;
+	font-size: 1.7em;
+	font-weight: bold;
+	background: #424242;
+}
+.card_titles{
+	position: relative;
+	top: -40px;
+}
+.radio-img-name-msn{
+	position: relative;
+	top: 0px;
+	width: 90px;
+	padding: 20px 0px;
+	border-radius: 300px;
+	font-weight: bold;
+	font-size: 2em;
+}
+.card .user-card{
+	position: relative;
+	padding: 20px 0 20px 20px; 
+}
+.card .msn-card{
+	position: relative;
+	padding: 20px 0;
+}
+.card .user_name{
+	padding-bottom: 25px;
+}
+.card .card_users{
+	position: relative;
+	top: 100px;
+}
+.user_card{
+	height: 900px;
+	top: 70px;
+	margin-bottom: 100px;
+}
+.img-container-perfil{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	border-radius: 120px; 
+	top: -100px;
+	left: 50%;
+	margin-left: -100px;
+	overflow: hidden;
+}
+.radio-img-perfil{
+	position: relative;
+	width: 100%;
+	border-radius: 50px;
+}
+.card .padding-perfil{
+	padding: 20px;
+}
+.card .option_editar{
+	position: relative;
+	width: 100%;
+	top: -80px;
+	font-size: 1.2em;
+	color: black;
+}

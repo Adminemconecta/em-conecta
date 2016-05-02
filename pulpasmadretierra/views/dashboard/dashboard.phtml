@@ -1,4 +1,4 @@
-<div class="row center-align paddingmenu">
+<div class="row center-align">
 	<div class="col s12 m12 l12 padding-menu-search grey-text darken-2">
 		<div class="row">
 			<div class="col s1 m1 l1">
@@ -45,32 +45,86 @@
 			</div>
 		</div>
 	</div>
-	<div class="grey lighten-4">
-		<div class="my_card card_mail">
-		 		<div class="card_title">
-		 			Correo <span class="icon-mail_outline"></span>
-		 		</div>
-		 		<div class="container_info mail_email">
-			 		<ul class="collapsible popout" data-collapsible="accordion">
-						<?php for ($i=0; $i < count( $this->mensaje ); $i++) { ?>
-						    <li>
-						      <div class="collapsible-header white"><span class="left"><strong><?php echo ucwords($this->mensaje[$i]['mensaje_nombre']).' '.ucwords($this->mensaje[$i]['mensaje_apellido']); ?></strong></span><span class="right hide-on-med-and-down"><strong><?php echo ucfirst($this->mensaje[$i]['mensaje_asunto']); ?></strong></span></div>
-						      <div class="collapsible-body white">
-						      		<h4 class="padding_titles">
-						      			<?php echo ucfirst($this->mensaje[$i]['mensaje_asunto']); ?>
-						      		</h4>
-						      		<h5 class="padding_titles">
-						      			<?php echo ucwords($this->mensaje[$i]['mensaje_nombre']).' '.ucwords($this->mensaje[$i]['mensaje_apellido']); ?><br>
-						      			<h6 class="padding_titles"><?php echo ucfirst($this->mensaje[$i]['mensaje_email']); ?></h6>
-						      		</h5>
-								     <p>
-								     	<?php echo ucfirst($this->mensaje[$i]['mensaje_mensaje']); ?>
-								     </p>
-						      </div>
-						    </li>
-						<?php } ?>
-					</ul>
-		 		</div>
-	 		</div>
+	<div class="cards_container row">
+
+		<div class="col s12 m3 card_mail">
+	        <div class="card white card_titles">
+	            <div class="card-mail col s12 white-text">Mensajes</div>
+	        </div>
+        </div>
+
+        <div class="col s12 m9 card_mail">
+	        <div class="card white card_titles">
+	        	<div class="card-mail left-align col s12 white-text">Mensaje</div>
+	        </div>
+        </div>
+
+        <div class="col s12 m3">
+	        <div class="card white my_card card_mail">
+	        <?php for ($i=0; $i < count( $this->mensaje ); $i++) { ?>
+	        	<div class="card-content black-text">
+	              <div class="card-name col s12 user_name"> <?php echo ucwords($this->mensaje[$i]['mensaje_nombre']).' '.ucwords($this->mensaje[$i]['mensaje_apellido']); ?></div>
+	              <div class="col s3">
+	              	<div class="radio-img-name <?php echo substr(lcfirst($this->mensaje[$i]['mensaje_nombre']), 0, 1); ?> white-text"><?php echo substr(ucfirst($this->mensaje[$i]['mensaje_nombre']), 0, 1); ?></div>
+	              </div>
+	              <p class="col s9 truncate">
+	              	<?php echo ucfirst($this->mensaje[$i]['mensaje_asunto']); ?>
+	              </p>
+	            </div>
+	        <?php } ?>
+	        </div>
+        </div>
+
+
+        <div class="col s12 m9">
+	        <div class="card white my_card card_mail">
+	            <div class="card-content black-text">
+	              <div class="card-name user-card left-align col s12"><?php echo ucwords($this->mensaje[0]['mensaje_nombre']).' '.ucwords($this->mensaje[0]['mensaje_apellido']); ?></div>
+	              <div class="col s1">
+	              	<div class="radio-img-name-msn <?php echo substr(lcfirst($this->mensaje[0]['mensaje_nombre']), 0, 1); ?>  white-text"><?php echo substr(ucfirst($this->mensaje[0]['mensaje_nombre']), 0, 1); ?></div>
+	              </div>
+	              <div class="col s11 right-align"><?php echo ucfirst($this->mensaje[0]['mensaje_asunto']); ?></div>
+	              <div class="col s11 right-align"><?php echo ucfirst($this->mensaje[0]['mensaje_email']); ?></div>
+
+	              <div class="msn-card col s12 left-align">
+	              	<?php echo ucfirst($this->mensaje[0]['mensaje_mensaje']); ?>
+	              </div>
+	            </div>
+	        </div>
+        </div>
+
+        <div class="row">
+	        <div class="col s12 m6">
+	          <div class="card white user_card">
+	            <div class="card-content">
+		            <div class="img-container-perfil">
+						<img class="radio-img-perfil" src="<?php echo BASE_URL?>public/img/portafolio/girl-pretty-beautiful-young-47215-compressor.jpeg">
+					</div>
+					<div class="option_editar"><a href="#">Editar foto</a></div>
+		            <div class="card-title black-text padding-perfil"><strong><?php echo 'Hola! '.$_SESSION['usuario'] ?></strong></div>
+		            <p class="col s12 black-text padding-perfil">Bienvenido a micolombiaenlinea este es tu perfil, modifica todo lo que tú quieras.</p>
+		            <div class="col s6 left-align padding-perfil">
+		            	<?php echo $_SESSION['nombre'].' '.$_SESSION['apellido'] ?>
+		            </div>
+		            <div class="col s6 right-align padding-perfil">
+		            	<a href="#">Editar nombres</a>
+		            </div>
+		            <div class="col s6 left-align padding-perfil">
+		            	<?php echo $_SESSION['usuario']?>
+		            </div>
+		            <div class="col s6 right-align padding-perfil">
+		            	<a href="#">Editar usuario</a>
+		            </div>
+		            <div class="col s6 left-align padding-perfil">
+		            	<?php echo '**************'?>
+		            </div>
+		            <div class="col s6 right-align padding-perfil">
+		            	<a href="#">Editar contraseña</a>
+		            </div>
+	            </div>
+	          </div>
+	        </div>
+	    </div>
+
 	</div>
 </div>

@@ -23,7 +23,7 @@
 			$this->_view->articulos = $this->_dashboard->getArticulos();
 			
 			$this->_view->titulo = 'Dashboard';
-			$this->_view->setCss(array('index'));
+			$this->_view->setCss(array('dashboard'));
 			$this->_view->setJs(array('index'));
 			$this->_view->renderizar('dashboard'); 
 		}

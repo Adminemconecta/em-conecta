@@ -10,17 +10,23 @@
 }
 .card_title{
 	width: 100%;
-	padding: 10px 0 10px 0;
 	background: #212121;
-	text-align: center;
 	color: white;
 	font-size: 1.5em;
 }
 .my_card{
 	position: relative;
-	padding: 10px;
-	min-height: 680px;
-	background: #424242;
+	background: white;
+	min-height: 970px;
+	max-height: 1200px;
+}
+.cards_container{
+	position: relative;
+	top: 60px;
+	padding-top: 10px;
+	min-height: 1000px;
+	max-height: 1200px;
+	background: #e0e0e0;
 }
 .row .col{
 	padding: 0
@@ -106,6 +112,18 @@
 	display: none; 
 }
 /*displays*/
+.card_mail{
+	position: relative;
+	float: left;
+	margin-left: 12px;
+	top: -40px;
+}
+.card_dataname{
+	width: 30%;
+}
+.card_datamensaje{
+	width: 68%;
+}
 .navigation_menu_vertical{
 	width: 60px;
 }
@@ -123,11 +141,6 @@
 }
 .fixed-action-btn{
 	width: 60px;
-}
-.card_mail{
-	min-height: 600px;
-	max-height: 600px;
-	overflow-y: scroll;
 }
 .padding_titles{
 	padding: 20px 0 0 20px;

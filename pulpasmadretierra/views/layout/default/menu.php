@@ -7,7 +7,7 @@
                 <a class="collapsible-header">Config inicial<i class="icon-keyboard_arrow_down"></i></a>
                 <div class="collapsible-body">
                   <ul>
-                    <li><a href="#">Usuarios</a></li>
+                    <li><a id="conf_inicial" href="#">Usuarios</a></li>
                     <li><a href="#">Redes sociales</a></li>
                     <li><a href="#">Favi-icon</a></li>
                   </ul>

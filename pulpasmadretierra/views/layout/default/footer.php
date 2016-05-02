@@ -2,6 +2,7 @@
     <link property="normalize" rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>normalize.css">
     <link property="materializecss" rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>materialize.min.css">
     <link property="icomoon" rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>style.css">
+    <link property="icomoon" rel="stylesheet" type="text/css" href="<?php echo $_layoutParams['ruta_css'];?>font-color.css">
     <link property="www.micolombiaenlinea.com" href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <?php if(isset($_layoutParams['css']) && count($_layoutParams['css'])){ ?>
         <?php for($i=0; $i < count($_layoutParams['css']); $i++){ ?>
